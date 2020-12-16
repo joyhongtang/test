@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="270dp"
+    android:layout_height="170dp"
+    android:layout_gravity="center"
+    android:clickable="true"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:id="@+id/main_v"
+        android:layout_width="220dp"
+        android:layout_height="120dp"
+        android:background="@drawable/shape_actionsheet_top_test_noresult">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/test_result"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shape_actionsheet_green_normal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/test_result_desp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:text="测试失败"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/focus_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="-10dp"
+        android:background="@drawable/bg_selector_photo_main"
+        android:scaleType="fitXY"
+        android:visibility="invisible"/>
+</RelativeLayout>

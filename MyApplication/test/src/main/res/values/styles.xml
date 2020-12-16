@@ -1,0 +1,226 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <attr name="wifi_signal" format="reference" />
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/main</item>
+
+        <!--<item name="android:fontFamily">@font/thingold</item>-->
+
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+
+        <item name="wifi_signal">@drawable/wifi_signal_dark</item>
+    </style>
+
+    <style name="DateTimePicker" parent="@android:style/Theme.Holo.Light.Dialog.MinWidth">
+        <item name="android:editTextStyle">@style/DateTimeEditText</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="DateTimeEditText" parent="@android:style/Widget.EditText">
+        <item name="android:textSize">@dimen/sp_24</item>
+    </style>
+
+    <style name="TransparentTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="TranslucentTheme" parent="AppTheme">
+        <item name="android:windowBackground">@color/translucent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--clock-->
+    <style name="ViewFlipper">
+        <item name="android:layout_width">@dimen/dp_107</item>
+        <item name="android:layout_height">@dimen/dp_165</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:inAnimation">@anim/anim_in</item>
+        <item name="android:outAnimation">@anim/anim_out</item>
+    </style>
+
+    <!-- popup window 显示消失动画-->
+    <style name="PopWindowAnim">
+        <item name="android:windowShowAnimation">@anim/dialog_enter</item>
+        <!-- 指定显示的动画xml  -->
+        <item name="android:windowHideAnimation">@anim/dialog_exit</item>
+        <!-- 指定消失的动画xml  -->
+    </style>
+
+    <!--calendar-->
+    <style name="tv_week_calendar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/dp_16</item>
+    </style>
+
+    <!--CommonDialog-->
+    <style name="MaterialDialog" parent="android:style/Theme.Holo.Dialog">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="dialog_scale_anim">
+        <item name="android:windowShowAnimation">@anim/material_dialog_show_scale</item>
+        <!-- 指定显示的动画xml  -->
+        <item name="android:windowHideAnimation">@anim/material_dialog_hide_scale</item>
+        <!-- 指定消失的动画xml  -->
+    </style>
+
+    <style name="dialog_from_bottom_anim">
+        <item name="android:windowShowAnimation">@anim/material_dialog_show_translate</item>
+        <!-- 指定显示的动画xml  -->
+        <item name="android:windowHideAnimation">@anim/material_dialog_hide_translate</item>
+        <!-- 指定消失的动画xml  -->
+    </style>
+
+    <style name="FloatWindow">
+        <item name="android:windowEnterAnimation">@anim/float_window_in</item>
+        <item name="android:windowExitAnimation">@anim/float_window_out</item>
+    </style>
+
+    <style name="RelativeLayoutSidebarTitleStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/sidebar</item>
+    </style>
+
+    <style name="ImageViewTitleStyle">
+        <item name="android:id">@id/iv_back</item>
+        <item name="android:layout_width">@dimen/dp_50</item>
+        <item name="android:layout_height">@dimen/dp_50</item>
+        <item name="android:layout_marginTop">@dimen/dp_30</item>
+        <item name="android:layout_marginLeft">@dimen/dp_30</item>
+        <item name="android:src">@drawable/ic_back_selector</item>
+    </style>
+
+    <style name="TextViewTitleStyle">
+        <item name="android:id">@id/tv_title_back</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dp_50</item>
+        <item name="android:textSize">@dimen/sp_35</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_alignTop">@id/iv_back</item>
+        <item name="android:layout_toRightOf">@id/iv_back</item>
+        <item name="android:layout_marginLeft">@dimen/dp_20</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ViewTitleStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_1</item>
+        <item name="android:layout_below">@id/iv_back</item>
+        <item name="android:layout_marginTop">@dimen/dp_30</item>
+        <item name="android:background">@color/divider_sidebar</item>
+    </style>
+
+    <style name="LoadingDialog" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
+    <style name="SwitchStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:switchMinWidth">@dimen/dp_80</item>
+        <item name="android:textOff">"     "</item>
+        <item name="android:textOn">"     "</item>
+        <item name="android:thumb">@drawable/thumb</item>
+        <item name="android:track">@drawable/track</item>
+    </style>
+
+    <style name="jz_style_dialog_progress" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/jz_popup_toast_anim</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="jz_popup_toast_anim" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
+
+    <style name="wifi_item">
+        <item name="android:gravity">start</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8.0dip</item>
+        <item name="android:layout_marginStart">16.0dip</item>
+        <item name="android:layout_marginEnd">16.0dip</item>
+    </style>
+
+    <style name="wifi_item_content">
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="wifi_item_edit_content">
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="wifi_item_label">
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">viewStart</item>
+    </style>
+
+    <style name="wifi_section">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MyDialog" parent="android:Theme.Dialog">
+        <!-- 背景颜色及透明程度 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 是否没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否背景模糊 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 设置背景模糊的透明度-->
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+    <style name="MyElsonAlertDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+        <item name="android:background">@android:color/transparent</item>
+        <!-- 背景色 -->
+        <!--<item name="android:windowSoftInputMode">stateAlwaysVisible</item>-->
+        <!--显示软件盘-->
+    </style>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/conut_down_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:text="tester"
+            android:singleLine="true"
+            android:id="@+id/wifi_name"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="请设wifi名称"
+            android:textColor="@color/main"
+            android:textColorHint="@color/main"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:visibility="gone"
+            android:text="12345678"
+            android:singleLine="true"
+            app:layout_constraintTop_toBottomOf="@+id/wifi_name"
+            android:id="@+id/wifi_pwd"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="设置wifi密码"
+            android:textColor="@color/main"
+            android:textColorHint="@color/main"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            app:layout_constraintBottom_toBottomOf="@+id/wifi_pwd"
+            android:id="@+id/countdown_go"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="开始测试"
+            app:layout_constraintStart_toEndOf="@id/wifi_name" />
+
+        <TextView
+            android:id="@+id/wifi_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/countdown_go"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/countdown_go" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

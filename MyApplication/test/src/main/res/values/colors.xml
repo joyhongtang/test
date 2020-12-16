@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="test_normal">#999999</color>
+    <color name="test_pressed">#666666</color>
+    <color name="gray_9999">#999</color>
+    <color name="gray_f2f2">#333</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="gray">#999</color>
+    <color name="darker_gray">#AAA</color>
+    <color name="red">#F00</color>
+
+    <color name="main">#00A7D4</color>
+    <color name="main_pressed">#9900A7D4</color>
+
+    <color name="bg_dialog">#9000</color>
+    <color name="divider_dialog">#9FFF</color>
+
+    <color name="bg_content">#0A85A6</color>
+    <color name="text">#FFF</color>
+    <color name="text_gray">#CCC</color>
+
+    <color name="accept">#1AAD19</color>
+    <color name="accept_pressed">#129611</color>
+    <color name="refuse">#FF3B30</color>
+    <color name="refuse_pressed">#F72428</color>
+
+    <color name="text_light_dialog_title">#000</color>
+    <color name="divider_light_dialog_title">#CCC</color>
+    <color name="bg_light_dialog_content">#0000</color>
+    <color name="bg_light_dialog_content_pressed">#1000</color>
+    <color name="text_light_dialog_content">#000</color>
+    <color name="divider_light_dialog_content">#CCC</color>
+    <color name="solid_dark_dialog">#9000</color>
+    <color name="stroke_dark_dialog">#9FFF</color>
+    <color name="text_dark_dialog_title">#FFF</color>
+    <color name="divider_dark_dialog_title">#9FFF</color>
+    <color name="text_dark_dialog_content">#FFF</color>
+    <color name="divider_dark_dialog_content">#999</color>
+    <color name="icon">#FFF</color>
+    <color name="icon_pressed">#CCFFFFFF</color>
+    <!--SeekBar-->
+    <color name="background">#99FFFFFF</color>
+    <color name="progress">#FFFFFF</color>
+
+    <color name="bg_tab">#0099BB</color>
+
+    <!--music-->
+    <color name="divider_sidebar">#435971</color>
+    <color name="t_sidebar_normal">#B6CEFF</color>
+    <color name="t_sidebar_select">#FFF</color>
+    <color name="white_24p">#3DFFFFFF</color>
+    <color name="white_50p">#80FFFFFF</color>
+    <color name="gray_music">#CCCCCC</color>
+
+    <!--weather-->
+    <color name="yellow_hot">#f9c000</color>
+    <color name="blue_ice">#1A1737</color>
+    
+    <!--files-->
+    <color name="slider_browse">#014A5B</color>
+    <color name="text_menu_normal">#B7CEFF</color>
+    <color name="text_menu_selected">#FFF</color>
+
+    <!--settings-->
+    <color name="transparent">#00000000</color>
+    <color name="item_pressed">#11000000</color>
+    <color name="translucent">#C000</color>
+    <color name="divider">#CCC</color>
+    <color name="sidebar">#14304E</color>
+    <color name="frame">#24A2C8</color>
+
+    <color name="lightpink">#ffb6c1</color><!--亮粉红色 -->
+    <color name="orange">#ffa500</color><!--橙色 -->
+    <color name="pink">#ffc0cb</color><!--粉红色 -->
+
+    <color name="em_indicator_select">#9E9E9E</color>
+    <color name="em_indicator_normal">#1AFFFFFF</color>
+    <color name="black_deep">#FF000000</color>
+
+    <color name="textFF6060">#FF6060</color>
+</resources>

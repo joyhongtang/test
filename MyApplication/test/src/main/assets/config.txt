@@ -1,0 +1,17 @@
+Touch_1 (触摸)
+Camera_1 （摄像头）
+Record_1（录音测试）
+Lcd_1 （显示屏）
+Wifi_1 （wifi测试）
+RemoteControl_0 （遥控器测试）
+Speaker_1  （喇叭测试）
+SystemInfo_1 (系统版本信息)
+G-sensor_0 (重力感应测试)
+Sdcard_1 (sdcard测试)
+Human-sensor_1 (人体感应测试)
+USB_1 (USB存储测试)
+HeadSet_0 (耳机)
+Battery_0 (电池)
+VideoTest_1 （视频老化测试）
+UnlimitedData_1 （软件配置项_不限流量）
+AutoBrightness_0 （自动调节亮度）

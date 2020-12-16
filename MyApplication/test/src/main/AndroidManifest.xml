@@ -1,0 +1,70 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.joyhong.test">
+
+    /
+    <application>
+
+        <activity
+            android:name="com.joyhong.test.TouchScreenTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".wifi.WifiTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".interfacedevice.InterfaceDevice"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".control.ControlTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".device.DeviceInfoTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".gsensor.GsnsorViewAcitvity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".androidmediademo.media.MusicSelActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name="com.joyhong.test.androidmediademo.media.record.AudioRecorderActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".CameraTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".TestMainActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".RecordActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".musictest.MusicTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".photo.SlideTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".video.VideoViewTestActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+
+
+    </application>
+</manifest>

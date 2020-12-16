@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CloudPhotoFrame</string>
+    <string name="description">Caption</string>
+    <string name="screen_shot">Capture</string>
+    <string name="ringtone_mgr">Incoming call ringtone settings</string>
+    <string name="admin">Manager</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="back">Back</string>
+    <string name="home">Home</string>
+    <string name="vol_minus">Vol-</string>
+    <string name="vol_plus">Vol+</string>
+
+    <string name="power">Power</string>
+    <string name="out_of_memory">Insufficient memory available, restore normal memory after cleaning device memory</string>
+    <!--Welcome-->
+    <string name="prev">Prev</string>
+    <string name="next">Next</string>
+    <string name="choose_a_network">Choose a network</string>
+    <string name="skip_wizard_title">Skip Wizard</string>
+    <string name="skip_wizard_content">After skipping the wizard, the photo frame will not support cloud photo sharing temporarily.</string>
+    <string name="device_bind">Device Bind</string>
+    <string name="complete">Complete</string>
+    <!--Main-->
+    <string name="photo">Photo</string>
+    <string name="music">Music</string>
+    <string name="video">Video</string>
+    <string name="calendar">Calendar</string>
+    <string name="clock">Clock</string>
+    <string name="alarm">Alarm</string>
+    <string name="call" translatable="false">Call</string>
+    <string name="weather">Weather</string>
+    <string name="files">Files</string>
+    <string name="settings">Settings</string>
+    <!--Photo-->
+    <string name="cloud_photo">Cloud Photo</string>
+    <string name="favorites">Favorites</string>
+    <string name="all">All</string>
+    <string name="internal_storage">Internal Storage</string>
+    <string name="sd_card">SD Card</string>
+    <string name="usb">USB</string>
+    <string name="usb_sd_card">USB/SD Card</string>
+    <string name="resolution" translatable="false">%1$dx%2$d</string>
+    <string name="digital_indicator">%1$d/%2$d</string>
+    <string name="transition_name" translatable="false">photo</string>
+    <!--Slideshow-->
+    <string name="shared_by">Shared by %1$s</string>
+    <!--Music-->
+    <string name="unknown">Unknown</string>
+    <string name="no_music_files_found">No music files found</string>
+    <string name="play_time_start">00:00</string>
+    <string name="mode_loop">List loop</string>
+    <string name="mode_shuffle">Shuffle Playback</string>
+    <string name="mode_one">Single cycle</string>
+    <string name="playback_failed">The player doesn\'t support this type of audio file.</string>
+    <!--Video-->
+    <string name="tips_not_wifi">You are currently using the mobile network, the player will continue to consume traffic</string>
+    <string name="tips_not_wifi_confirm">Resume</string>
+    <string name="tips_not_wifi_cancel">Stop play</string>
+    <string name="no_url">No url</string>
+    <string name="replay">Replay</string>
+    <string name="click_to_restart">Click to try again</string>
+    <string name="video_loading_faild">Video loading failed</string>
+    <!--Weather-->
+    <string name="positioning_desc">Show weather after networking and positioning</string>
+    <string name="refresh_success">Refresh success</string>
+    <string name="temp_c">%1$.1f°C</string>
+    <string name="temp_f">%1$.1f°F</string>
+    <string name="humidity_current">Humidity %1$d&#037;&#037;</string>
+    <string name="wind_speed_current">Wind Speed&#160;%1$.1f</string>
+    <string name="date_weather">%1$s, %2$s</string>
+    <string name="temp_c_range">%1$.1f ~ %2$.1f°C</string>
+    <string name="temp_f_range">%1$.1f ~ %2$.1f°F</string>
+    <string name="search_city">Search City</string>
+    <string name="no_cities_found">No cities found</string>
+    <string name="please_enter_the_city_name">Please enter the city name</string>
+    <string name="geo_coords">Geo coords [%1$s]</string>
+    <!--Clock-->
+    <string name="choose_clock_skin">Choose Clock Skin</string>
+    <!--Alarm-->
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+    <string name="repeat">Repeat</string>
+    <string name="ringtone">Ringtone</string>
+    <string name="label">Label</string>
+    <string name="set_time">Set time</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="once">Once</string>
+    <string name="monday_to_friday">Monday to Friday</string>
+    <string name="everyday">Everyday</string>
+    <string name="custom">Custom</string>
+    <string name="right_slide_close_alarm_clock">Right slide close alarm clock</string>
+    <!--Calendar-->
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <!--Files-->
+    <string name="file_path">Path: %1$s</string>
+    <string name="file_size">Size: %1$s</string>
+    <string name="file_date">Date: %1$s</string>
+    <string name="file_desc">Caption: %1$s</string>
+    <string name="files_import">Import</string>
+    <string name="import_files_to_memory">Import files to memory</string>
+    <string name="files_export">Export</string>
+    <string name="export_files_to_external_storage">Export files to external storage</string>
+    <string name="import_success">Import success</string>
+    <string name="import_failure">Import failure</string>
+    <string name="export_success">Export success</string>
+    <string name="export_failure">Export failure</string>
+    <string name="please_select_a_storage_device_first">Please select a storage device first</string>
+    <string name="delete">Delete</string>
+    <string name="delete_file">Delete file?</string>
+    <string name="delete_the_selected_files">Delete the selected file?</string>
+    <string name="delete_success">Delete success</string>
+    <string name="delete_failure">Delete failure</string>
+    <string name="selected">Selected %1$d</string>
+    <string name="select_all">Select All</string>
+    <string name="unselect_all">Unselect All</string>
+    <!--Settings-->
+    <string name="device_info">Device Info</string>
+    <string name="user_management">User Management</string>
+    <string name="pc_control">PC Control</string>
+    <string name="album_settings">Description</string>
+    <string name="system_settings">System Settings</string>
+    <string name="about">About</string>
+    <!--Device Info-->
+    <string name="refreshing">refreshing</string>
+    <string name="refresh_desc">Please connect to the network, click the refresh button</string>
+    <string name="display_device_info">Display device information after networking</string>
+    <string name="frame_id_desc">Frame ID: %1$s</string>
+    <string name="frame_id">Frame ID</string>
+    <string name="users">Users</string>
+    <string name="accept_new_users">Accept new users</string>
+    <string name="view_photos">View Photos</string>
+    <string name="remark_name">Name</string>
+    <string name="remark_name_setting">Rename</string>
+    <string name="delete_user">Delete User</string>
+    <string name="delete_user_photos">Delete User &amp; Photos</string>
+    <string name="no_photos_found">No photos found</string>
+    <string name="block">Block</string>
+    <string name="blocked">Blocked</string>
+    <string name="unblock">Unblock</string>
+    <string name="after_blocking_files_that_the_user_uploads_can_not_be_received">After blocking, files that the user uploads can not be received.</string>
+    <string name="after_unblocking_you_can_receive_files_uploaded_by_the_user">After unblocking, you can receive files uploaded by the user.</string>
+    <string name="after_deleting_the_user_can_not_upload_files_to_the_device">After deleting, the user can\'t upload files to the device.</string>
+
+    <string name="activation_failed_mac_empty" translatable="false">Mac address is empty, activation failed</string>
+    <string name="activation_failed_push_token_empty" translatable="false">Push token is empty, activation failed</string>
+    <!--User Management-->
+    <string name="pending_user_requests">Pending User Requests</string>
+    <string name="accept">Accept</string>
+    <string name="refuse">Refuse</string>
+    <!--PC control-->
+    <string name="wlan_name">WLAN Name: %1$s</string>
+    <string name="please_connect_an_available_wifi">Please connect an available Wi-Fi</string>
+    <string name="start_service_to_enable_ftp_server">Start service to enable FTP server</string>
+    <string name="enter_the_following_address_into_your_ftp_client">Enter the following address into your FTP client:</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+
+    <!-- HTTP proxy settings title -->
+    <string name="proxy_settings_title">Proxy</string>
+    <!-- HTTP proxy settings. Button to clear the proxy box. -->
+    <string name="proxy_clear_text">Clear</string>
+    <!-- HTTP proxy settings. The port number label. -->
+    <string name="proxy_port_label">Proxy port</string>
+    <!-- HTTP proxy settings. The hint text field for port. -->
+    <string name="proxy_port_hint" translatable="false">8080</string>
+    <!-- HTTP proxy settings. The exclusion list label. -->
+    <string name="proxy_exclusionlist_label">Bypass proxy for</string>
+    <!-- HTTP proxy settings. The hint text for proxy exclusion list. [CHAR LIMIT=50]-->
+    <string name="proxy_exclusionlist_hint">example.com,mycomp.test.com,localhost</string>
+    <!-- HTTP proxy settings. The button to restore the defaults. -->
+    <string name="proxy_defaultView_text">Restore defaults</string>
+    <!-- HTTP proxy settings. The button to save. -->
+    <string name="proxy_action_text">Done</string>
+    <!-- HTTP proxy settings. The text field for the hostname -->
+    <string name="proxy_hostname_label">Proxy hostname</string>
+    <!-- HTTP proxy settings. The hint text field for the hostname. [CHAR LIMIT=50] -->
+    <string name="proxy_hostname_hint">proxy.example.com</string>
+    <!-- HTTP proxy settings. Title if there is an error-->
+    <string name="proxy_error">Attention</string>
+    <!-- HTTP proxy settings. Button to get rid of error box-->
+    <string name="proxy_error_dismiss">OK</string>
+    <!-- HTTP proxy settings. The error if the hostname is not valid -->
+    <string name="proxy_error_invalid_host">The hostname you typed isn\'t valid.</string>
+    <!-- HTTP proxy settings. The error if the exclusion list is not valid -->
+    <string name="proxy_error_invalid_exclusion_list">The exclusion list you typed isn\'t properly formatted. Type a comma-separated list of excluded domains.</string>
+    <!-- HTTP proxy settings. Error msg -->
+    <string name="proxy_error_empty_port">You need to complete the port field.</string>
+    <!-- HTTP proxy settings. Error msg -->
+    <string name="proxy_error_empty_host_set_port">The port field must be empty if the host field is empty.</string>
+    <!-- HTTP proxy settings. Error msg -->
+    <string name="proxy_error_invalid_port">The port you typed isn\'t valid.</string>
+    <!-- HTTP proxy settings. Warning message about limited application support [CHAR LIMIT=100]-->
+    <string name="proxy_warning_limited_support">The HTTP proxy is used by the browser but may not be used by the other apps.</string>
+
+    <!-- Wi-Fi Settings -->
+    <skip />
+    <!-- Used in the 1st-level settings screen to turn on Wi-Fi -->
+    <string name="wifi_quick_toggle_title">Wi\u2011Fi</string>
+    <!-- Used in the 1st-level settings screen as the turn-on summary -->
+    <string name="wifi_quick_toggle_summary">Turn on Wi\u2011Fi</string>
+    <!-- Used in the 1st-level settings screen to go to the 2nd-level settings screen  [CHAR LIMIT=20]-->
+    <string name="wifi_settings">Wi\u2011Fi</string>
+    <!-- Title of the Wi-fi settings screen -->
+    <string name="wifi_settings_category">Wi\u2011Fi settings</string>
+    <!-- Title of the Wi-fi settings entry in the left top level menu -->
+    <string name="wifi_settings_title">Wi\u2011Fi</string>
+    <!-- Summary text of the Wi-fi settings screen -->
+    <string name="wifi_settings_summary">Set up &amp; manage wireless access points</string>
+    <!-- Used in the 1st-level settings screen to turn on Wi-Fi  [CHAR LIMIT=60] -->
+    <string name="wifi_setup_wizard_title">Select Wi\u2011Fi</string>
+    <!-- Summary text when turning Wi-Fi or bluetooth on -->
+    <string name="wifi_starting">Turning Wi\u2011Fi on\u2026</string>
+    <!-- Summary text when turning Wi-Fi or bluetooth off -->
+    <string name="wifi_stopping">Turning off Wi\u2011Fi\u2026</string>
+    <!-- Summary text when Wi-Fi or bluetooth has error -->
+    <string name="wifi_error">Error</string>
+    <!-- Toast message when Wi-Fi or bluetooth is disallowed in airplane mode -->
+    <string name="wifi_in_airplane_mode">In Airplane mode</string>
+    <!-- Toast message when Wi-Fi cannot scan for networks -->
+    <string name="wifi_fail_to_scan">Can\'t scan for networks</string>
+    <!-- Checkbox title for option to notify user when open networks are nearby -->
+    <string name="wifi_notify_open_networks">Network notification</string>
+    <!-- Checkbox summary for option to notify user when open networks are nearby -->
+    <string name="wifi_notify_open_networks_summary">Notify me when an open network is available</string>
+    <!-- Checkbox title for option to toggle poor network detection -->
+    <string name="wifi_poor_network_detection">Avoid poor connections</string>
+    <!-- Checkbox summary for option to toggle poor network detection -->
+    <string name="wifi_poor_network_detection_summary">Don\'t use a Wi\u2011Fi network unless it has a good Internet connection</string>
+    <!-- Checkbox title for option to scan always available setting -->
+    <string name="wifi_scan_always_available">Scanning always available</string>
+    <!-- Checkbox summary for option to toggle scan always available setting -->
+    <string name="wifi_scan_always_available_summary">Let Google\'s location service and other apps scan for networks, even when Wi-Fi is off</string>
+    <!-- Preference title for option to install certificates -->
+    <string name="wifi_install_credentials">Install certificates</string>
+    <string name="wifi_scan_notify_text_location_on">To improve location accuracy and for other purposes, Google and other apps may scan for nearby networks, even when Wi-Fi is off. If you don\'t want this to happen, go to Advanced &gt; Scanning always available.</string>
+    <string name="wifi_scan_notify_text_location_off">Apps may scan for nearby networks, even when Wi-Fi is off. If you don\'t want this to happen, go to Advanced &gt; Scanning always available.</string>
+    <!-- Wifi scan always mode checkbox text -->
+    <string name="wifi_scan_notify_remember_choice">Don\'t show again</string>
+    <!-- Setting title for setting the wifi sleep policy. Do we keep Wi-Fi active when the screen turns off? -->
+    <string name="wifi_setting_sleep_policy_title">Keep Wi\u2011Fi on during sleep</string>
+    <!-- Generic error message when the sleep policy could not be set. -->
+    <string name="wifi_setting_sleep_policy_error">There was a problem changing the setting</string>
+    <!-- Checkbox title for option to toggle suspend power optimizations -->
+    <string name="wifi_suspend_optimizations">Wi\u2011Fi optimization</string>
+    <!-- Checkbox summary for option to toggle suspend power optimizations -->
+    <string name="wifi_suspend_optimizations_summary">Minimize battery usage when Wi\u2011Fi is on</string>
+    <!-- Action bar text message to manually add a wifi network [CHAR LIMIT=20]-->
+    <string name="wifi_add_network">Add network</string>
+    <!-- Header for the list of wifi networks-->
+    <string name="wifi_access_points">Wi\u2011Fi networks</string>
+    <!-- Menu option to do WPS Push Button [CHAR LIMIT=25]-->
+    <string name="wifi_menu_wps_pbc">WPS Push Button</string>
+    <!-- Content description for menu button in Wifi setup. Not shown on the screen. [CHAR LIMIT=NONE] -->
+    <string name="wifi_menu_more_options">More options</string>
+    <!-- Menu option to do WPS Pin Entry [CHAR LIMIT=25]-->
+    <string name="wifi_menu_wps_pin">WPS Pin Entry</string>
+    <!-- Menu option to launch Wi-Fi Direct settings [CHAR LIMIT=20]-->
+    <string name="wifi_menu_p2p">Wi\u2011Fi Direct</string>
+    <!-- Menu option to scan Wi-Fi networks -->
+    <string name="wifi_menu_scan">Scan</string>
+    <!-- Menu option to Wi-Fi advanced settings -->
+    <string name="wifi_menu_advanced">Advanced</string>
+    <!-- Menu option to connect to a Wi-Fi network -->
+    <string name="wifi_menu_connect">Connect to network</string>
+    <!-- Menu option to delete a Wi-Fi network -->
+    <string name="wifi_menu_forget">Forget network</string>
+    <!-- Menu option to modify a Wi-Fi network configuration -->
+    <string name="wifi_menu_modify">Modify network</string>
+    <!-- Wi-Fi settings. text displayed when Wi-Fi is off and network list is empty [CHAR LIMIT=50]-->
+    <string name="wifi_empty_list_wifi_off">To see available networks, turn Wi\u2011Fi on.</string>
+    <!-- Wi-Fi settings. text displayed when Wi-Fi is on and network list is empty [CHAR LIMIT=50]-->
+    <string name="wifi_empty_list_wifi_on">Searching for Wi\u2011Fi networks\u2026</string>
+    <!-- Wifi Settings. text displayed when user has restriction DISALLOW_CONFIG_WIFI [CHAR LIMIT=NONE]-->
+    <string name="wifi_empty_list_user_restricted">You don\'t have permission to change the Wi\u2011Fi network.</string>
+    <!-- Wi-Fi settings. title for setup other network button [CHAR LIMIT=35]-->
+    <string name="wifi_other_network">Other network\u2026</string>
+    <!-- Wi-Fi settings. content description for more button [CHAR LIMIT=50]-->
+    <string name="wifi_more">More</string>
+    <!-- Wi-Fi settings. wps menu title [CHAR LIMIT=25]-->
+    <string name="wifi_setup_wps">Automatic setup (WPS)</string>
+    <!-- Message informing that wifi is required during setup [CHAR LIMIT=NONE] -->
+    <string name="wifi_required_info_text">To complete setup, your tablet needs access to Wi\u2011Fi. After setup, you can switch between mobile data and Wi\u2011Fi.</string>
+
+    <!-- Dialog for Access Points -->
+    <skip />
+    <!-- Label to show/hide advanced options -->
+    <string name="wifi_show_advanced">Show advanced options</string>
+    <!-- Title for the WPS setup dialog [CHAR LIMIT=50] -->
+    <string name="wifi_wps_setup_title">Wi\u2011Fi Protected Setup</string>
+    <!-- Message in WPS dialog at start up [CHAR LIMIT=150] -->
+    <string name="wifi_wps_setup_msg">Starting WPS\u2026</string>
+    <!-- Message in WPS dialog for PBC after start up [CHAR LIMIT=150] -->
+    <string name="wifi_wps_onstart_pbc">Press the Wi\u2011Fi Protected Setup button on your router. It may be called \"WPS\" or contain this symbol:</string>
+    <!-- Message in WPS dialog for PIN after start up [CHAR LIMIT=150] -->
+    <string name="wifi_wps_onstart_pin">Enter pin %1$s on your Wi\u2011Fi router. The setup can take up to two minutes to complete.</string>
+    <!-- Text displayed when WPS succeeds [CHAR LIMIT=150] -->
+    <string name="wifi_wps_complete">WPS succeeded. Connecting to the network\u2026</string>
+    <!-- Text displayed when Wi-Fi is connected through WPS [CHAR LIMIT=150] -->
+    <string name="wifi_wps_connected">Connected to Wi\u2011Fi network %s</string>
+    <!-- Text displayed when WPS setup is in progress [CHAR LIMIT=150] -->
+    <string name="wifi_wps_in_progress">WPS is already in progress and can take up to two minutes to complete</string>
+    <!-- Text displayed when WPS fails to start [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_generic">WPS failed. Please try again in a few minutes.</string>
+    <!-- Text displayed when WPS fails due to WEP [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_wep">The wireless router security setting (WEP) is not supported</string>
+    <!-- Text displayed when WPS fails to TKIP [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_tkip">The wireless router security setting (TKIP) is not supported</string>
+    <!-- Text displayed when WPS fails due to authentication issues [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_auth">Authentication failure. Please try again.</string>
+    <!-- Text displayed when WPS fails due to another session [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_overlap">Another WPS session was detected. Please try again in a few minutes.</string>
+    <!-- Label for the SSID of the network -->
+    <string name="wifi_ssid">Network SSID</string>
+    <!-- Hint for a text field to enter the SSID of a hidden wifi network. [CHAR LIMIT=35] -->
+    <string name="wifi_ssid_hint">Enter the SSID</string>
+    <!-- Label for the security of the connection -->
+    <string name="wifi_security">Security</string>
+    <!-- Label for the signal strength of the connection -->
+    <string name="wifi_signal">Signal strength</string>
+    <!-- Label for the status of the connection -->
+    <string name="wifi_status">Status</string>
+    <!-- Label for the link speed of the connection -->
+    <string name="wifi_speed">Link speed</string>
+    <!-- Label for the IP address of the connection -->
+    <string name="wifi_ip_address">IP address</string>
+    <!-- Hint text for the IP address -->
+    <string name="wifi_ip_address_hint" translatable="false">192.168.1.128</string>
+    <!-- Label for the EAP method of the network -->
+    <string name="wifi_eap_method">EAP method</string>
+    <!-- Label for the phase2 -->
+    <string name="please_select_phase2">Phase 2 authentication</string>
+    <!-- Label for the EAP CA certificate of the network -->
+    <string name="wifi_eap_ca_cert">CA certificate</string>
+    <!-- Label for the EAP user certificate of the network -->
+    <string name="wifi_eap_user_cert">User certificate</string>
+    <!-- Label for the EAP identity of the network -->
+    <string name="wifi_eap_identity">Identity</string>
+    <!-- Label for the EAP anonymous identity of the network -->
+    <string name="wifi_eap_anonymous">Anonymous identity</string>
+    <!-- Label for the password of the secured network -->
+    <string name="wifi_password">Password</string>
+    <!-- Label for the check box to show password -->
+    <string name="wifi_show_password">Show password</string>
+    <!-- Label for the spinner to show ip settings [CHAR LIMIT=25] -->
+    <string name="wifi_ip_settings">IP settings</string>
+    <!-- Hint for unchanged fields -->
+    <string name="wifi_unchanged">(unchanged)</string>
+    <!-- Hint for unspecified fields -->
+    <string name="wifi_unspecified">(unspecified)</string>
+    <!-- Summary for the remembered network. -->
+    <string name="wifi_remembered">Saved</string>
+    <!-- Status for networks disabled for unknown reason -->
+    <string name="wifi_disabled_generic">Disabled</string>
+    <!-- Status for networked disabled from a DNS or DHCP failure -->
+    <string name="wifi_disabled_network_failure">Avoided poor Internet connection</string>
+    <!-- Status for networks disabled from authentication failure (wrong password or certificate). -->
+    <string name="wifi_disabled_password_failure">Authentication problem</string>
+    <!-- Summary for the remembered network but currently not in range. -->
+    <string name="wifi_not_in_range">Not in range</string>
+    <!-- Substring of status line when Wi-Fi Protected Setup (WPS) is available and string is listed first [CHAR LIMIT=20]-->
+    <string name="wifi_wps_available_first_item">WPS available</string>
+    <!-- Substring of wifi status when Wi-Fi Protected Setup (WPS) is available and string is listed after a wifi_secured_* string-->
+    <string name="wifi_wps_available_second_item">\u0020(WPS available)</string>
+    <!-- Substring of wifi status for wifi with authentication.  This version is for when the string is first in the list (titlecase in english) -->
+    <string name="wifi_secured_first_item">Secured with %1$s</string>
+    <!-- Substring of wifi status for wifi with authentication.  This version is for when the string is not first in the list (lowercase in english) -->
+    <string name="wifi_secured_second_item">, secured with %1$s</string>
+
+    <!-- Do not translate.  Concise terminology for wifi with WEP security -->
+    <string name="wifi_security_short_wep" translatable="false">WEP</string>
+    <!-- Do not translate.  Concise terminology for wifi with WPA security -->
+    <string name="wifi_security_short_wpa" translatable="false">WPA</string>
+    <!-- Do not translate.  Concise terminology for wifi with WPA2 security -->
+    <string name="wifi_security_short_wpa2" translatable="false">WPA2</string>
+    <!-- Do not translate.  Concise terminology for wifi with both WPA/WPA2 security -->
+    <string name="wifi_security_short_wpa_wpa2" translatable="false">WPA/WPA2</string>
+    <!-- Do not translate.  Concise terminology for wifi with unknown PSK type -->
+    <string name="wifi_security_short_psk_generic" translatable="false">@string/wifi_security_short_wpa_wpa2</string>
+    <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
+    <string name="wifi_security_short_eap" translatable="false">802.1x</string>
+
+    <!-- Used in Wi-Fi settings dialogs when Wi-Fi does not have any security. -->
+    <string name="wifi_security_none">None</string>
+
+    <!-- Do not translate.  Terminology for wifi with WEP security -->
+    <string name="wifi_security_wep" translatable="false">WEP</string>
+    <!-- Do not translate.  Terminology for wifi with WPA security -->
+    <string name="wifi_security_wpa" translatable="false">WPA PSK</string>
+    <!-- Do not translate.  Terminology for wifi with WPA2 security -->
+    <string name="wifi_security_wpa2" translatable="false">WPA2 PSK</string>
+    <!-- Do not translate.  Terminology for wifi with both WPA/WPA2 security, or unknown -->
+    <string name="wifi_security_wpa_wpa2" translatable="false">WPA/WPA2 PSK</string>
+    <!-- Do not translate.  Terminology for wifi with unknown PSK type -->
+    <string name="wifi_security_psk_generic" translatable="false">@string/wifi_security_wpa_wpa2</string>
+    <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
+    <string name="wifi_security_eap" translatable="false">802.1x EAP</string>
+
+    <string name="wifi_scan_always_turnon_message">To improve location accuracy and for other purposes, %1$s wants to turn on network scanning, even when Wi-Fi is off.\n\nAllow this for all apps that want to scan?</string>
+    <string name="wifi_scan_always_confirm_allow">Allow</string>
+    <string name="wifi_scan_always_confirm_deny">Deny</string>
+
+    <!-- Button label to connect to a Wi-Fi network -->
+    <string name="wifi_connect">Connect</string>
+    <!-- Failured notification for connect -->
+    <string name="wifi_failed_connect_message">Failed to connect to network</string>
+    <!-- Button label to delete a Wi-Fi network -->
+    <string name="wifi_forget">Forget</string>
+    <!-- Failured notification for forget -->
+    <string name="wifi_failed_forget_message">Failed to forget network</string>
+    <!-- Button label to save a Wi-Fi network configuration -->
+    <string name="wifi_save">Save</string>
+    <!-- Failured notification for save -->
+    <string name="wifi_failed_save_message">Failed to save network</string>
+    <!-- Button label to dismiss the dialog -->
+    <string name="wifi_cancel">Cancel</string>
+    <!-- Button for skipping a step after having been warned of a potential concern [CHAR LIMIT=30] -->
+    <string name="wifi_skip_anyway">Skip anyway</string>
+    <!-- Button for going to the previous screen or step [CHAR LIMIT=20] -->
+    <string name="wifi_dont_skip">Don\'t skip</string>
+
+    <!-- Text warning about skipping Wi-Fi with a mobile connect (tablet) [CHAR LIMIT=NONE]-->
+    <string name="wifi_skipped_message">WARNING: You may incur extra carrier data charges.\n\nTablet setup can require significant network activity.</string>
+    <!-- Text warning about skipping Wi-Fi without a mobile connect (tablet) [CHAR LIMIT=NONE] -->
+    <string name="wifi_and_mobile_skipped_message">WARNING: Until you have an internet connection, the tablet won\'t be able to verify that your software is up to date.</string>
+    <!-- Text alerting that Wi-Fi couldn't connect (tablet) [CHAR LIMIT=NONE] -->
+    <string name="wifi_connect_failed_message">The tablet was unable to connect to this Wi\u2011Fi network.</string>
+
+    <!-- Wi-Fi Advanced Settings -->
+    <skip />
+    <!-- Wi-Fi settings screen, advanced, settings section.  This is a header shown above advanced wifi settings. -->
+    <string name="wifi_advanced_titlebar">Advanced Wi\u2011Fi</string>
+    <!-- Wi-Fi settings screen, setting title for setting the band [CHAR LIMIT=50]-->
+    <string name="wifi_setting_frequency_band_title">Wi\u2011Fi frequency band</string>
+    <!-- Wi-Fi settings screen, setting summary for setting the wifi frequency band [CHAR LIMIT=50]-->
+    <string name="wifi_setting_frequency_band_summary">Specify the frequency range of operation</string>
+    <!-- Wi-Fi settings screen, error message when the frequency band could not be set [CHAR LIMIT=50]. -->
+    <string name="wifi_setting_frequency_band_error">There was a problem setting the frequency band.</string>
+    <!-- Wi-Fi settings screen, advanced, title of the item to show the Wi-Fi device's MAC address. -->
+    <string name="wifi_advanced_mac_address_title">MAC address</string>
+    <!-- Title of the screen to adjust IP settings -->
+    <!-- Wi-Fi settings screen, advanced, title of the item to show the Wi-Fi device's current IP address. -->
+    <string name="wifi_advanced_ip_address_title">IP address</string>
+
+    <!-- Wifi Advanced settings.  Used as a label under the shortcut icon that goes to Wifi advanced settings. [CHAR LIMIT=20]-->
+    <string name="wifi_advanced_settings_label">IP settings</string>
+    <!-- Menu item to save the IP settings -->
+    <string name="wifi_ip_settings_menu_save">Save</string>
+    <!-- Menu ietm to cancel the IP settings -->
+    <string name="wifi_ip_settings_menu_cancel">Cancel</string>
+    <!-- Error message if the IP address is not valid [CHAR LIMIT=50]-->
+    <string name="wifi_ip_settings_invalid_ip_address">Type a valid IP address.</string>
+    <!-- Error message if the gateway is not valid [CHAR LIMIT=50]-->
+    <string name="wifi_ip_settings_invalid_gateway">Type a valid gateway address.</string>
+    <!-- Error message if the dns is not valid [CHAR LIMIT=50]-->
+    <string name="wifi_ip_settings_invalid_dns">Type a valid DNS address.</string>
+    <!-- Error message if the network prefix length is not valid [CHAR LIMIT=50]-->
+    <string name="wifi_ip_settings_invalid_network_prefix_length">Type a network prefix length between 0 and 32.</string>
+    <!-- Label for the DNS (first one) -->
+    <string name="wifi_dns1">DNS 1</string>
+    <!-- Hint text for DNS -->
+    <string name="wifi_dns1_hint" translatable="false">8.8.8.8</string>
+    <!-- Label for the DNS (second one)-->
+    <string name="wifi_dns2">DNS 2</string>
+    <!-- Hint text for DNS -->
+    <string name="wifi_dns2_hint" translatable="false">8.8.4.4</string>
+    <!-- Label for the gateway of the network -->
+    <string name="wifi_gateway">Gateway</string>
+    <!-- Hint text for the gateway -->
+    <string name="wifi_gateway_hint" translatable="false">192.168.1.1</string>
+    <!-- Label for the network prefix of the network [CHAR LIMIT=25]-->
+    <string name="wifi_network_prefix_length">Network prefix length</string>
+    <!-- Hint text for network prefix length -->
+    <string name="wifi_network_prefix_length_hint" translatable="false">24</string>
+
+    <!--  Help URLs for some screens. Not specified here. Specified in product overlays -->
+    <skip />
+    <!-- Help menu label [CHAR LIMIT=20] -->
+    <string name="help_label">Help</string>
+    <!-- Help URL, WiFi [DO NOT TRANSLATE] -->
+    <string name="help_url_wifi" translatable="false"></string>
+
+    <!--Album Settings-->
+    <string name="full_screen">Full Screen</string>
+    <string name="the_photo_will_be_displayed_in_full_screen">The photo will be displayed in full screen</string>
+    <string name="slideshow">Slideshow</string>
+    <string name="background_music">Background Music</string>
+    <string name="slideshow_mode">Slideshow Mode</string>
+    <string name="random">Random</string>
+    <string name="sequential">Sequential</string>
+    <string name="slideshow_transition_effect">Slideshow Transition Effect</string>
+    <string name="Default">Default</string>
+    <string name="alpha">Alpha</string>
+    <string name="rotate">Rotate</string>
+    <string name="cube">Cube</string>
+    <string name="flip">Flip</string>
+    <string name="accordion">Accordion</string>
+    <string name="zoom_fade">Zoom Fade</string>
+    <string name="fade">Fade</string>
+    <string name="zoom_center">Zoom Center</string>
+    <string name="zoom_stack">Zoom Stack</string>
+    <string name="stack">Stack</string>
+    <string name="depth">Depth</string>
+    <string name="zoom">Zoom</string>
+    <string name="slideshow_interval">Slideshow Interval</string>
+    <string name="seconds">%1$d Seconds</string>
+    <string name="minute">%1$d Minute</string>
+    <string name="minutes">%1$d Minutes</string>
+    <string name="delete_photos">Delete Photos</string>
+    <string name="delete_photos_desc">Delete photos from internal storage, including cloud photos</string>
+    <string name="restore_default_settings">Restore default settings</string>
+    <!--System settings-->
+    <string name="system">System</string>
+    <string name="sound">Sound</string>
+    <string name="display">Display</string>
+    <string name="suspended_ball_title">Suspended ball</string>
+    <string name="suspended_ball_desc">Quick navigation key</string>
+    <string name="date_and_time">Date And Time</string>
+    <string name="language">Language</string>
+    <string name="master_clear_title">Factory data reset</string>
+    <string name="master_clear_desc">"This will erase all data from your device\u2019s <b>internal storage</b>, including:\n\n<li>System and app data and settings</li>\n<li>Music</li>\n<li>Photos</li>\n<li>Other user data</li>"</string>
+    <string name="master_clear_button_text">Reset device</string>
+    <string name="master_clear_confirm_title">Reset?</string>
+    <string name="delete_all_users_and_restore_the_device_to_inactive">Delete all users and restore the device to inactive</string>
+    <string name="media_volume">Media Volume</string>
+    <string name="notification_volume">Notification Volume</string>
+    <string name="touch_sounds">Touch Sounds</string>
+    <string name="brightness">Brightness</string>
+    <string name="automatic_date_time">Automatic date &#038; time</string>
+    <string name="use_network_provided_time">Use network-provided time</string>
+    <string name="set_date">Set date</string>
+    <string name="select_time_zone">Select time zone</string>
+    <string name="use_24_hour_format">Use 24-hour format</string>
+    <string name="choose_date_format">Choose date format</string>
+    <string name="auto_on_off">Auto On &amp; Off</string>
+    <string name="auto_power_on_off">Auto Power On/Off</string>
+    <string name="power_off">Power Off</string>
+    <string name="auto_off_time">Auto-Off Time</string>
+    <string name="auto_on_time">Auto-On Time</string>
+    <string name="shutdown_confirm">Your tablet will shut down.</string>
+    <string name="motion_sensor">Motion Sensor</string>
+    <string name="sleep">Sleep</string>
+    <string name="accelerometer_title">Auto-rotate screen</string>
+    <!--About-->
+    <string name="version">Version</string>
+    <string name="check_for_updates">Check for updates</string>
+    <string name="its_the_latest_version">It\'s the latest version</string>
+    <string name="find_new_version">Find new version</string>
+    <string name="download">Download</string>
+    <string name="install_new_version">Install new version</string>
+    <string name="install">Install</string>
+    <string name="status_wifi_mac_address">Wi\u2011Fi MAC address</string>
+    <string name="model">Model</string>
+    <string name="build_number">Build Number</string>
+    <string name="serial_number">Serial Number</string>
+    <string name="data_flow">Data Flow</string>
+    <string name="top_up">Top Up</string>
+    <string name="total">Total %1$s</string>
+    <string name="available">Available %1$s</string>
+    <string name="data_top_up">Data Top-up</string>
+    <string name="top_up_link">Top-up link: %1$s</string>
+    <!--External storage-->
+    <string name="storage_card_is_inserted">Storage card is inserted.</string>
+    <string name="storage_card_has_been_taken_out">Storage card has been taken out.</string>
+    <string name="usb_flash_disk_is_inserted">USB flash disk is inserted.</string>
+    <string name="usb_flash_disk_has_been_taken_out">USB flash disk has been taken out.</string>
+    <!--Message-->
+    <string name="message_recharged">Recharged %1$s</string>
+    <string name="message_photo">1 photo</string>
+    <string name="message_photos">%1$d photos</string>
+    <string name="message_video">1 video</string>
+    <string name="message_bind">%1$s requests to bind your device.</string>
+    <string name="message_unbind">%1$s has unbind your device.</string>
+    <!--Network exception-->
+    <string name="unconnected_network">Unconnected network</string>
+    <string name="network_unavailable">Current network is unavailable</string>
+    <string name="network_connection_timeout">Network connection timeout</string>
+    <!--Device controller error-->
+    <string name="e101">Unable to find the device</string>
+    <string name="e102">Update device failed, please try again later</string>
+    <string name="e103">Unable to find the relationship between user and device</string>
+    <string name="e104">Update user status failed, please try again later</string>
+    <string name="e105">The user has been deleted</string>
+    <string name="e106">Unknown</string>
+    <string name="e107">Update user device relationship failed, please try again later</string>
+    <string name="e108">The device already been bound</string>
+    <string name="e109">Unable to find the user</string>
+    <string name="e110">Update device name failed, please try again later</string>
+    <string name="e111">Update device status failed, please try again later</string>
+    <string name="e112">Unable to find the order</string>
+    <string name="e113">No results found</string>
+    <string name="e114">Request denied</string>
+    <string name="e115">Invalid request</string>
+    <string name="e116">Unknown</string>
+    <string name="e117">The number of bound users exceeds the limit</string>
+    <string name="e118">It\'s the latest version</string>
+    <string name="e119">Serial number error</string>
+    <string name="e120">The device is activated</string>
+    <string name="e121">The device does not exist</string>
+    <string name="e122">Insufficient balance</string>
+    <string name="e123">Insufficient data flow</string>
+    <string name="e124">User locked</string>
+    <string name="e125">The device refuses to bind new users</string>
+    <string name="e126">The device is bound and cannot be bound again</string>
+    <string name="e127">Bound type error</string>
+    <string name="e128">Company name error</string>
+    <string name="e129">Accept binding failed</string>
+    <string name="e130">Accept binding type error</string>
+    <string name="e131">The device is activated and cannot be reactivated</string>
+    <string name="e132">The device is not activated</string>
+    <string name="e133">The device is activated and cannot be reactivated</string>
+    <string name="e134">The device name already exists</string>
+    <string name="e135">The device is activated and cannot be reactivated</string>
+    <!--Upload controller error-->
+    <string name="e313">User-Id property format error</string>
+    <string name="e318">Save file url to database failed, please try again later</string>
+    <string name="e327">User bound device change</string>
+    <!--User controller error-->
+    <string name="e404">Update user profile failed, please try again later</string>
+    <string name="e405">Unable to find the user</string>
+    <string name="e406">Unable to find the application</string>
+    <string name="e407">Unable to register email user</string>
+    <string name="e408">Verification code timeout</string>
+    <string name="e409">Verification code error</string>
+    <string name="e410">The user name already exists</string>
+    <string name="e411">The user\'s email address already exists</string>
+    <string name="e412">The user\'s email address does not exist</string>
+    <string name="e413">Database update failed</string>
+    <string name="e414">Wrong password</string>
+    <string name="e415">The user name already exists</string>
+    <string name="e416">Failed to send email</string>
+    <string name="e417">User push token or platform error</string>
+    <string name="e418">User has been offline</string>
+    <!--Service error-->
+    <string name="e901">File does not exist</string>
+    <string name="e902">File already exists</string>
+    <string name="error_code">error code: %1$d</string>
+
+
+
+
+
+    <string name="btnPlayorPause">PlAY/PAUSE</string>
+    <string name="btnStop">STOP</string>
+    <string name="btnQuit">QUIT</string>
+    <string name="btnPre">PREVIOUS</string>
+    <string name="btnNext">NEXT</string>
+    <string name="play">Play</string>
+    <string name="playing">Playing</string>
+    <string name="pause">Pause</string>
+</resources>

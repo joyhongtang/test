@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--clock-->
+    <declare-styleable name="AnalogClock">
+        <attr name="center_x" format="integer" />
+        <attr name="center_y" format="integer" />
+        <attr name="d_width" format="dimension" />
+        <attr name="d_height" format="dimension" />
+        <attr name="h_width" format="dimension" />
+        <attr name="h_height" format="dimension" />
+        <attr name="h_bound_left" format="dimension" />
+        <attr name="m_width" format="dimension" />
+        <attr name="m_height" format="dimension" />
+        <attr name="m_bound_left" format="dimension" />
+        <attr name="s_width" format="dimension" />
+        <attr name="s_height" format="dimension" />
+        <attr name="s_bound_left" format="dimension" />
+        <attr name="disc_width" format="dimension" />
+        <attr name="disc_height" format="dimension" />
+        <attr name="m_dial_id" format="reference" />
+        <attr name="m_hour_id" format="reference" />
+        <attr name="m_minute_id" format="reference" />
+        <attr name="m_second_id" format="reference" />
+        <attr name="m_disc_id" format="reference" />
+        <attr name="show_date" format="boolean" />
+    </declare-styleable>
+
+    <!--圆环进度条-->
+    <declare-styleable name="RingView">
+        <attr name="radius" format="dimension"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="ringColor" format="color"/>
+        <attr name="ringBgColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="WifiEncryptionState">
+        <attr name="state_encrypted" format="boolean" />
+    </declare-styleable>
+
+    <attr name="ic_menu_add" format="reference" />
+    <attr name="ic_wps" format="reference" />
+
+    <declare-styleable name="SwitchTextView">
+        <attr name="bgColor" format="color|reference" />
+        <attr name="leftColor" format="color|reference" />
+        <attr name="rightColor" format="color|reference" />
+        <attr name="textLeftColor" format="color" />
+        <attr name="textRightColor" format="color" />
+        <attr name="textLeftClickColor" format="color" />
+        <attr name="textRightClickColor" format="color" />
+        <attr name="textLeft" format="string" />
+        <attr name="textRight" format="string" />
+        <attr name="setChecked" format="boolean" />
+        <attr name="padding" format="dimension" />
+        <attr name="time" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CalendarView">
+
+        <attr name="calendar_padding" format="dimension" /><!--日历内部左右padding-->
+
+        <attr name="week_background" format="color" /><!--周背景-->
+        <attr name="week_line_background" format="color" /><!--线条颜色-->
+        <attr name="week_text_color" format="color" /><!--周栏字体颜色-->
+        <attr name="week_text_size" format="dimension" /><!--周栏字体大小-->
+        <attr name="week_line_margin" format="dimension" /><!--线条margin-->
+
+        <attr name="month_view" format="string" /><!--完全自定义月视图-->
+        <attr name="week_view" format="string" /> <!--完全自定义周视图-->
+        <attr name="year_view" format="string" /> <!--完全自定义年视图-->
+        <attr name="week_bar_height" format="dimension" /> <!--星期栏的高度-->
+        <attr name="week_bar_view" format="string" /> <!--如果需要的话使用自定义星期栏-->
+
+        <attr name="scheme_text" format="string" />
+        <attr name="day_text_size" format="dimension" />
+        <attr name="lunar_text_size" format="dimension" />
+        <attr name="calendar_height" format="dimension" />
+        <attr name="calendar_match_parent" format="boolean" /> <!-- 全屏日历 -->
+        <attr name="scheme_text_color" format="color" />
+        <attr name="scheme_month_text_color" format="color" />
+        <attr name="scheme_lunar_text_color" format="color" />
+        <attr name="scheme_theme_color" format="color" />
+
+        <attr name="selected_theme_color" format="color" />
+        <attr name="selected_text_color" format="color" />
+        <attr name="selected_lunar_text_color" format="color" />
+
+        <attr name="current_day_text_color" format="color" />
+        <attr name="current_day_lunar_text_color" format="color" />
+        <attr name="current_month_text_color" format="color" />
+        <attr name="other_month_text_color" format="color" />
+        <attr name="current_month_lunar_text_color" format="color" />
+        <attr name="other_month_lunar_text_color" format="color" />
+
+
+        <!-- 年视图相关 -->
+        <attr name="year_view_month_text_size" format="dimension" />
+        <attr name="year_view_day_text_size" format="dimension" />
+        <attr name="year_view_month_text_color" format="color" />
+        <attr name="year_view_current_day_text_color" format="color" />
+        <attr name="year_view_day_text_color" format="color" />
+        <attr name="year_view_select_text_color" format="color" />
+        <attr name="year_view_scheme_color" format="color" />
+        <attr name="year_view_background" format="color" />
+        <attr name="year_view_month_height" format="dimension" />
+        <attr name="year_view_week_height" format="dimension" />
+        <attr name="year_view_week_text_size" format="dimension" />
+        <attr name="year_view_week_text_color" format="color" />
+        <attr name="year_view_padding" format="dimension" />
+        <attr name="year_view_month_margin_top" format="dimension" />
+        <attr name="year_view_month_margin_bottom" format="dimension" />
+
+        <!--日期范围-->
+        <attr name="min_year" format="integer" />
+        <attr name="max_year" format="integer" />
+        <attr name="min_year_month" format="integer" />
+        <attr name="max_year_month" format="integer" />
+        <attr name="min_year_day" format="integer" />
+        <attr name="max_year_day" format="integer" />
+
+
+        <!--月视图是否可滚动-->
+        <attr name="month_view_scrollable" format="boolean" />
+        <!--周视图是否可滚动-->
+        <attr name="week_view_scrollable" format="boolean" />
+        <!--年视图是否可滚动-->
+        <attr name="year_view_scrollable" format="boolean" />
+
+        <!-- 月份显示模式 -->
+        <attr name="month_view_show_mode">
+            <enum name="mode_all" value="0" />
+            <enum name="mode_only_current" value="1" />
+            <enum name="mode_fix" value="2" />
+        </attr>
+
+        <!-- 自定义周起始 -->
+        <attr name="week_start_with">
+            <enum name="sun" value="1" />
+            <enum name="mon" value="2" />
+            <enum name="sat" value="7" />
+        </attr>
+
+        <!-- 自定义选择模式 -->
+        <attr name="select_mode">
+            <enum name="default_mode" value="0" />
+            <enum name="single_mode" value="1" />
+            <enum name="range_mode" value="2" />
+            <enum name="multi_mode" value="3" />
+        </attr>
+
+        <!-- when select_mode = multi_mode -->
+        <attr name="max_multi_select_size" format="integer" />
+
+        <!-- when select_mode = range_mode -->
+        <attr name="min_select_range" format="integer" />
+        <attr name="max_select_range" format="integer" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CalendarLayout">
+        <attr name="default_status">
+            <enum name="expand" value="0" />
+            <enum name="shrink" value="1" />
+        </attr>
+
+
+        <!-- 手势模式 -->
+        <attr name="gesture_mode">
+            <enum name="default_mode" value="0" />
+            <!--<enum name="only_calendar" value="1" />-->
+            <enum name="disabled" value="2" />
+        </attr>
+
+        <attr name="calendar_show_mode">
+            <enum name="both_month_week_view" value="0" />
+            <enum name="only_week_view" value="1" />
+            <enum name="only_month_view" value="2" />
+        </attr>
+        <attr name="calendar_content_view_id" format="integer" />
+
+
+    </declare-styleable>
+    <declare-styleable name="DLRoundMenuView">
+        <attr name="RMHasCoreMenu" format="boolean" /> <!-- 是否有中间OK按钮 -->
+        <attr name="RMCoreMenuNormalBackgroundColor" format="color" /> <!-- 正常情况下的中间按钮的背景颜色 -->
+        <attr name="RMCoreMenuStrokeColor" format="color" /> <!-- 中间按钮的描边颜色 -->
+        <attr name="RMCoreMenuStrokeSize" format="dimension" /> <!-- 中间按钮的描边边框大小 -->
+        <attr name="RMCoreMenuSelectedBackgroundColor" format="color" /> <!-- 中间按钮选中时的背景颜色 -->
+        <attr name="RMCoreMenuDrawable" format="reference" /> <!-- 中心按钮图片 -->
+        <attr name="RMCoreMenuRoundRadius" format="dimension" /> <!-- 中心按钮圆形半径 -->
+        <attr name="RMRoundMenuNumber" format="integer" /> <!-- 菜单数量 -->
+        <attr name="RMRoundMenuDeviationDegree" format="integer" /> <!-- 菜单偏移角度 -->
+        <attr name="RMRoundMenuDrawable" format="reference" /> <!-- 菜单图片 -->
+        <attr name="RMIsDrawLineToCenter" format="boolean" /> <!-- 是否画每个菜单扇形到中心点的直线 -->
+        <attr name="RMRoundMenuNormalBackgroundColor" format="color" /> <!-- 菜单正常背景颜色 -->
+        <attr name="RMRoundMenuSelectedBackgroundColor" format="color" /> <!-- 菜单点击背景颜色 -->
+        <attr name="RMRoundMenuStrokeColor" format="color" /> <!-- 菜单描边颜色 -->
+        <attr name="RMRoundMenuStrokeSize" format="dimension" /> <!-- 菜单描边宽度 -->
+        <attr name="RMRoundMenuDistance" format="fraction" /> <!-- 菜单图片与中心点的距离 百分数 -->
+    </declare-styleable>
+</resources>
