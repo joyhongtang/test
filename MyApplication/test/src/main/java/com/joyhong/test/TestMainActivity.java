@@ -7,7 +7,6 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.HumanSensor;
 import android.provider.Settings;
 import android.provider.SyncStateContract;
 import android.text.TextUtils;
@@ -43,6 +42,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Method;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -583,8 +583,9 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
     private void setMotionSensor(boolean open) {
         openSensor = true;
         try {
-            Class.forName("android.os.HumanSensor");
-            HumanSensor.setMode(open);
+            Class<?> threadClazz = Class.forName("android.os.HumanSensor");
+            Method method = threadClazz.getMethod("setMode", Boolean.class);
+            System.out.println(method.invoke(null, open));
         } catch (Exception e) {
             FileWriter fileWriter = null;
             try {
