@@ -13,8 +13,6 @@
 
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-
-        <item name="wifi_signal">@drawable/wifi_signal_dark</item>
     </style>
 
     <style name="DateTimePicker" parent="@android:style/Theme.Holo.Light.Dialog.MinWidth">
@@ -36,22 +34,6 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
-    <!--clock-->
-    <style name="ViewFlipper">
-        <item name="android:layout_width">@dimen/dp_107</item>
-        <item name="android:layout_height">@dimen/dp_165</item>
-        <item name="android:layout_centerVertical">true</item>
-        <item name="android:inAnimation">@anim/anim_in</item>
-        <item name="android:outAnimation">@anim/anim_out</item>
-    </style>
-
-    <!-- popup window 显示消失动画-->
-    <style name="PopWindowAnim">
-        <item name="android:windowShowAnimation">@anim/dialog_enter</item>
-        <!-- 指定显示的动画xml  -->
-        <item name="android:windowHideAnimation">@anim/dialog_exit</item>
-        <!-- 指定消失的动画xml  -->
-    </style>
 
     <!--calendar-->
     <style name="tv_week_calendar">
@@ -69,24 +51,6 @@
         <item name="android:windowNoTitle">true</item>
     </style>
 
-    <style name="dialog_scale_anim">
-        <item name="android:windowShowAnimation">@anim/material_dialog_show_scale</item>
-        <!-- 指定显示的动画xml  -->
-        <item name="android:windowHideAnimation">@anim/material_dialog_hide_scale</item>
-        <!-- 指定消失的动画xml  -->
-    </style>
-
-    <style name="dialog_from_bottom_anim">
-        <item name="android:windowShowAnimation">@anim/material_dialog_show_translate</item>
-        <!-- 指定显示的动画xml  -->
-        <item name="android:windowHideAnimation">@anim/material_dialog_hide_translate</item>
-        <!-- 指定消失的动画xml  -->
-    </style>
-
-    <style name="FloatWindow">
-        <item name="android:windowEnterAnimation">@anim/float_window_in</item>
-        <item name="android:windowExitAnimation">@anim/float_window_out</item>
-    </style>
 
     <style name="RelativeLayoutSidebarTitleStyle">
         <item name="android:layout_width">0dp</item>
@@ -95,34 +59,6 @@
         <item name="android:background">@color/sidebar</item>
     </style>
 
-    <style name="ImageViewTitleStyle">
-        <item name="android:id">@id/iv_back</item>
-        <item name="android:layout_width">@dimen/dp_50</item>
-        <item name="android:layout_height">@dimen/dp_50</item>
-        <item name="android:layout_marginTop">@dimen/dp_30</item>
-        <item name="android:layout_marginLeft">@dimen/dp_30</item>
-        <item name="android:src">@drawable/ic_back_selector</item>
-    </style>
-
-    <style name="TextViewTitleStyle">
-        <item name="android:id">@id/tv_title_back</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">@dimen/dp_50</item>
-        <item name="android:textSize">@dimen/sp_35</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:layout_alignTop">@id/iv_back</item>
-        <item name="android:layout_toRightOf">@id/iv_back</item>
-        <item name="android:layout_marginLeft">@dimen/dp_20</item>
-        <item name="android:gravity">center</item>
-    </style>
-
-    <style name="ViewTitleStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/dp_1</item>
-        <item name="android:layout_below">@id/iv_back</item>
-        <item name="android:layout_marginTop">@dimen/dp_30</item>
-        <item name="android:background">@color/divider_sidebar</item>
-    </style>
 
     <style name="LoadingDialog" parent="android:Theme.Dialog">
         <item name="android:windowFrame">@null</item>
@@ -133,15 +69,6 @@
         <item name="android:backgroundDimAmount">0.4</item>
     </style>
 
-    <style name="SwitchStyle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:switchMinWidth">@dimen/dp_80</item>
-        <item name="android:textOff">"     "</item>
-        <item name="android:textOn">"     "</item>
-        <item name="android:thumb">@drawable/thumb</item>
-        <item name="android:track">@drawable/track</item>
-    </style>
 
     <style name="jz_style_dialog_progress" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
