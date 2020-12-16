@@ -251,6 +251,10 @@ public class DLRoundMenuView extends View {
         keyCodeMap.put(KeyEvent.KEYCODE_DPAD_DOWN,  new TestRecord(2));
         keyCodeMap.put(KeyEvent.KEYCODE_DPAD_RIGHT,  new TestRecord(1));
         keyCodeMap.put(KeyEvent.KEYCODE_DPAD_CENTER,  new TestRecord(-1));
+        keyCodeMap.put(KeyEvent.KEYCODE_BACK,  new TestRecord(4));
+        keyCodeMap.put(25,  new TestRecord(3));
+        keyCodeMap.put(24,  new TestRecord(1));
+        keyCodeMap.put(66,  new TestRecord(-1));
     }
 
     /**
@@ -333,6 +337,9 @@ public class DLRoundMenuView extends View {
             paint.setAntiAlias(true);
             paint.setStrokeWidth(mCoreMenuStrokeSize);
             paint.setColor(onClickState == -1 ? mCoreMenuSelectedBackgroundColor : mCoreMenuNormalBackgroundColor);
+            if (clickedPos.contains(-1)) {
+                paint.setColor(mCoreMenuSelectedBackgroundColor);
+            }
             canvas.drawArc(rect1, 0, 360, true, paint);
             //画描边
             paint = new Paint();
@@ -414,10 +421,11 @@ public class DLRoundMenuView extends View {
 
     private HashMap<Integer, TestRecord> keyCodeMap = new HashMap<>();
 
-    public void receiverKeyDown(int keyCode) {
+    public void receiverKeyDown(int keyCode,boolean needRefresh) {
         try {
             onClickState = keyCodeMap.get(keyCode).getPos();
             keyCodeMap.get(keyCode).setSuccess(true);
+            if(needRefresh)
             invalidate();
 
             boolean testOK = true;

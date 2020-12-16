@@ -5,6 +5,8 @@ import android.net.ConnectivityManager
 import android.net.wifi.ScanResult
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiManager
+import android.text.TextUtils
+import com.blankj.utilcode.util.ToastUtils
 import com.joyhong.test.util.TestConstant
 
 object WifiUtils {
@@ -37,7 +39,11 @@ object WifiUtils {
 //        }
 
         //在扫描到的wifi中找ssid也就是wifi名相同的，如果没有说明没搜到，那么连不了，等下一次吧
+        if(TextUtils.isEmpty(ssid)){
+            return null
+        }
         var scanResult = wifiManager.scanResults.singleOrNull { it.SSID == ssid }
+//        ToastUtils.showLong("SSID == "+ ssid)
         var scanResults = wifiManager.scanResults
         return scanResult
 //        if(scanResults.isEmpty()){

@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_battery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取电池的信息" />
+
+    <TextView
+        android:textSize="@dimen/sp_30"
+        android:layout_marginTop="@dimen/dp_120"
+        android:id="@+id/tv_battery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <RelativeLayout
+        android:focusable="true"
+        android:id="@+id/test_result"
+        android:visibility="visible"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="500dp"
+        android:layout_height="120dp">
+
+        <com.joyhong.test.FocusView
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_centerVertical="true"
+            android:focusable="true"
+            android:nextFocusRight="@+id/pass"
+            android:alpha="0.5"
+            android:id="@+id/fail"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape_actionsheet_top_normal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="测试失败"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </com.joyhong.test.FocusView>
+
+        <com.joyhong.test.FocusView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/fail"
+            android:focusable="true"
+            android:nextFocusLeft="@+id/fail"
+            android:alpha="0.5"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/pass"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:background="@drawable/shape_actionsheet_green_normal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="测试成功"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </com.joyhong.test.FocusView>
+    </RelativeLayout>
+
+
+</RelativeLayout>

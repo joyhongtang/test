@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
+            android:inputType="textNoSuggestions"
             android:text="tester"
             android:singleLine="true"
             android:id="@+id/wifi_name"

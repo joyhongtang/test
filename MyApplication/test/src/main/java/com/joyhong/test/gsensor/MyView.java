@@ -41,7 +41,7 @@ public class MyView extends SurfaceView implements SurfaceHolder.Callback, Runna
     /**
      * 控制游戏循环
      **/
-    boolean mIsRunning = false;
+    public boolean mIsRunning = false;
     /**
      * SensorManager管理器
      **/
@@ -76,10 +76,12 @@ public class MyView extends SurfaceView implements SurfaceHolder.Callback, Runna
     private float mGX = 0;
     private float mGY = 0;
     private float mGZ = 0;
+
     public MyView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
+
     public void init(Context context) {
 /** 设置当前View拥有控制焦点 **/
         this.setFocusable(true);
@@ -112,6 +114,9 @@ public class MyView extends SurfaceView implements SurfaceHolder.Callback, Runna
 
     private void Draw() {
 /**绘制游戏背景**/
+        if (null == mbitmapBg || null == mCanvas || null == mPaint) {
+            return;
+        }
         mCanvas.drawBitmap(mbitmapBg, 0, 0, mPaint);
 /**绘制小球**/
         mCanvas.drawBitmap(mbitmapBall, mPosX, mPosY, mPaint);

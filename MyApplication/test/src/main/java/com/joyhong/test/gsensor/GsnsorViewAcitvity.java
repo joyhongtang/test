@@ -61,5 +61,9 @@ public class GsnsorViewAcitvity extends FragmentActivity implements OnClickListe
         }
     }
 
-
+    @Override
+    protected void onPause() {
+        mAnimView.mIsRunning = false;
+        super.onPause();
+    }
 }

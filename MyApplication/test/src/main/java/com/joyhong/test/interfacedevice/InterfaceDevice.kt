@@ -143,7 +143,7 @@ public class InterfaceDevice : BaseTestActivity(), UsbLis, HeadSetLis {
             // 耳机类型
             val name = intent.getStringExtra("name")
             // 耳机是否带有麦克风 0 没有，1 有
-            val mic = if (intent.getIntExtra("microphone", 0) == 0) false else true
+            val mic = if (intent.getIntExtra("Speaker", 0) == 0) false else true
             val headsetChange =
                 String.format("耳机插入: %b, 有麦克风: %b", state, mic)
             if (null != headSetLis) {

@@ -267,15 +267,16 @@ class VideoViewTestActivity : BaseTestActivity() {
             countdown_go -> {
                 val countDowmNumber: Long
                 if(isFirstIn){
-                    countDowmNumber = 2
+                    //视频老化时间
+                    countDowmNumber = 4
                     isFirstIn = false
                 }else{
                     countDowmNumber = SysUtils.parseLong(SysUtils.getSafeString(countdown_ms!!.text.toString()))
                 }
-                if (countDowmNumber >= 2) {
+                if (countDowmNumber >= 4) {
                     countdown_tv!!.startCountDown(countDowmNumber*3600)
                 }else{
-                    ToastUtils.showLong("测试时间至少2小时")
+                    ToastUtils.showLong("测试时间至少4小时")
                 }
             }
             countdown_ms ->{

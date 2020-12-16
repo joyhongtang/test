@@ -1,6 +1,7 @@
 package com.joyhong.test.device
 
 import android.os.Build
+import android.text.TextUtils
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.blankj.utilcode.BuildConfig
@@ -37,9 +38,22 @@ class DeviceInfoTestActivity : BaseTestActivity() {
         } catch (e: Exception) {
             ""
         }
-        mDeviceInfo.add(DeviceInfoItem("MAC 地址 ： ", macAddress))
-        mDeviceInfo.add(DeviceInfoItem("Android 系统版本 ： ", Build.VERSION.RELEASE))
-        mDeviceInfo.add(DeviceInfoItem("Build 系统版本 ： ", Build.DISPLAY))
+        mDeviceInfo.add(DeviceInfoItem("MAC:", macAddress))
+        mDeviceInfo.add(DeviceInfoItem("Android sdk:", Build.VERSION.RELEASE))
+        mDeviceInfo.add(DeviceInfoItem("Build version", Build.DISPLAY))
+
+        val system_info = "\nSystemInfo_appversion:" +
+                AppUtils.getAppVersionName() +
+                "\nSystemInfo_frameid:" + TestConstant.deviceToken +
+                "\nSystemInfo_sn:" + TestConstant.snnumber +
+                "\nSystemInfo_mac:" + macAddress +
+                "\nSystemInfo_systemversion:" + Build.VERSION.RELEASE +
+                "\nSystemInfo_machine:" + Build.DISPLAY
+        val testEntity =
+            TestMainActivity.testResult["${TestConstant.PACKAGE_NAME}$localClassName"]
+        SPUtils.getInstance().put(testEntity!!.tag + "_detail", system_info)
+
+
         mMusicAdapter =
             object : BaseQuickAdapter<DeviceInfoItem, BaseViewHolder>(
                 R.layout.item_device_test,
@@ -63,12 +77,35 @@ class DeviceInfoTestActivity : BaseTestActivity() {
             )
         )
         rv_device_info.adapter = mMusicAdapter
-        try {
-            fail.requestFocus()
-        }catch (e:Exception){
-            e.printStackTrace()
-        }
+        fail.requestFocus()
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (checkDeviceInfoAllExist()) {
+            test_result.visibility = View.VISIBLE
+        } else {
+            test_result.visibility = View.INVISIBLE
+        }
+    }
+
+    fun checkDeviceInfoAllExist(): Boolean {
+        var success = true
+        val macAddress = try {
+            DeviceUtils.getMacAddress()
+        } catch (e: Exception) {
+            ""
+        }
+        if (TextUtils.isEmpty(AppUtils.getAppVersionName()) || TextUtils.isEmpty(TestConstant.deviceToken) ||
+            TextUtils.isEmpty(TestConstant.snnumber) || TextUtils.isEmpty(macAddress) || TextUtils.isEmpty(
+                Build.VERSION.RELEASE
+            )
+            || TextUtils.isEmpty(Build.DISPLAY)
+        ) {
+            success = false
+        }
+        return success
     }
 
     override fun initListener() {
@@ -83,14 +120,14 @@ class DeviceInfoTestActivity : BaseTestActivity() {
                 val testEntity =
                     TestMainActivity.testResult["${TestConstant.PACKAGE_NAME}$localClassName"]
                 testEntity!!.testResultEnum = TestResultEnum.PASS
-                SPUtils.getInstance().put(testEntity.getTag(),1)
+                SPUtils.getInstance().put(testEntity.getTag(), 1)
                 finish()
             }
             R.id.fail -> {
                 val testEntity2 =
                     TestMainActivity.testResult["${TestConstant.PACKAGE_NAME}$localClassName"]
                 testEntity2!!.testResultEnum = TestResultEnum.FAIL
-                SPUtils.getInstance().put(testEntity2.getTag(),2)
+                SPUtils.getInstance().put(testEntity2.getTag(), 2)
                 finish()
             }
         }

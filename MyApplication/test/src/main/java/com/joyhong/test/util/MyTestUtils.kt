@@ -32,7 +32,17 @@ object MyTestUtils {
         }
         return file
     }
-
+    fun getTestFile(): File {
+        val file = File(Environment.getExternalStorageDirectory(), "CloudFrame/Test")
+        if (!file.exists()) {
+            file.mkdirs()
+        }
+        var fileTest = File(file.absolutePath,"test.txt")
+        if(!fileTest.exists()){
+            fileTest.createNewFile()
+        }
+        return fileTest
+    }
 
 
     fun convertWidthHeight(photo: Photo): IntArray {

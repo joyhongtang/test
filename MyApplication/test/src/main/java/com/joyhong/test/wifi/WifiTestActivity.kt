@@ -20,6 +20,7 @@ import com.joyhong.test.TestResultEnum
 import com.joyhong.test.util.TestConstant
 import com.joyhong.test.util.TestConstant.RSSI_NOT_EXIST
 import io.reactivex.Observable
+import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_wifi_test.*
 import java.util.concurrent.TimeUnit
@@ -41,7 +42,7 @@ class WifiTestActivity : BaseTestActivity() {
     override fun initData() {
         connectWifi()
     }
-
+    var connectObs : Disposable?=null
     var checkWifiSig: Thread? = null
     var checkWifi : Boolean = true
     fun connectWifi() {
@@ -52,17 +53,18 @@ class WifiTestActivity : BaseTestActivity() {
             .callback(object : PermissionUtils.SimpleCallback {
                 override fun onGranted() {
                     //    每2秒发送一次事件
-                    var connectObs = Observable.interval(2, TimeUnit.SECONDS)
+                    connectObs = Observable.interval(2, TimeUnit.SECONDS)
                         //    取30次，还没连上就结束，算这次超时
                         .take(Long.MAX_VALUE)
                         .subscribeOn(Schedulers.computation())
                         .subscribe({
-                            //开启扫描
-                            WifiUtils.startScan()
-                            //连接
-                            var resule = WifiUtils.connect(wifi_name.text.toString(), wifiPwd)
-                            if (null != resule) {
-                                updateViewBySign(resule.level)
+                            if(checkWifi){
+                                //开启扫描
+                                WifiUtils.startScan()
+                                //连接
+                                var resule = WifiUtils.connect(wifi_name.text.toString(), wifiPwd)
+                                if (null != resule) {
+                                    updateViewBySign(resule.level)
 //                                if (null == checkWifiSig) {
 //                                    checkWifiSig = Thread(Runnable {
 //                                        while (checkWifi){
@@ -73,7 +75,9 @@ class WifiTestActivity : BaseTestActivity() {
 //                                    })
 //                                    checkWifiSig!!.start()
 //                                }
+                                }
                             }
+
                         }, {}, {
                             ToastUtils.showLong("连接屏热点超时")
                         })
@@ -125,6 +129,8 @@ class WifiTestActivity : BaseTestActivity() {
                     TestMainActivity.testResult["${TestConstant.PACKAGE_NAME}$localClassName"]
                 testEntity!!.testResultEnum = TestResultEnum.PASS
                 SPUtils.getInstance().put(testEntity.getTag(),1)
+                SPUtils.getInstance().put(testEntity!!.tag + "_detail", "Wifi_sign:"+s)
+
                 finish()
             }
             wifi_sign.setText(s.toString() + " dbm")
@@ -147,6 +153,13 @@ class WifiTestActivity : BaseTestActivity() {
 
     override fun onDestroy() {
         checkWifi = false
+        try {
+            if(null != connectObs){
+                connectObs!!.dispose()
+            }
+        }catch (e:Exception){
+            e.printStackTrace()
+        }
         unregisterReceiver(rssiReceiver)
         super.onDestroy()
     }

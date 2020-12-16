@@ -2,6 +2,13 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/src/main/java/com/joyhong/test/androidmediademo" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/test/src/main/java/com/joyhong/test/util/AudioFileFunc.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/test/src/main/res/drawable-hdpi/icon_stop.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/test/src/main/res/drawable-hdpi/player_btn_play_normal.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/test/src/main/res/layout/activity_audio_recorder.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/test/src/main/res/layout/activity_take_music.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/test/src/main/res/layout/content_new_music.xml" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

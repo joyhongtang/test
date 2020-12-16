@@ -93,7 +93,7 @@ class SlideTestActivity : BaseTestActivity(), ViewPager.OnPageChangeListener, Ba
             if(TestConstant.isConfigTestMode){
                 return
             }
-           
+
         }
     }
 

@@ -8,6 +8,8 @@ import com.joyhong.test.R;
 import com.joyhong.test.control.dlroundmenuview.DLRoundMenuView;
 import com.joyhong.test.control.dlroundmenuview.Interface.OnMenuClickListener;
 
+import java.util.HashMap;
+
 
 public class ControlTestActivity extends BaseTestActivity {
     DLRoundMenuView dlRoundMenuView;
@@ -18,6 +20,7 @@ public class ControlTestActivity extends BaseTestActivity {
 
     @Override
     public void initData() {
+        buildKeyMap();
         dlRoundMenuView = findViewById(R.id.dl_rmv);
         dlRoundMenuView.setOnMenuClickListener(new OnMenuClickListener() {
             @Override
@@ -32,10 +35,28 @@ public class ControlTestActivity extends BaseTestActivity {
 
     }
 
+    private HashMap<Integer,Integer> keyMapReflect = new HashMap<>();
 
+    private void buildKeyMap(){
+        keyMapReflect.put(KeyEvent.KEYCODE_DPAD_LEFT,25);
+        keyMapReflect.put(25,KeyEvent.KEYCODE_DPAD_LEFT);
+
+        keyMapReflect.put(KeyEvent.KEYCODE_DPAD_RIGHT,24);
+        keyMapReflect.put(24,KeyEvent.KEYCODE_DPAD_RIGHT);
+
+        keyMapReflect.put(KeyEvent.KEYCODE_DPAD_CENTER,66);
+        keyMapReflect.put(66,KeyEvent.KEYCODE_DPAD_CENTER);
+
+    }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        dlRoundMenuView.receiverKeyDown(keyCode);
+        try {
+            int reflect = keyMapReflect.get(keyCode);
+            dlRoundMenuView.receiverKeyDown(reflect,false);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        dlRoundMenuView.receiverKeyDown(keyCode,true);
         return super.onKeyDown(keyCode, event);
     }
 }

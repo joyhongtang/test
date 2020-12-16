@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.blankj.utilcode.util.SPUtils;
+import com.blankj.utilcode.util.ScreenUtils;
 import com.joyhong.test.util.TestConstant;
 
 import java.util.ArrayList;
@@ -34,6 +35,9 @@ public class TouchScreenTestActivity extends AppCompatActivity implements View.O
         white = ContextCompat.getColor(this, R.color.white);//指定一种颜色
         layout = (MyGridLayout) findViewById(R.id.SLayout);
 
+        int screenWidth = ScreenUtils.getScreenWidth();
+        int screenHeight = ScreenUtils.getScreenHeight();
+
         int row = 12;
         int col = 12;
         layout.setColumnCount(col);
@@ -43,9 +47,27 @@ public class TouchScreenTestActivity extends AppCompatActivity implements View.O
             for (int j = 0; j < col; j++) {
                 TextView textview = new TextView(this);
                //每个textview都监听触摸事件
-                GridLayout.Spec rowSpec = GridLayout.spec(i, 1.0f); //行坐标和比重rowweight,用float表示的
-                GridLayout.Spec columnSpec = GridLayout.spec(j, 1.0f);//列坐标和columnweight
+                GridLayout.Spec rowSpec = GridLayout.spec(i); //行坐标和比重rowweight,用float表示的
+                GridLayout.Spec columnSpec = GridLayout.spec(j);//列坐标和columnweight
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams(rowSpec, columnSpec);
+                // 设置btn的宽和高
+                //7cun
+//                params.width = (int) getResources().getDimension(R.dimen.dp_85);
+//                params.height =(int) getResources().getDimension(R.dimen.dp_50);
+
+                // 设置btn的宽和高
+//                params.width = 110;
+//                params.height = 67;
+                if (j == col - 1) {
+                    params.width = screenWidth - (screenWidth / row) * (row - 1);
+                }else {
+                    params.width = screenWidth / row;
+                }
+                if (i == row - 1) {
+                    params.height = screenHeight - (screenHeight / col) * (col - 1);
+                }else {
+                    params.height = screenHeight / col;
+                }
                 if (i == 0 || i == row - 1 || j == 0 || j == col - 1) {
                     textview.setBackgroundColor(red);
                     textview.setOnTouchListener(this);
@@ -68,7 +90,7 @@ public class TouchScreenTestActivity extends AppCompatActivity implements View.O
                     textview.setOnTouchListener(this);
                     testViews.add(textview);
                 }
-                layout.addView(textview, params);
+                layout.addView(textview,params);
             }
     }
 

@@ -27,6 +27,7 @@
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop" />
         <activity
+            android:screenOrientation="landscape"
             android:name=".gsensor.GsnsorViewAcitvity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop" />
@@ -44,7 +45,13 @@
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop" />
         <activity
+            android:screenOrientation="landscape"
             android:name=".TestMainActivity"
+            android:configChanges="orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:screenOrientation="landscape"
+            android:name=".BatteryInfoActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop" />
 

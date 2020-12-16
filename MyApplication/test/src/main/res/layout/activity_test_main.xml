@@ -18,7 +18,7 @@
         android:layout_height="200dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_30"
         android:background="@drawable/shape_actionsheet_top_normal">
 
         <TextView
@@ -34,4 +34,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
+
+    <com.joyhong.test.FocusView
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_alignBottom="@id/test_result_main"
+        android:layout_toRightOf="@+id/test_result_main"
+        android:id="@+id/clear_result_main"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:background="@drawable/shape_actionsheet_top_normal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Clear"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.joyhong.test.FocusView>
 </RelativeLayout>

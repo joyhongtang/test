@@ -60,6 +60,7 @@ public class HomeTvAdapter extends CustomRecyclerView.CustomAdapter<TestEntity> 
             @Override
             public void onClick(View view) {
                 try {
+                    lastFocusPos = position;
                     Intent intent = new Intent();
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.setClassName(context, String.valueOf(testEntities.get(position).getTag()));

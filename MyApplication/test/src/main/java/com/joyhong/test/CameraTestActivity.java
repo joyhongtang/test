@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.widget.SeekBar;
 import android.widget.Toast;
 import android.widget.VideoView;
 

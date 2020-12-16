@@ -61,9 +61,24 @@ public class CustomRecyclerView extends RecyclerView {
                     } else {
                         View rightView = FocusFinder.getInstance().findNextFocus(this, focusView, View.FOCUS_RIGHT);
                         if (rightView != null) {
+                            int currentPos = getChildAdapterPosition(focusView);
+                            int nextPos = getChildAdapterPosition(rightView);
+                            if(nextPos <= currentPos){
+                                return true;
+                            }
                             rightView.requestFocusFromTouch();
                             return true;
                         } else {
+                            try {
+                                int currentPos = getChildAdapterPosition(focusView);
+                                View nextPos = getChildAt(currentPos+1);
+                                if(null != nextPos){
+                                    nextPos.requestFocusFromTouch();
+                                    return true;
+                                }
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
                             this.smoothScrollBy(dx, 0);
                             //移动之后获得焦点，是在scroll方法中处理的。
                             return true;
@@ -76,9 +91,24 @@ public class CustomRecyclerView extends RecyclerView {
                         return true;
                     } else {
                         if (leftView != null) {
+                            int currentPos = getChildAdapterPosition(focusView);
+                            int nextPos = getChildAdapterPosition(leftView);
+                            if(nextPos >= currentPos){
+                                return true;
+                            }
                             leftView.requestFocusFromTouch();
                             return true;
                         } else {
+                            try {
+                                int currentPos = getChildAdapterPosition(focusView);
+                                View nextPos = getChildAt(currentPos-1);
+                                if(null != nextPos){
+                                    nextPos.requestFocusFromTouch();
+                                    return true;
+                                }
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
                             this.smoothScrollBy(-dx, 0);
                             return true;
                         }

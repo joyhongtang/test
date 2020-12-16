@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_light_dialog">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_title_dialog_material"
+        android:layout_width="@dimen/dp_600"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title_dialog_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="@dimen/dp_20"
+            android:textColor="@color/text_light_dialog_title"
+            android:textSize="@dimen/sp_28"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <View
+            android:id="@+id/v_title_dialog_material"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_2"
+            android:background="@color/divider_light_dialog_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_dialog_material" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_content_dialog_material"
+        android:layout_width="@dimen/dp_600"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_title_dialog_material">
+
+        <TextView
+            android:id="@+id/tv_content_dialog_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_20"
+            android:textColor="@color/text_light_dialog_content"
+            android:textSize="@dimen/sp_28"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/et_content_dialog_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:padding="@dimen/dp_20"
+            android:singleLine="true"
+            android:textColor="@color/text_light_dialog_content"
+            android:textSize="@dimen/sp_28"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_content_dialog_material"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_negative_dialog_material"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/dialog_material_selector"
+        android:gravity="center"
+        android:textColor="@color/text"
+        android:textSize="@dimen/sp_28"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_positive_dialog_material"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_content_dialog_material" />
+
+    <TextView
+        android:id="@+id/tv_positive_dialog_material"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@drawable/dialog_material_selector"
+        android:gravity="center"
+        android:textColor="@color/text"
+        android:textSize="@dimen/sp_28"
+        app:layout_constraintBottom_toBottomOf="@id/tv_negative_dialog_material"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_negative_dialog_material"
+        app:layout_constraintTop_toTopOf="@id/tv_negative_dialog_material" />
+</androidx.constraintlayout.widget.ConstraintLayout>

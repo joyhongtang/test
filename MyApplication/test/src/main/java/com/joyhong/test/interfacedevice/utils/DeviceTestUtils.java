@@ -50,7 +50,7 @@ public class DeviceTestUtils {
         for(String path : allpaths){
             if (path.contains("emulated") || path.contains("internal")) {
                 //内置存储
-            }else if(TextUtils.equals(getSDcardPath(TestConstant.application),path)){
+            }else if(TextUtils.equals(getSDcardPath(TestConstant.application),path) || path.contains("extsd") || path.contains("_sd")){
                 //Sdcard
                 interfaceDeviceExist.setExternalStorage(true);
             }else{

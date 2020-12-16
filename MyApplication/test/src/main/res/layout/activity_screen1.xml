@@ -6,6 +6,10 @@
    >
 
     <com.joyhong.test.MyGridLayout
+        android:layout_rowSpan = "2"
+        android:layout_columnSpan = "2"
+        android:layout_column = "3"
+        android:layout_row = "5"
         android:layout_above="@+id/main_v"
         android:orientation="vertical"
         android:id="@+id/SLayout"
