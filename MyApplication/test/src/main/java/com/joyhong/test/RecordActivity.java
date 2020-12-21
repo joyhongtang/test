@@ -228,14 +228,14 @@ public class RecordActivity extends AppCompatActivity implements TextureView.Sur
             }
         }
         //设置聚焦模式
-        List<String> focusModes = parameters.getSupportedFocusModes();
-        if (focusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO)) {
-            parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
-        } else if (focusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
-            parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
-        } else {
-            parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
-        }
+//        List<String> focusModes = parameters.getSupportedFocusModes();
+//        if (focusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO)) {
+//            parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
+//        } else if (focusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
+//            parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+//        } else {
+//            parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
+//        }
 
 
         //设置预览尺寸,因为预览的尺寸和最终是录制视频的尺寸无关，所以我们选取最大的数值
