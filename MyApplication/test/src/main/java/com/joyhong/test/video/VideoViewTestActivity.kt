@@ -190,7 +190,6 @@ class VideoViewTestActivity : BaseTestActivity() {
             vsv_video_view.adjustSize(it.videoWidth, it.videoHeight)
             it.start()
             mState = STATE_PLAYING
-            iv_play_video_view.setImageResource(R.drawable.jz_click_pause_selector)
             val duration = it.duration
             tv_current_time_video_view.text = "00:00"
             tv_total_time_video_view.text = TimeTestUtil.formatTime(duration.toLong())
@@ -247,12 +246,10 @@ class VideoViewTestActivity : BaseTestActivity() {
                 mHandler.postDelayed(mRunnable, 3000)
                 if (mState == STATE_PLAYING) {
                     mMediaPlayer?.pause()
-                    iv_play_video_view.setImageResource(R.drawable.jz_click_play_selector)
                     mState = STATE_PAUSED
                     mHandler.removeCallbacks(mProgressRunnable)
                 } else if (mState == STATE_PAUSED) {
                     mMediaPlayer?.start()
-                    iv_play_video_view.setImageResource(R.drawable.jz_click_pause_selector)
                     mState = STATE_PLAYING
                     mHandler.removeCallbacks(mProgressRunnable)
                     mHandler.post(mProgressRunnable)

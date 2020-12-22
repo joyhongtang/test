@@ -63,7 +63,6 @@
             android:layout_height="@dimen/dp_60"
             android:layout_marginEnd="@dimen/dp_100"
             android:contentDescription="@null"
-            android:src="@drawable/jz_click_prev_selector"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/iv_play_video_view"
             app:layout_constraintTop_toTopOf="parent" />
@@ -84,7 +83,6 @@
             android:layout_height="@dimen/dp_60"
             android:layout_marginStart="@dimen/dp_100"
             android:contentDescription="@null"
-            android:src="@drawable/jz_click_next_selector"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_play_video_view"
             app:layout_constraintTop_toTopOf="parent" />

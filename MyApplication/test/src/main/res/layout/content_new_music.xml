@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:paddingBottom="15dp"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                 >
 
 
                     <RelativeLayout
@@ -216,7 +216,6 @@
                                     android:layout_height="15dp"
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
-                                    android:indeterminateDrawable="@drawable/jz_loading"
                                     android:visibility="invisible" />
 
                                 <ImageView

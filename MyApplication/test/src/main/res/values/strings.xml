@@ -11,7 +11,7 @@
     <string name="home">Home</string>
     <string name="vol_minus">Vol-</string>
     <string name="vol_plus">Vol+</string>
-
+    <string name="scan_qr_code_errror">生成二维码失败</string>
     <string name="power">Power</string>
     <string name="out_of_memory">Insufficient memory available, restore normal memory after cleaning device memory</string>
     <!--Welcome-->

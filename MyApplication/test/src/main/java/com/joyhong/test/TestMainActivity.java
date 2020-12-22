@@ -29,6 +29,7 @@ import com.joyhong.test.util.MyTestUtils;
 import com.joyhong.test.util.TestConstant;
 import com.joyhong.test.util.FileUtil;
 import com.joyhong.test.widget.MaterialDialog;
+import com.joyhong.test.widget.MyCreateQRViewDialog;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -69,6 +70,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         SPUtils.getInstance().put("stepinto_test", true);
         TestConstant.isConfigTestMode = true;
+        TestConstant.application = getApplication();
         testResult.clear();
         hideBottomUIMenu();  //隐藏底部虚拟按键
         TestEntity testEntity = new TestEntity(0, 0, "com.joyhong.test.TouchScreenTestActivity", "触摸测试", TestResultEnum.UNKNOW);
@@ -154,6 +156,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         clear_result_main = findViewById(R.id.clear_result_main);
         test_info = findViewById(R.id.test_info);
         clear_result_main.setOnClickListener(this);
+        findViewById(R.id.show_qr_code).setOnClickListener(this);
         for (TestEntity testEntityR : testEntities) {
             testResult.put(testEntityR.getTag(), testEntityR);
         }
@@ -230,6 +233,8 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                         }
                     })
                     .show();
+        }else if(v.getId() == R.id.show_qr_code){
+            showQRCODE(saveTestResult2Sdcard(false));
         }
     }
 
@@ -357,7 +362,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        FileUtil.copyAssetsFiles(TestConstant.application, "test", TestConstant.application.getExternalFilesDir(null).getAbsolutePath());
+                        FileUtil.copyAssetsFiles(TestConstant.application, "test", getApplication().getExternalFilesDir(null).getAbsolutePath());
                     }
                 }).start();
             }
@@ -477,75 +482,156 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
      *
      * @param clear 清除文件后，还原测试文件
      */
-    public void saveTestResult2Sdcard(boolean clear) {
+    public String saveTestResult2Sdcard(boolean clear) {
         File file = new File(Environment.getExternalStorageDirectory(), "CloudFrame/Test/test.txt");
+        StringBuffer testContent = new StringBuffer();
         if (clear) {
             file.delete();
             initTestResult2Sdcard();
-            return;
+            return "";
         }
         //对测试文件进行读写
         BufferedWriter bufWriter = null;
         OutputStreamWriter outputStreamWriter = null;
         try {
-            //测试文件
-            File testFile = MyTestUtils.INSTANCE.getTestFile();
-            outputStreamWriter = new OutputStreamWriter(new FileOutputStream(testFile));
-            bufWriter = new BufferedWriter(outputStreamWriter);
+            File testFile = null;
             String line = "";
+            //测试文件
+            try {
+                testFile = MyTestUtils.INSTANCE.getTestFile();
+                outputStreamWriter = new OutputStreamWriter(new FileOutputStream(testFile));
+                bufWriter = new BufferedWriter(outputStreamWriter);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
             for (TestEntity testEntity : testEntities) {
                 int result = SPUtils.getInstance().getInt(testEntity.getTag(), 0);
                 String resultDetail = SPUtils.getInstance().getString(testEntity.getTag()+"_detail");
                 line = testEntity.getTag();
                 if (line.contains("TouchScreenTestActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("Touch:"+result);
+                    testContent.append("Touch:"+result);
+                    testContent.append(",");
                 } else if (line.contains("RecordActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("Camera:"+result);
+                    testContent.append("Camera:"+result);
+                    testContent.append(",");
                 } else if (line.contains("MusicSelActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("Record:"+result);
+                    testContent.append("Record:"+result);
+                    testContent.append(",");
                 } else if (line.contains("SlideTestActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("Lcd:"+result);
+                    testContent.append("Lcd:"+result);
+                    testContent.append(",");
                 } else if (line.contains("VideoViewTestActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("VideoTest:"+result);
+                    testContent.append("VideoTest:"+result);
+                    testContent.append(",");
                 } else if (line.contains("WifiTestActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("Wifi:"+result);
-                    bufWriter.newLine();
-                    bufWriter.append(resultDetail);
+                    testContent.append("Wifi:"+result);
+                    testContent.append(",");
+                    if(null != bufWriter) {
+                        bufWriter.newLine();
+                        bufWriter.append(resultDetail);
+                    }
+                    if(!TextUtils.isEmpty(resultDetail)) {
+                        testContent.append(resultDetail);
+                        testContent.append(",");
+                    }
                 } else if (line.contains("ControlTestActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("RemoteControl:"+result);
+
+                    testContent.append("RemoteControl:"+result);
+                    testContent.append(",");
                 } else if (line.contains("MusicTestActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("Speaker:"+result);
+                    testContent.append("Speaker:"+result);
+                    testContent.append(",");
                 } else if (line.contains("DeviceInfoTestActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("SystemInfo:"+result);
-                    bufWriter.newLine();
-                    bufWriter.append(resultDetail);
+                    testContent.append("SystemInfo:"+result);
+                    testContent.append(",");
+                    if(null != bufWriter) {
+                        bufWriter.newLine();
+                        bufWriter.append(resultDetail);
+                    }
+                    if(!TextUtils.isEmpty(resultDetail)) {
+                        testContent.append(resultDetail);
+                        testContent.append(",");
+                    }
                 } else if (line.contains("GsnsorViewAcitvity")) {
+                    if(null != bufWriter)
                     bufWriter.append("G-sensor:"+result);
+                    testContent.append("G-sensor:"+result);
+                    testContent.append(",");
                 } else if (line.contains("sensor_human")) {
+                    if(null != bufWriter)
                     bufWriter.append("Human-sensor:"+result);
+                    testContent.append("Human-sensor:"+result);
+                    testContent.append(",");
                 } else if (line.contains("BatteryInfoActivity")) {
+                    if(null != bufWriter)
                     bufWriter.append("Battery:"+result);
+                    testContent.append("Battery:"+result);
+                    testContent.append(",");
+                    if(null != bufWriter)
                     bufWriter.newLine();
+                    if(!TextUtils.isEmpty(resultDetail)) {
+                        testContent.append(resultDetail);
+                        testContent.append(",");
+                    }
+                    if(null != bufWriter)
                     bufWriter.append(resultDetail);
                 }
-                bufWriter.newLine();
-                bufWriter.flush();
+                if(null != bufWriter) {
+                    bufWriter.newLine();
+                    bufWriter.flush();
+                }
             }
 
             if (EXIST_EXTERNA_STORAGE) {
+                if(null != bufWriter)
                 bufWriter.append("Sdcard:"+SPUtils.getInstance().getInt("isExternalStorage", 0));
-                bufWriter.newLine();
-                bufWriter.flush();
+                testContent.append("Sdcard:"+SPUtils.getInstance().getInt("isExternalStorage", 0));
+                testContent.append(",");
+                if(null != bufWriter) {
+                    bufWriter.newLine();
+                    bufWriter.flush();
+                }
             }
             if (EXIST_USB_STORAGE) {
-                bufWriter.append("USB:"+SPUtils.getInstance().getInt("isUsbStorage", 0));
-                bufWriter.newLine();
-                bufWriter.flush();
+                if(null != bufWriter) {
+                    bufWriter.append("USB:" + SPUtils.getInstance().getInt("isUsbStorage", 0));
+                }
+                testContent.append("USB:"+SPUtils.getInstance().getInt("isUsbStorage", 0));
+                testContent.append(",");
+                if(null != bufWriter) {
+                    bufWriter.newLine();
+                    bufWriter.flush();
+                }
             }
             if (EXIST_HEADSET) {
-                bufWriter.append("HeadSet:"+SPUtils.getInstance().getInt("isHeadSet", 0));
-                bufWriter.newLine();
-                bufWriter.flush();
+                if(null != bufWriter) {
+                    bufWriter.append("HeadSet:" + SPUtils.getInstance().getInt("isHeadSet", 0));
+                }
+                testContent.append("HeadSet:"+SPUtils.getInstance().getInt("isHeadSet", 0));
+                testContent.append(",");
+                if(null != bufWriter) {
+                    bufWriter.newLine();
+                    bufWriter.flush();
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -564,6 +650,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                 e.printStackTrace();
             }
         }
+        return testContent.toString();
     }
 
     @Override
@@ -612,5 +699,13 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
             Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, Integer.MAX_VALUE);
         } else
             Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, 15_000);
+    }
+    private MyCreateQRViewDialog myCreateQRViewDialog;
+    public void showQRCODE(String connectCode) {
+        //二维码页面
+        myCreateQRViewDialog = new MyCreateQRViewDialog(this, R.layout.activity_create_qrcode_dialog);
+        //显示
+        myCreateQRViewDialog.show();
+        myCreateQRViewDialog.createQRCode(connectCode);
     }
 }
