@@ -80,18 +80,22 @@ class DeviceInfoTestActivity : BaseTestActivity() {
                 )
             )
         )
+        Log.e("KKKKKK", "8")
         rv_device_info.adapter = mMusicAdapter
         fail.requestFocus()
+        Log.e("KKKKKK", "9")
 
     }
 
     override fun onResume() {
         super.onResume()
+        Log.e("KKKKKK", "10")
         if (checkDeviceInfoAllExist()) {
             test_result.visibility = View.VISIBLE
         } else {
             test_result.visibility = View.INVISIBLE
         }
+        Log.e("KKKKKK", "11")
     }
 
     fun checkDeviceInfoAllExist(): Boolean {
