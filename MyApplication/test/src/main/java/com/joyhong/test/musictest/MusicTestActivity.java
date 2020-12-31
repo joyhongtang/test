@@ -79,6 +79,12 @@ public class MusicTestActivity extends AppCompatActivity implements View.OnClick
         if(null == musicService.mp){
             musicService.initMusicPlayer();
             musicStatus.setText(getResources().getString(R.string.pause));
+            btnPlayOrPause.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    musicService.playOrPause();
+                }
+            }, 500);
         }else {
             if (musicService.mp.isPlaying()) {
                 musicStatus.setText(getResources().getString(R.string.playing));
@@ -97,9 +103,6 @@ public class MusicTestActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onPause() {
         super.onPause();
-        if (null != musicService) {
-            stopMusic();
-        }
     }
 
     private ServiceConnection sc = new ServiceConnection() {
@@ -191,6 +194,9 @@ public class MusicTestActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onDestroy() {
+        if (null != musicService) {
+            stopMusic();
+        }
         super.onDestroy();
     }
 
