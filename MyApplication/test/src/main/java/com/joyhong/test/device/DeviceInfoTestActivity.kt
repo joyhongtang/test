@@ -2,9 +2,9 @@ package com.joyhong.test.device
 
 import android.os.Build
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.blankj.utilcode.BuildConfig
 import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.DeviceUtils
 import com.blankj.utilcode.util.SPUtils
@@ -30,14 +30,18 @@ class DeviceInfoTestActivity : BaseTestActivity() {
     override fun initData() {
         //tv_title_base.setText(R.string.music)
         mDeviceInfo.add(DeviceInfoItem("APP版本 ： ", AppUtils.getAppVersionName()))
+        Log.e("KKKKKK", "1")
         mDeviceInfo.add(DeviceInfoItem("相框ID ： ", TestConstant.deviceToken))
+        Log.e("KKKKKK", "2")
         mDeviceInfo.add(DeviceInfoItem("SN ： ", TestConstant.snnumber))
+        Log.e("KKKKKK", "3")
         val macAddress = try {
             DeviceUtils.getMacAddress()
         } catch (e: Exception) {
             ""
         }
         mDeviceInfo.add(DeviceInfoItem("MAC:", macAddress))
+        Log.e("KKKKKK", "5")
         mDeviceInfo.add(DeviceInfoItem("Android sdk:", Build.VERSION.RELEASE))
         mDeviceInfo.add(DeviceInfoItem("Build version", Build.DISPLAY))
 
