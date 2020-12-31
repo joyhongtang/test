@@ -151,6 +151,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                 e.printStackTrace();
             }
         }
+        testEntities.add(testEntity2);
         setContentView(R.layout.activity_test_main);
         main_v = findViewById(R.id.test_result_main);
         clear_result_main = findViewById(R.id.clear_result_main);

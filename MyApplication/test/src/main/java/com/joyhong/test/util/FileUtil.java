@@ -32,7 +32,7 @@ public class FileUtil {
         if (!file.exists()) {
             boolean success = file.mkdirs();
             if (!success) {
-                throw new RuntimeException("create file failed");
+//                throw new RuntimeException("create file failed");
             }
         }
         hasInitialize = true;

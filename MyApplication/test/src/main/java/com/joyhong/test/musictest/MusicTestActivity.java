@@ -76,10 +76,15 @@ public class MusicTestActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     protected void onResume() {
-        if (musicService.mp.isPlaying()) {
-            musicStatus.setText(getResources().getString(R.string.playing));
-        } else {
+        if(null == musicService.mp){
+            musicService.initMusicPlayer();
             musicStatus.setText(getResources().getString(R.string.pause));
+        }else {
+            if (musicService.mp.isPlaying()) {
+                musicStatus.setText(getResources().getString(R.string.playing));
+            } else {
+                musicStatus.setText(getResources().getString(R.string.pause));
+            }
         }
 
         seekBar.setProgress(musicService.mp.getCurrentPosition());

@@ -24,6 +24,9 @@ public class MusicService extends Service {
     }
     public MediaPlayer mp ;
     public MusicService() {
+        initMusicPlayer();
+    }
+    public void initMusicPlayer(){
         try {
             if(null == mp){
                 mp = new MediaPlayer();
