@@ -81,7 +81,7 @@ class DeviceInfoTestActivity : BaseTestActivity() {
             )
         )
         Log.e("KKKKKK", "8")
-        rv_device_info.adapter = mMusicAdapter
+//        rv_device_info.adapter = mMusicAdapter
         fail.requestFocus()
         Log.e("KKKKKK", "9")
 
