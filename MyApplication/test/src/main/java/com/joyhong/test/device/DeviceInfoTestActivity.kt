@@ -92,10 +92,10 @@ class DeviceInfoTestActivity : BaseTestActivity() {
         Log.e("KKKKKK", "10")
         if (checkDeviceInfoAllExist()) {
             Log.e("KKKKKK", "12")
-            test_result.visibility = View.VISIBLE
+//            test_result.visibility = View.VISIBLE
         } else {
             Log.e("KKKKKK", "13")
-            test_result.visibility = View.INVISIBLE
+//            test_result.visibility = View.INVISIBLE
         }
         Log.e("KKKKKK", "11")
     }
