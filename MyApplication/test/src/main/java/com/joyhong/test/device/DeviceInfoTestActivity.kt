@@ -91,8 +91,10 @@ class DeviceInfoTestActivity : BaseTestActivity() {
         super.onResume()
         Log.e("KKKKKK", "10")
         if (checkDeviceInfoAllExist()) {
+            Log.e("KKKKKK", "12")
             test_result.visibility = View.VISIBLE
         } else {
+            Log.e("KKKKKK", "13")
             test_result.visibility = View.INVISIBLE
         }
         Log.e("KKKKKK", "11")
@@ -100,7 +102,8 @@ class DeviceInfoTestActivity : BaseTestActivity() {
 
     fun checkDeviceInfoAllExist(): Boolean {
         var success = true
-        val macAddress = try {
+        var macAddress = ""
+         macAddress = try {
             DeviceUtils.getMacAddress()
         } catch (e: Exception) {
             ""
