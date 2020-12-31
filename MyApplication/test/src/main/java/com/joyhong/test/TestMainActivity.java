@@ -677,7 +677,8 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         } catch (Exception e) {
             FileWriter fileWriter = null;
             try {
-                File file = new File("/data/data/com.idwell.cloudframe/sleepmode.txt");
+                File file = new File("/data/data/" + getPackageName() + "/sleepmode.txt");
+                Log.d("test", file.getAbsolutePath());
                 if (!file.exists()) {
                     file.createNewFile();
                 }
