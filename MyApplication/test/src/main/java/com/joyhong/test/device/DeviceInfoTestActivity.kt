@@ -56,7 +56,7 @@ class DeviceInfoTestActivity : BaseTestActivity() {
             TestMainActivity.testResult["${TestConstant.PACKAGE_NAME}$localClassName"]
         SPUtils.getInstance().put(testEntity!!.tag + "_detail", system_info)
 
-
+        Log.e("KKKKKK", "6")
         mMusicAdapter =
             object : BaseQuickAdapter<DeviceInfoItem, BaseViewHolder>(
                 R.layout.item_device_test,
@@ -69,6 +69,7 @@ class DeviceInfoTestActivity : BaseTestActivity() {
                     }
                 }
             }
+        Log.e("KKKKKK", "7")
         mLinearLayoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rv_device_info.layoutManager = mLinearLayoutManager
         rv_device_info.addItemDecoration(
