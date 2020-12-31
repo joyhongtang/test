@@ -7,7 +7,6 @@ import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.BatteryManager;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -18,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.blankj.utilcode.util.SPUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.idwell.cloudframe.ui.test.device.DeviceInfoItem;
+import com.joyhong.test.device.DeviceInfoItem;
 import com.joyhong.test.util.TestConstant;
 
 import java.io.ByteArrayOutputStream;

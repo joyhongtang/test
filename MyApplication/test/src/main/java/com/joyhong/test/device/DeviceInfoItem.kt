@@ -1,4 +1,4 @@
-package com.idwell.cloudframe.ui.test.device
+package com.joyhong.test.device
 
 class DeviceInfoItem {
 

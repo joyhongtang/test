@@ -10,7 +10,6 @@ import com.blankj.utilcode.util.DeviceUtils
 import com.blankj.utilcode.util.SPUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import com.idwell.cloudframe.ui.test.device.DeviceInfoItem
 import com.joyhong.test.BaseTestActivity
 import com.joyhong.test.R
 import com.joyhong.test.TestMainActivity
