@@ -669,6 +669,10 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
     private boolean openSensor = false;
     private void setMotionSensor(boolean open) {
         openSensor = true;
+        String packageName = getPackageName();
+        if(!TextUtils.isEmpty(TestConstant.PACKAGE_NAME)){
+            packageName = TestConstant.PACKAGE_NAME;
+        }
         try {
             Class<?> threadClazz = Class.forName("android.os.HumanSensor");
             Method method = threadClazz.getMethod("setMode", Boolean.class);
@@ -676,7 +680,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         } catch (Exception e) {
             FileWriter fileWriter = null;
             try {
-                File file = new File("/data/data/" + getPackageName() + "/sleepmode.txt");
+                File file = new File("/data/data/" + packageName + "/sleepmode.txt");
                 Log.d("test", file.getAbsolutePath());
                 if (!file.exists()) {
                     file.createNewFile();
