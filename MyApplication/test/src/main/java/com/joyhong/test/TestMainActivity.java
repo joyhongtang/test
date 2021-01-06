@@ -7,7 +7,6 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.HumanSensor;
 import android.provider.Settings;
 import android.provider.SyncStateContract;
 import android.text.TextUtils;
@@ -676,7 +675,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
             packageName = TestConstant.PACKAGE_NAME;
         }*/
 
-        try {
+        /*try {
             Class.forName("android.os.HumanSensor");
             HumanSensor.setMode(open);
         } catch (Exception e) {
@@ -703,12 +702,13 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                     }
                 }
             }
-        }
+        }*/
 
-        /*try {
+        try {
             Class<?> threadClazz = Class.forName("android.os.HumanSensor");
             Method method = threadClazz.getMethod("setMode", Boolean.class);
-            System.out.println(method.invoke(null, open));
+            Object result = method.invoke(null, open);
+            Log.d("test", "" + result);
         } catch (Exception e) {
             FileWriter fileWriter = null;
             try {
@@ -726,12 +726,14 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                 fileWriter.close();
             } catch (Exception e2) {
                 try {
-                    fileWriter.close();
+                    if (fileWriter != null) {
+                        fileWriter.close();
+                    }
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
             }
-        }*/
+        }
         if (!open) {
             Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, Integer.MAX_VALUE);
         } else
