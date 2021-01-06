@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.HumanSensor;
 import android.provider.Settings;
 import android.provider.SyncStateContract;
 import android.text.TextUtils;
@@ -670,10 +671,41 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
     private void setMotionSensor(boolean open) {
         openSensor = true;
         String packageName = getPackageName();
-        if(!TextUtils.isEmpty(TestConstant.PACKAGE_NAME)){
+        Log.d("test", packageName);
+        /*if(!TextUtils.isEmpty(TestConstant.PACKAGE_NAME)){
             packageName = TestConstant.PACKAGE_NAME;
-        }
+        }*/
+
         try {
+            Class.forName("android.os.HumanSensor");
+            HumanSensor.setMode(open);
+        } catch (Exception e) {
+            FileWriter fileWriter = null;
+            try {
+                File file = new File("/data/data/" + packageName + "/sleepmode.txt");
+                Log.d("test", file.getAbsolutePath());
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
+                fileWriter = new FileWriter(file);
+                if (open) {
+                    fileWriter.write("300");
+                } else {
+                    fileWriter.write("200");
+                }
+                fileWriter.close();
+            } catch (Exception e1) {
+                if (fileWriter != null) {
+                    try {
+                        fileWriter.close();
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        /*try {
             Class<?> threadClazz = Class.forName("android.os.HumanSensor");
             Method method = threadClazz.getMethod("setMode", Boolean.class);
             System.out.println(method.invoke(null, open));
@@ -699,7 +731,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                     ex.printStackTrace();
                 }
             }
-        }
+        }*/
         if (!open) {
             Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, Integer.MAX_VALUE);
         } else
