@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -655,6 +656,11 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
             unRegisterHumanSensor();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        TestEntity recordEntity = testResult.get("com.joyhong.test.androidmediademo.media.MusicSelActivity");
+        if (recordEntity != null) {
+            AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            audioManager.setMode(AudioManager.MODE_NORMAL);
         }
         TestEntity humanSensorEntity = testResult.get(humanSensorTag);
         if (humanSensorEntity != null) {
