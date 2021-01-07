@@ -377,6 +377,9 @@ public class MusicSelActivity extends AppCompatActivity implements CirclePgBar.O
             e.printStackTrace();
         }
         stopTimer();
+        //退出还原音频模式
+        AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        audioManager.setMode(AudioManager.MODE_NORMAL);
     }
     /*******6.0以上版本手机权限处理***************************/
     /**

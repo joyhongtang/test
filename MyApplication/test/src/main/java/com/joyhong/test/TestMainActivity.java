@@ -657,11 +657,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         } catch (Exception e) {
             e.printStackTrace();
         }
-        TestEntity recordEntity = testResult.get("com.joyhong.test.androidmediademo.media.MusicSelActivity");
-        if (recordEntity != null) {
-            AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-            audioManager.setMode(AudioManager.MODE_NORMAL);
-        }
+        //退出还原人体感应
         TestEntity humanSensorEntity = testResult.get(humanSensorTag);
         if (humanSensorEntity != null) {
             EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_OFF));
