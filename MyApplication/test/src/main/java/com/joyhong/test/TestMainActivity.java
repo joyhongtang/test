@@ -8,29 +8,24 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
-import android.provider.SyncStateContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.blankj.utilcode.util.SPUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.joyhong.test.util.MyTestUtils;
 import com.joyhong.test.util.TestConstant;
 import com.joyhong.test.util.FileUtil;
 import com.joyhong.test.widget.MaterialDialog;
 import com.joyhong.test.widget.MyCreateQRViewDialog;
 
+import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
@@ -49,7 +44,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static com.joyhong.test.HomeTvAdapter.lastFocusPos;
-import static com.joyhong.test.util.TestConstant.CATEGORY_POP_SELECT_POSITION;
 
 public class TestMainActivity extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<TestEntity> testEntities = new ArrayList<>();
@@ -314,7 +308,8 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         checkResult(false);
         TestEntity testEntity = testResult.get(humanSensorTag);
         if (testEntity != null && SPUtils.getInstance().getInt(testEntity.getTag(), -1) != 1) {
-            setMotionSensor(true);
+            //setMotionSensor(true);
+            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_ON));
         }
     }
 
@@ -660,6 +655,10 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
             unRegisterHumanSensor();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        TestEntity humanSensorEntity = testResult.get(humanSensorTag);
+        if (humanSensorEntity != null) {
+            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_OFF));
         }
         super.onDestroy();
     }
