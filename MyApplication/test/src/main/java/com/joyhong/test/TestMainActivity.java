@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -26,6 +27,7 @@ import com.joyhong.test.util.FileUtil;
 import com.joyhong.test.widget.MaterialDialog;
 import com.joyhong.test.widget.MyCreateQRViewDialog;
 
+import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
@@ -257,7 +259,8 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
         checkResult(false);
         TestEntity testEntity = testResult.get(humanSensorTag);
         if (testEntity != null && SPUtils.getInstance().getInt(testEntity.getTag(), -1) != 1) {
-            setMotionSensor(true);
+            //setMotionSensor(true);
+            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_ON));
         }
     }
 
@@ -698,6 +701,11 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
             unRegisterHumanSensor();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        //退出还原人体感应
+        TestEntity humanSensorEntity = testResult.get(humanSensorTag);
+        if (humanSensorEntity != null) {
+            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_OFF));
         }
         super.onDestroy();
     }
