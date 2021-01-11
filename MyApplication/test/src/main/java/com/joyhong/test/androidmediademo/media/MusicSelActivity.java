@@ -40,6 +40,7 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.joyhong.test.BaseTestActivity;
 import com.joyhong.test.R;
 import com.joyhong.test.TestEntity;
 import com.joyhong.test.TestResultEnum;
@@ -58,7 +59,7 @@ import java.util.concurrent.Executors;
 import static com.joyhong.test.TestMainActivity.testResult;
 
 
-public class MusicSelActivity extends AppCompatActivity implements CirclePgBar.OnCountdownProgressListener, View.OnClickListener {
+public class MusicSelActivity extends BaseTestActivity implements CirclePgBar.OnCountdownProgressListener, View.OnClickListener {
     private CirclePgBar circlePgBar;
     private TextView count_s;
     private boolean isRecording = false;
@@ -99,7 +100,7 @@ public class MusicSelActivity extends AppCompatActivity implements CirclePgBar.O
         initData();
     }
 
-    protected void initData() {
+    public void initData() {
         findViewById(R.id.left_back).setOnClickListener(this);
         findViewById(R.id.fail).setOnClickListener(this);
         findViewById(R.id.pass).setOnClickListener(this);

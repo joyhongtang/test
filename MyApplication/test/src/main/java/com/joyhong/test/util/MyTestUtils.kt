@@ -12,6 +12,7 @@ import android.os.storage.StorageManager
 import android.view.KeyEvent
 import com.blankj.utilcode.util.ScreenUtils
 import com.blankj.utilcode.util.Utils
+import com.joyhong.test.TestMainActivity
 import com.joyhong.test.photo.Photo
 import java.io.File
 import java.util.*
@@ -43,7 +44,17 @@ object MyTestUtils {
         }
         return fileTest
     }
-
+    fun getPrivateFile(): File {
+        val file = File(TestMainActivity.DEVICE_TEST_RESULT)
+        if (!file.exists()) {
+            file.mkdirs()
+        }
+        var fileTest = File(file.absolutePath,"test.txt")
+        if(!fileTest.exists()){
+            fileTest.createNewFile()
+        }
+        return fileTest
+    }
 
     fun convertWidthHeight(photo: Photo): IntArray {
         val width: Int

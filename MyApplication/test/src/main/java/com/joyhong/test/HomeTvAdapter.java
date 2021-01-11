@@ -48,10 +48,8 @@ public class HomeTvAdapter extends CustomRecyclerView.CustomAdapter<TestEntity> 
         holder.tv.setTag(testEntities.get(position).getTag());
         if (SPUtils.getInstance().getInt(testEntity.getTag(), 0) == 2) {
             holder.main_v.setBackgroundResource(R.drawable.shape_actionsheet_top_normal);
-//            holder.test_result_desp.setText("测试失败");
         } else if (SPUtils.getInstance().getInt(testEntity.getTag(), 0) == 1) {
             holder.main_v.setBackgroundResource(R.drawable.shape_actionsheet_green_normal);
-//            holder.test_result_desp.setText("测试成功");
         } else {
             holder.main_v.setBackgroundResource(R.drawable.shape_actionsheet_top_test_noresult);
             holder.test_result.setVisibility(View.GONE);

@@ -1,5 +1,6 @@
 package com.joyhong.test;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -8,24 +9,18 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
-import android.provider.SyncStateContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.blankj.utilcode.util.SPUtils;
-import com.blankj.utilcode.util.ToastUtils;
 import com.joyhong.test.util.MyTestUtils;
+import com.joyhong.test.util.ShellUtils;
 import com.joyhong.test.util.TestConstant;
 import com.joyhong.test.util.FileUtil;
 import com.joyhong.test.widget.MaterialDialog;
@@ -35,12 +30,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Method;
@@ -49,10 +44,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static com.joyhong.test.HomeTvAdapter.lastFocusPos;
-import static com.joyhong.test.util.TestConstant.CATEGORY_POP_SELECT_POSITION;
 
-public class TestMainActivity extends AppCompatActivity implements View.OnClickListener {
-    private ArrayList<TestEntity> testEntities = new ArrayList<>();
+public class TestMainActivity extends BaseTestActivity implements View.OnClickListener {
+    public static ArrayList<TestEntity> testEntities = new ArrayList<>();
     public static HashMap<String, TestEntity> testResult = new HashMap<String, TestEntity>();
     public static boolean EXIST_EXTERNA_STORAGE = false;
     public static boolean EXIST_USB_STORAGE = false;
@@ -63,106 +57,37 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
     private TextView test_info;
     private GridLayoutManager mLayoutManager;
     public static int LINE_NUM = 3;  //要显示的行数
-    private static final String CHARGER_CURRENT_NOW =
+    public static final String CHARGER_CURRENT_NOW =
             "/sys/class/power_supply/battery/BatteryAverageCurrent";
+    public static final String DEVICE_RTC =
+            "/dev/rtc";
+    public static final String DEVICE_RTC0 =
+            "/dev/rtc0";
+    public static final String DEVICE_TEST_RESULT = "/private/";
+    private String rtcTag = "com.joyhong.test.rtc";
+    public static boolean autoTest = false;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SPUtils.getInstance().put("stepinto_test", true);
         TestConstant.isConfigTestMode = true;
         TestConstant.application = getApplication();
         testResult.clear();
         hideBottomUIMenu();  //隐藏底部虚拟按键
-        TestEntity testEntity = new TestEntity(0, 0, "com.joyhong.test.TouchScreenTestActivity", "触摸测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity2 = new TestEntity(0, 1, "com.joyhong.test.RecordActivity", "摄像头测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity3 = new TestEntity(0, 2, "com.joyhong.test.androidmediademo.media.MusicSelActivity", "录音测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity4 = new TestEntity(0, 2, "com.joyhong.test.photo.SlideTestActivity", "LCD测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity5 = new TestEntity(0, 2, "com.joyhong.test.video.VideoViewTestActivity", "视频老化测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity6 = new TestEntity(0, 2, "com.joyhong.test.wifi.WifiTestActivity", "Wifi信号强度测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity7 = new TestEntity(0, 2, "com.joyhong.test.control.ControlTestActivity", "面板测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity8 = new TestEntity(0, 2, "com.joyhong.test.musictest.MusicTestActivity", "喇叭测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity9 = new TestEntity(0, 2, "com.joyhong.test.device.DeviceInfoTestActivity", "系统版本信息", TestResultEnum.UNKNOW);
-        TestEntity testEntity10 = new TestEntity(0, 2, "com.joyhong.test.gsensor.GsnsorViewAcitvity", "重力感应测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity11 = new TestEntity(0, 2, "com.joyhong.test.interfacedevice.InterfaceDevice", "外接设备测试", TestResultEnum.UNKNOW);
-        TestEntity testEntity12 = new TestEntity(0, 2, "com.joyhong.test.sensor_human", "人体感应", TestResultEnum.UNKNOW);
-        TestEntity testEntity13 = new TestEntity(0, 2, "com.joyhong.test.BatteryInfoActivity", "电池测试", TestResultEnum.UNKNOW);
-
-        InputStreamReader inputReader = null;
-        BufferedReader bufReader = null;
-        try {
-            inputReader = new InputStreamReader(getResources().getAssets().open("config.txt"));
-            bufReader = new BufferedReader(inputReader);
-            String line = "";
-            while ((line = bufReader.readLine()) != null) {
-                if (line.contains("Touch_1")) {
-                    testEntities.add(testEntity);
-                } else if (line.contains("Camera_1")) {
-                    testEntities.add(testEntity2);
-                } else if (line.contains("Record_1")) {
-                    testEntities.add(testEntity3);
-                } else if (line.contains("Lcd_1")) {
-                    testEntities.add(testEntity4);
-                } else if (line.contains("VideoTest_1")) {
-                    testEntities.add(testEntity5);
-                } else if (line.contains("Wifi_1")) {
-                    testEntities.add(testEntity6);
-                } else if (line.contains("RemoteControl_1")) {
-                    testEntities.add(testEntity7);
-                } else if (line.contains("Speaker_1")) {
-                    testEntities.add(testEntity8);
-                } else if (line.contains("SystemInfo_1")) {
-                    testEntities.add(testEntity9);
-                } else if (line.contains("G-sensor_1")) {
-                    testEntities.add(testEntity10);
-                } else if (line.contains("Human-sensor_1")) {
-                    testEntities.add(testEntity12);
-                } else if (line.contains("Sdcard_1")) {
-                    EXIST_EXTERNA_STORAGE = true;
-                    if (!testEntities.contains(testEntity11)) {
-                        testEntities.add(testEntity11);
-                    }
-                } else if (line.contains("USB_1")) {
-                    EXIST_USB_STORAGE = true;
-                    if (!testEntities.contains(testEntity11)) {
-                        testEntities.add(testEntity11);
-                    }
-                } else if (line.contains("HeadSet_1")) {
-                    EXIST_HEADSET = true;
-                    if (!testEntities.contains(testEntity11)) {
-                        testEntities.add(testEntity11);
-                    }
-                }else if (line.contains("Battery_1")) {
-                    testEntities.add(testEntity13);
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (null != bufReader) {
-                    bufReader.close();
-                    bufReader = null;
-                }
-                if (null != inputReader) {
-                    inputReader.close();
-                    inputReader = null;
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        initConfig();
         setContentView(R.layout.activity_test_main);
         main_v = findViewById(R.id.test_result_main);
         clear_result_main = findViewById(R.id.clear_result_main);
         test_info = findViewById(R.id.test_info);
         clear_result_main.setOnClickListener(this);
+        findViewById(R.id.auto_test).setOnClickListener(this);
+        findViewById(R.id.reset_factory).setOnClickListener(this);
         findViewById(R.id.show_qr_code).setOnClickListener(this);
         for (TestEntity testEntityR : testEntities) {
             testResult.put(testEntityR.getTag(), testEntityR);
         }
         rv = findViewById(R.id.rv2);
-        int spacing = 32; // 50px
-        boolean includeEdge = true;
         //设置布局管理器
         homeTvAdapter = new HomeTvAdapter(TestMainActivity.this, testEntities);
         DecimalFormat df = new DecimalFormat("0.00");//格式化小数
@@ -174,38 +99,29 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         rv.setAdapter(homeTvAdapter);
         homeTvAdapter.setOnItemClickListener(new MyOnItemClickListener());
         rv.setOnScrollListener(new MyOnScrollListener());
+        detectRtc();
         checkFileExistOrCopy();
-//        if (SPUtils.getInstance().getInt(humanSensorTag) != 1) {
         registerHumanSensor();
-//        }
-
         initTestResult2Sdcard();
-        try {
-            Log.e("TTTTTT","readCurrentFile "+readCurrentFile(new File(CHARGER_CURRENT_NOW)));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
-    public String readCurrentFile(File file) throws IOException {
-        InputStream input = null;
+
+    ////////////////////////////////////rtc test////////////////////////////////////////
+    private void detectRtc() {
         try {
-            input  = new FileInputStream(file);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(
-                    input));
-            StringBuilder sb = new StringBuilder();
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line);
+            File rtc1 = new File(DEVICE_RTC);
+            File rtc0 = new File(DEVICE_RTC0);
+            if (rtc1.exists() || rtc0.exists()) {
+                TestEntity testEntity = testResult.get(rtcTag);
+                testEntity.setTestResultEnum(TestResultEnum.PASS);
+                SPUtils.getInstance().put(testEntity.getTag(), 1);
+                homeTvAdapter.notifyDataSetChanged();
             }
-            return sb.toString();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            if(null != input)
-            input.close();
         }
-        return "";
     }
+
     //////////////////////////human sensor//////////////////////////////////////////////////////
     private boolean humanSensorCloseSuccess, humanSensorOpenSuccess;
     private final String HUMAN_SENSOR_CLOSE = "android.system.voltage.low";
@@ -233,8 +149,35 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                         }
                     })
                     .show();
-        }else if(v.getId() == R.id.show_qr_code){
+        } else if (v.getId() == R.id.show_qr_code) {
             showQRCODE(saveTestResult2Sdcard(false));
+        } else if (v.getId() == R.id.reset_factory) {
+            resetFactory();
+        } else if (v.getId() == R.id.auto_test) {
+            autoTest = true;
+            rv.getChildAt(0).performClick();
+
+            String filePath = MyTestUtils.INSTANCE.getTestFile().getAbsolutePath()+File.separator;
+//        String[] commands = new String[] { "mount -o remount rw /private/" ,"cp "+ filePath +" /private/" };
+//            String[] commands = new String[] { "su" };
+//            ShellUtils.CommandResult result = ShellUtils.execCommand(commands, false);
+//            Log.e("TTTTT","result success ooooooooo "+result.successMsg +"  result error  "+result.errorMsg+"  result code  "+result.result);
+//        if (!MyTestUtils.INSTANCE.getPrivateFile().exists()) {
+
+//            isRoot(new RootResult() {
+//                @Override
+//                public void success() {
+////                    String[] commands = new String[] { "mount -o remount rw /private/", "rm -rf /private/a.txt" };
+//                    String[] commands = new String[] { "rm -rf /private/a.txt" };
+//                    ShellUtils.CommandResult result = ShellUtils.execCommand(commands, false);
+//                    Log.e("TTTTT","result success ooooooooo "+result.successMsg +"  result error  "+result.errorMsg+"  result code  "+result.result);
+//                }
+//                @Override
+//                public void fail() {
+//
+//                }
+//            });
+
         }
     }
 
@@ -318,6 +261,94 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+
+    /**
+     * 初始化所有配置项
+     */
+    public void initConfig() {
+        TestEntity testEntity = new TestEntity(0, 0, "com.joyhong.test.TouchScreenTestActivity", "触摸测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity2 = new TestEntity(0, 1, "com.joyhong.test.RecordActivity", "摄像头测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity3 = new TestEntity(0, 2, "com.joyhong.test.androidmediademo.media.MusicSelActivity", "录音测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity4 = new TestEntity(0, 2, "com.joyhong.test.photo.SlideTestActivity", "LCD测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity5 = new TestEntity(0, 2, "com.joyhong.test.video.VideoViewTestActivity", "视频老化测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity6 = new TestEntity(0, 2, "com.joyhong.test.wifi.WifiTestActivity", "Wifi信号强度测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity7 = new TestEntity(0, 2, "com.joyhong.test.control.ControlTestActivity", "面板测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity8 = new TestEntity(0, 2, "com.joyhong.test.musictest.MusicTestActivity", "喇叭测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity9 = new TestEntity(0, 2, "com.joyhong.test.device.DeviceInfoTestActivity", "系统版本信息", TestResultEnum.UNKNOW);
+        TestEntity testEntity10 = new TestEntity(0, 2, "com.joyhong.test.gsensor.GsnsorViewAcitvity", "重力感应测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity11 = new TestEntity(0, 2, "com.joyhong.test.interfacedevice.InterfaceDevice", "外接设备测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity12 = new TestEntity(0, 2, "com.joyhong.test.sensor_human", "人体感应", TestResultEnum.UNKNOW);
+        TestEntity testEntity13 = new TestEntity(0, 2, "com.joyhong.test.BatteryInfoActivity", "电池测试", TestResultEnum.UNKNOW);
+        TestEntity testEntity14 = new TestEntity(0, 2, "com.joyhong.test.rtc", "RTC测试", TestResultEnum.UNKNOW);
+
+        InputStreamReader inputReader = null;
+        BufferedReader bufReader = null;
+        try {
+            inputReader = new InputStreamReader(getResources().getAssets().open("config.txt"));
+            bufReader = new BufferedReader(inputReader);
+            String line = "";
+            while ((line = bufReader.readLine()) != null) {
+                if (line.contains("Touch_1")) {
+                    testEntities.add(testEntity);
+                } else if (line.contains("Camera_1")) {
+                    testEntities.add(testEntity2);
+                } else if (line.contains("Record_1")) {
+                    testEntities.add(testEntity3);
+                } else if (line.contains("Lcd_1")) {
+                    testEntities.add(testEntity4);
+                } else if (line.contains("VideoTest_1")) {
+                    testEntities.add(testEntity5);
+                } else if (line.contains("Wifi_1")) {
+                    testEntities.add(testEntity6);
+                } else if (line.contains("RemoteControl_1")) {
+                    testEntities.add(testEntity7);
+                } else if (line.contains("Speaker_1")) {
+                    testEntities.add(testEntity8);
+                } else if (line.contains("SystemInfo_1")) {
+                    testEntities.add(testEntity9);
+                } else if (line.contains("G-sensor_1")) {
+                    testEntities.add(testEntity10);
+                } else if (line.contains("Human-sensor_1")) {
+                    testEntities.add(testEntity12);
+                } else if (line.contains("Sdcard_1")) {
+                    EXIST_EXTERNA_STORAGE = true;
+                    if (!testEntities.contains(testEntity11)) {
+                        testEntities.add(testEntity11);
+                    }
+                } else if (line.contains("USB_1")) {
+                    EXIST_USB_STORAGE = true;
+                    if (!testEntities.contains(testEntity11)) {
+                        testEntities.add(testEntity11);
+                    }
+                } else if (line.contains("HeadSet_1")) {
+                    EXIST_HEADSET = true;
+                    if (!testEntities.contains(testEntity11)) {
+                        testEntities.add(testEntity11);
+                    }
+                } else if (line.contains("Battery_1")) {
+                    testEntities.add(testEntity13);
+                } else if (line.contains("Rtc_1")) {
+                    testEntities.add(testEntity14);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (null != bufReader) {
+                    bufReader.close();
+                    bufReader = null;
+                }
+                if (null != inputReader) {
+                    inputReader.close();
+                    inputReader = null;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     private void refresh() {
         if (-1 == lastFocusPos) {
             homeTvAdapter.notifyDataSetChanged();
@@ -393,11 +424,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-    public void initTestResult2Sdcard() {
-        File file = new File(Environment.getExternalStorageDirectory(), "CloudFrame/Test/test.txt");
-        if (file.exists()) {
-            return;
-        }
+    public void initTestFile(File file) {
         InputStreamReader inputReader = null;
         BufferedReader bufReader = null;
         //对测试文件进行读写
@@ -443,7 +470,7 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                 } else if (line.contains("HeadSet_1")) {
                     bufWriter.append("HeadSet:");
                     EXIST_HEADSET = true;
-                }else if (line.contains("Battery_1")) {
+                } else if (line.contains("Battery_1")) {
                     bufWriter.append("Battery:");
                 }
 
@@ -478,18 +505,29 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    public void initTestResult2Sdcard() {
+        File file = new File(Environment.getExternalStorageDirectory(), "CloudFrame/Test/test.txt");
+        if (!file.exists()) {
+            initTestFile(file);
+        }
+    }
+
     /**
-     *
      * @param clear 清除文件后，还原测试文件
      */
     public String saveTestResult2Sdcard(boolean clear) {
         File file = new File(Environment.getExternalStorageDirectory(), "CloudFrame/Test/test.txt");
-        StringBuffer testContent = new StringBuffer();
         if (clear) {
             file.delete();
             initTestResult2Sdcard();
             return "";
         }
+        return saveTestResult2File(MyTestUtils.INSTANCE.getTestFile());
+    }
+
+
+    public String saveTestResult2File(File file) {
+        StringBuffer testContent = new StringBuffer();
         //对测试文件进行读写
         BufferedWriter bufWriter = null;
         OutputStreamWriter outputStreamWriter = null;
@@ -501,134 +539,134 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
                 testFile = MyTestUtils.INSTANCE.getTestFile();
                 outputStreamWriter = new OutputStreamWriter(new FileOutputStream(testFile));
                 bufWriter = new BufferedWriter(outputStreamWriter);
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
             for (TestEntity testEntity : testEntities) {
                 int result = SPUtils.getInstance().getInt(testEntity.getTag(), 0);
-                String resultDetail = SPUtils.getInstance().getString(testEntity.getTag()+"_detail");
+                String resultDetail = SPUtils.getInstance().getString(testEntity.getTag() + "_detail");
                 line = testEntity.getTag();
                 if (line.contains("TouchScreenTestActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("Touch:"+result);
-                    testContent.append("Touch:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("Touch:" + result);
+                    testContent.append("Touch:" + result);
                     testContent.append(",");
                 } else if (line.contains("RecordActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("Camera:"+result);
-                    testContent.append("Camera:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("Camera:" + result);
+                    testContent.append("Camera:" + result);
                     testContent.append(",");
                 } else if (line.contains("MusicSelActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("Record:"+result);
-                    testContent.append("Record:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("Record:" + result);
+                    testContent.append("Record:" + result);
                     testContent.append(",");
                 } else if (line.contains("SlideTestActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("Lcd:"+result);
-                    testContent.append("Lcd:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("Lcd:" + result);
+                    testContent.append("Lcd:" + result);
                     testContent.append(",");
                 } else if (line.contains("VideoViewTestActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("VideoTest:"+result);
-                    testContent.append("VideoTest:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("VideoTest:" + result);
+                    testContent.append("VideoTest:" + result);
                     testContent.append(",");
                 } else if (line.contains("WifiTestActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("Wifi:"+result);
-                    testContent.append("Wifi:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("Wifi:" + result);
+                    testContent.append("Wifi:" + result);
                     testContent.append(",");
-                    if(null != bufWriter) {
+                    if (null != bufWriter) {
                         bufWriter.newLine();
                         bufWriter.append(resultDetail);
                     }
-                    if(!TextUtils.isEmpty(resultDetail)) {
+                    if (!TextUtils.isEmpty(resultDetail)) {
                         testContent.append(resultDetail);
                         testContent.append(",");
                     }
                 } else if (line.contains("ControlTestActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("RemoteControl:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("RemoteControl:" + result);
 
-                    testContent.append("RemoteControl:"+result);
+                    testContent.append("RemoteControl:" + result);
                     testContent.append(",");
                 } else if (line.contains("MusicTestActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("Speaker:"+result);
-                    testContent.append("Speaker:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("Speaker:" + result);
+                    testContent.append("Speaker:" + result);
                     testContent.append(",");
                 } else if (line.contains("DeviceInfoTestActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("SystemInfo:"+result);
-                    testContent.append("SystemInfo:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("SystemInfo:" + result);
+                    testContent.append("SystemInfo:" + result);
                     testContent.append(",");
-                    if(null != bufWriter) {
+                    if (null != bufWriter) {
                         bufWriter.newLine();
                         bufWriter.append(resultDetail);
                     }
-                    if(!TextUtils.isEmpty(resultDetail)) {
+                    if (!TextUtils.isEmpty(resultDetail)) {
                         testContent.append(resultDetail);
                         testContent.append(",");
                     }
                 } else if (line.contains("GsnsorViewAcitvity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("G-sensor:"+result);
-                    testContent.append("G-sensor:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("G-sensor:" + result);
+                    testContent.append("G-sensor:" + result);
                     testContent.append(",");
                 } else if (line.contains("sensor_human")) {
-                    if(null != bufWriter)
-                    bufWriter.append("Human-sensor:"+result);
-                    testContent.append("Human-sensor:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("Human-sensor:" + result);
+                    testContent.append("Human-sensor:" + result);
                     testContent.append(",");
                 } else if (line.contains("BatteryInfoActivity")) {
-                    if(null != bufWriter)
-                    bufWriter.append("Battery:"+result);
-                    testContent.append("Battery:"+result);
+                    if (null != bufWriter)
+                        bufWriter.append("Battery:" + result);
+                    testContent.append("Battery:" + result);
                     testContent.append(",");
-                    if(null != bufWriter)
-                    bufWriter.newLine();
-                    if(!TextUtils.isEmpty(resultDetail)) {
+                    if (null != bufWriter)
+                        bufWriter.newLine();
+                    if (!TextUtils.isEmpty(resultDetail)) {
                         testContent.append(resultDetail);
                         testContent.append(",");
                     }
-                    if(null != bufWriter)
-                    bufWriter.append(resultDetail);
+                    if (null != bufWriter)
+                        bufWriter.append(resultDetail);
                 }
-                if(null != bufWriter) {
+                if (null != bufWriter) {
                     bufWriter.newLine();
                     bufWriter.flush();
                 }
             }
 
             if (EXIST_EXTERNA_STORAGE) {
-                if(null != bufWriter)
-                bufWriter.append("Sdcard:"+SPUtils.getInstance().getInt("isExternalStorage", 0));
-                testContent.append("Sdcard:"+SPUtils.getInstance().getInt("isExternalStorage", 0));
+                if (null != bufWriter)
+                    bufWriter.append("Sdcard:" + SPUtils.getInstance().getInt("isExternalStorage", 0));
+                testContent.append("Sdcard:" + SPUtils.getInstance().getInt("isExternalStorage", 0));
                 testContent.append(",");
-                if(null != bufWriter) {
+                if (null != bufWriter) {
                     bufWriter.newLine();
                     bufWriter.flush();
                 }
             }
             if (EXIST_USB_STORAGE) {
-                if(null != bufWriter) {
+                if (null != bufWriter) {
                     bufWriter.append("USB:" + SPUtils.getInstance().getInt("isUsbStorage", 0));
                 }
-                testContent.append("USB:"+SPUtils.getInstance().getInt("isUsbStorage", 0));
+                testContent.append("USB:" + SPUtils.getInstance().getInt("isUsbStorage", 0));
                 testContent.append(",");
-                if(null != bufWriter) {
+                if (null != bufWriter) {
                     bufWriter.newLine();
                     bufWriter.flush();
                 }
             }
             if (EXIST_HEADSET) {
-                if(null != bufWriter) {
+                if (null != bufWriter) {
                     bufWriter.append("HeadSet:" + SPUtils.getInstance().getInt("isHeadSet", 0));
                 }
-                testContent.append("HeadSet:"+SPUtils.getInstance().getInt("isHeadSet", 0));
+                testContent.append("HeadSet:" + SPUtils.getInstance().getInt("isHeadSet", 0));
                 testContent.append(",");
-                if(null != bufWriter) {
+                if (null != bufWriter) {
                     bufWriter.newLine();
                     bufWriter.flush();
                 }
@@ -665,8 +703,8 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-
     private boolean openSensor = false;
+
     private void setMotionSensor(boolean open) {
         openSensor = true;
         String packageName = getPackageName();
@@ -739,12 +777,192 @@ public class TestMainActivity extends AppCompatActivity implements View.OnClickL
         } else
             Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, 15_000);
     }
+
     private MyCreateQRViewDialog myCreateQRViewDialog;
+
     public void showQRCODE(String connectCode) {
         //二维码页面
         myCreateQRViewDialog = new MyCreateQRViewDialog(this, R.layout.activity_create_qrcode_dialog);
         //显示
         myCreateQRViewDialog.show();
         myCreateQRViewDialog.createQRCode(connectCode);
+    }
+
+    public void resetFactory() {
+        new MaterialDialog.Builder(this).setTitle("恢复出厂设置?")
+                .setNegativeButton(R.string.cancel, null)
+                .setPositiveButton(R.string.ok, new MaterialDialog.OnClickListener() {
+                    @Override
+                    public void onClick(@NotNull MaterialDialog dialog) {
+                        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O_MR1) {
+                            Intent intent = new Intent("android.intent.action.FACTORY_RESET");
+                            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
+                            intent.setPackage("android");
+                            intent.putExtra("android.intent.extra.REASON", "MasterClearConfirm");
+                            //intent.putExtra("android.intent.extra.WIPE_EXTERNAL_STORAGE", true)
+                            sendBroadcast(intent);
+                        } else {
+                            Intent intent = new Intent("android.intent.action.MASTER_CLEAR");
+                            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
+                            intent.putExtra("android.intent.extra.REASON", "MasterClearConfirm");
+                            //intent.putExtra("android.intent.extra.WIPE_EXTERNAL_STORAGE", true)
+                            sendBroadcast(intent);
+                        }
+                    }
+                })
+                .show();
+    }
+
+    public static boolean stepAutoTestActivity(Activity activity) {
+        boolean finished = false;
+        int seekPos = 0;
+        try {
+            for (int i = 0; i < testEntities.size(); i++) {
+                TestEntity testEntity = testEntities.get(i);
+                if (testEntity.tag.contains(activity.getLocalClassName())) {
+                    seekPos = i;
+                    break;
+                }
+            }
+            if (seekPos >= testEntities.size() - 1) {
+                finished = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        seekPos = seekPos + 1;
+        if (seekPos == testEntities.size() - 1) {
+        } else {
+            int curPos = seekPos;
+            for (int j = seekPos; j < testEntities.size(); j++) {
+                TestEntity testEntity = testEntities.get(j);
+                if (!testEntity.tag.contains("rtc") && !testEntity.tag.contains("human")) {
+                    Intent intent = new Intent();
+                    intent.setClassName(activity, testEntity.tag);
+                    activity.startActivity(intent);
+                    return false;
+                }
+                curPos = j;
+            }
+            curPos++;
+            if (curPos >= testEntities.size() - 1) {
+                finished = true;
+            }
+        }
+        return finished;
+    }
+
+
+    public boolean isRoot(RootResult rootResult) {
+        Process process = null;
+        DataOutputStream os = null;
+        try {
+            process = Runtime.getRuntime().exec("su");
+            os = new DataOutputStream(process.getOutputStream());
+            os.writeBytes("exit\n");
+            os.flush();
+            int exitValue = process.waitFor();
+            if (exitValue == 0) {
+                Log.e("GGGGG","ROOT SUCCESS 22");
+                rootResult.success();
+                return true;
+            } else {
+                Log.e("GGGGG","ROOT Fail");
+                rootResult.fail();
+                return false;
+            }
+        } catch (Exception e) {
+            rootResult.fail();
+            return false;
+        } finally {
+            try {
+                if (os != null) {
+                    os.close();
+                }
+                process.destroy();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    // 执行命令并且输出结果
+    public static String execRootCmd(String cmd) {
+        String result = "";
+        DataOutputStream dos = null;
+        DataInputStream dis = null;
+        try {
+            Process p = Runtime.getRuntime().exec("su");// 经过Root处理的android系统即有su命令
+            dos = new DataOutputStream(p.getOutputStream());
+            dis = new DataInputStream(p.getInputStream());
+
+            dos.writeBytes(cmd + "\n");
+            dos.flush();
+            dos.writeBytes("exit\n");
+            dos.flush();
+            String line = null;
+            while ((line = dis.readLine()) != null) {
+                Log.d("result", line);
+                result += line;
+            }
+            int exitValue = p.waitFor();
+            Log.e("GGGGG","exitValue "+exitValue);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (dos != null) {
+                try {
+                    dos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (dis != null) {
+                try {
+                    dis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return result;
+    }
+
+
+    /**
+     * 应用程序运行命令获取 Root权限，设备必须已破解(获得ROOT权限)
+     *
+     * @return 应用程序是/否获取Root权限
+     */
+    public static boolean upgradeRootPermission(String pkgCodePath) {
+        Process process = null;
+        DataOutputStream os = null;
+        try {
+            String cmd="chmod 777 " + pkgCodePath;
+            process = Runtime.getRuntime().exec("su"); //切换到root帐号
+            os = new DataOutputStream(process.getOutputStream());
+//            os.writeBytes(cmd + "\n");
+            os.writeBytes("exit\n");
+            os.flush();
+            int exitValue = process.waitFor();
+            Log.e("GGGGG","tj exitValue "+exitValue);
+        } catch (Exception e) {
+            return false;
+        } finally {
+            try {
+                if (os != null) {
+                    os.close();
+                }
+                process.destroy();
+            } catch (Exception e) {
+            }
+        }
+        return true;
+    }
+    interface RootResult {
+        void success();
+
+        void fail();
     }
 }

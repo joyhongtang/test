@@ -29,7 +29,7 @@ import java.util.ArrayList;
 
 import static com.joyhong.test.TestMainActivity.testResult;
 
-public class BatteryInfoActivity extends AppCompatActivity implements OnClickListener {
+public class BatteryInfoActivity extends BaseTestActivity implements OnClickListener {
     // 定义电池信息的按钮
     private Button btnBattery;
     // 定义显示电池信息的textview

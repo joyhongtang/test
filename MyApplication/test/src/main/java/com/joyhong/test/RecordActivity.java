@@ -33,7 +33,7 @@ import java.util.List;
 import static com.joyhong.test.TestMainActivity.testResult;
 
 
-public class RecordActivity extends AppCompatActivity implements TextureView.SurfaceTextureListener ,View.OnClickListener{
+public class RecordActivity extends BaseTestActivity implements TextureView.SurfaceTextureListener ,View.OnClickListener{
     private static final String TAG = "RecordActivity";
     //视图控件
     private TextureView mTextureV;
@@ -66,7 +66,7 @@ public class RecordActivity extends AppCompatActivity implements TextureView.Sur
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_record);

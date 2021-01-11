@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.blankj.utilcode.util.SPUtils;
+import com.joyhong.test.BaseTestActivity;
 import com.joyhong.test.R;
 import com.joyhong.test.TestEntity;
 import com.joyhong.test.TestResultEnum;
@@ -28,7 +29,7 @@ import java.text.SimpleDateFormat;
 import static com.joyhong.test.TestMainActivity.testResult;
 
 
-public class MusicTestActivity extends AppCompatActivity implements View.OnClickListener {
+public class MusicTestActivity extends BaseTestActivity implements View.OnClickListener {
 
     private MusicService musicService;
     private SeekBar seekBar;
@@ -38,7 +39,7 @@ public class MusicTestActivity extends AppCompatActivity implements View.OnClick
     public static String[] musicDir = new String[1];
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_test);
 

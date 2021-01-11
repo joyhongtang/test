@@ -24,6 +24,7 @@ import android.view.SurfaceHolder.Callback;
 import androidx.fragment.app.FragmentActivity;
 
 import com.blankj.utilcode.util.SPUtils;
+import com.joyhong.test.BaseTestActivity;
 import com.joyhong.test.R;
 import com.joyhong.test.TestEntity;
 import com.joyhong.test.TestResultEnum;
@@ -32,7 +33,7 @@ import com.joyhong.test.util.TestConstant;
 import static com.joyhong.test.TestMainActivity.testResult;
 
 
-public class GsnsorViewAcitvity extends FragmentActivity implements OnClickListener {
+public class GsnsorViewAcitvity extends BaseTestActivity implements OnClickListener {
     MyView mAnimView = null;
     @Override
     public void onCreate(Bundle savedInstanceState) {

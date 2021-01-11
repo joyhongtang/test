@@ -134,7 +134,6 @@
             android:name=".video.VideoViewTestActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTop" />
-
-
+        <service android:name=".service.TestService" />
     </application>
 </manifest>

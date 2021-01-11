@@ -20,14 +20,14 @@ import java.util.ArrayList;
 import static com.joyhong.test.TestMainActivity.testResult;
 
 
-public class TouchScreenTestActivity extends AppCompatActivity implements View.OnTouchListener {
+public class TouchScreenTestActivity extends BaseTestActivity implements View.OnTouchListener {
     private int red, white;
     private MyGridLayout layout;
     private ArrayList<View> testViews =  new ArrayList<>();
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen1);
         hideBottomUIMenu();  //隐藏底部虚拟按键
@@ -51,13 +51,6 @@ public class TouchScreenTestActivity extends AppCompatActivity implements View.O
                 GridLayout.Spec columnSpec = GridLayout.spec(j);//列坐标和columnweight
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams(rowSpec, columnSpec);
                 // 设置btn的宽和高
-                //7cun
-//                params.width = (int) getResources().getDimension(R.dimen.dp_85);
-//                params.height =(int) getResources().getDimension(R.dimen.dp_50);
-
-                // 设置btn的宽和高
-//                params.width = 110;
-//                params.height = 67;
                 if (j == col - 1) {
                     params.width = screenWidth - (screenWidth / row) * (row - 1);
                 }else {
@@ -119,8 +112,6 @@ public class TouchScreenTestActivity extends AppCompatActivity implements View.O
                 testViews.remove(v);
                 v.setBackgroundColor(white);
                 if (testViews.size() <= 0) {
-                    //com.joyhong.test.com.joyhong.test.TouchScreenTestActivity
-                    //com.joyhong.test.TouchScreenTestActivity -> {TestEntity@7254}
                     TestEntity testEntity = testResult.get(TestConstant.PACKAGE_NAME+getLocalClassName());
                     testEntity.setTestResultEnum(TestResultEnum.PASS);
                     SPUtils.getInstance().put(testEntity.getTag(),1);
