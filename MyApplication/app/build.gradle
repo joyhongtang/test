@@ -42,20 +42,20 @@ android {
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
     }
-    signingConfigs {
-        debug {
-            keyAlias 'android'
-            keyPassword 'android'
-            storeFile file('D:/KeyStore/platform.jks')
-            storePassword 'android'
-        }
-        release {
-            keyAlias 'android'
-            keyPassword 'android'
-            storeFile file('D:/KeyStore/platform.jks')
-            storePassword 'android'
-        }
-    }
+//    signingConfigs {
+//        debug {
+//            keyAlias 'android'
+//            keyPassword 'android'
+//            storeFile file('D:/KeyStore/platform.jks')
+//            storePassword 'android'
+//        }
+//        release {
+//            keyAlias 'android'
+//            keyPassword 'android'
+//            storeFile file('D:/KeyStore/platform.jks')
+//            storePassword 'android'
+//        }
+//    }
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
