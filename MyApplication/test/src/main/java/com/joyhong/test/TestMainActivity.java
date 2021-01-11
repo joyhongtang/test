@@ -711,81 +711,6 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
     }
 
 
-    private boolean openSensor = false;
-
-    private void setMotionSensor(boolean open) {
-        openSensor = true;
-        String packageName = getPackageName();
-        Log.d("test", packageName);
-        /*if(!TextUtils.isEmpty(TestConstant.PACKAGE_NAME)){
-            packageName = TestConstant.PACKAGE_NAME;
-        }*/
-
-        /*try {
-            Class.forName("android.os.HumanSensor");
-            HumanSensor.setMode(open);
-        } catch (Exception e) {
-            FileWriter fileWriter = null;
-            try {
-                File file = new File("/data/data/" + packageName + "/sleepmode.txt");
-                Log.d("test", file.getAbsolutePath());
-                if (!file.exists()) {
-                    file.createNewFile();
-                }
-                fileWriter = new FileWriter(file);
-                if (open) {
-                    fileWriter.write("300");
-                } else {
-                    fileWriter.write("200");
-                }
-                fileWriter.close();
-            } catch (Exception e1) {
-                if (fileWriter != null) {
-                    try {
-                        fileWriter.close();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                }
-            }
-        }*/
-
-        try {
-            Class<?> threadClazz = Class.forName("android.os.HumanSensor");
-            Method method = threadClazz.getMethod("setMode", Boolean.class);
-            Object result = method.invoke(null, open);
-            Log.d("test", "" + result);
-        } catch (Exception e) {
-            FileWriter fileWriter = null;
-            try {
-                File file = new File("/data/data/" + packageName + "/sleepmode.txt");
-                Log.d("test", file.getAbsolutePath());
-                if (!file.exists()) {
-                    file.createNewFile();
-                }
-                fileWriter = new FileWriter(file);
-                if (open) {
-                    fileWriter.write("300");
-                } else {
-                    fileWriter.write("200");
-                }
-                fileWriter.close();
-            } catch (Exception e2) {
-                try {
-                    if (fileWriter != null) {
-                        fileWriter.close();
-                    }
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        }
-        if (!open) {
-            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, Integer.MAX_VALUE);
-        } else
-            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, 15_000);
-    }
-
     private MyCreateQRViewDialog myCreateQRViewDialog;
 
     public void showQRCODE(String connectCode) {
@@ -935,38 +860,6 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
             }
         }
         return result;
-    }
-
-
-    /**
-     * 应用程序运行命令获取 Root权限，设备必须已破解(获得ROOT权限)
-     *
-     * @return 应用程序是/否获取Root权限
-     */
-    public static boolean upgradeRootPermission(String pkgCodePath) {
-        Process process = null;
-        DataOutputStream os = null;
-        try {
-            String cmd="chmod 777 " + pkgCodePath;
-            process = Runtime.getRuntime().exec("su"); //切换到root帐号
-            os = new DataOutputStream(process.getOutputStream());
-//            os.writeBytes(cmd + "\n");
-            os.writeBytes("exit\n");
-            os.flush();
-            int exitValue = process.waitFor();
-            Log.e("GGGGG","tj exitValue "+exitValue);
-        } catch (Exception e) {
-            return false;
-        } finally {
-            try {
-                if (os != null) {
-                    os.close();
-                }
-                process.destroy();
-            } catch (Exception e) {
-            }
-        }
-        return true;
     }
     interface RootResult {
         void success();
