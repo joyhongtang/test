@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Weather-->
+    <string-array name="weeks">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+    <!--Alarm-->
+    <string-array name="repeats">
+        <item>Once</item>
+        <item>Monday to Friday</item>
+        <item>Every day</item>
+        <item>Custom</item>
+    </string-array>
+    <string-array name="weeks_abbr">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+    <!--Calendar-->
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string-array name="week_string_array">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>Poor</item>
+        <item>Fair</item>
+        <item>Good</item>
+        <item>Excellent</item>
+    </string-array>
+    <!--Album Settings-->
+    <string-array name="slideshow_mode">
+        <item>Sequential</item>
+        <item>Random</item>
+    </string-array>
+    <string-array name="slideshow_animation">
+        <item>Default</item>
+        <item>Alpha</item>
+        <item>Rotate</item>
+        <item>Cube</item>
+        <item>Flip</item>
+        <item>Accordion</item>
+        <item>Zoom Fade</item>
+        <item>Fade</item>
+        <item>Zoom Center</item>
+        <item>Zoom Stack</item>
+        <item>Depth</item>
+        <item>Zoom</item>
+        <item>Random</item>
+    </string-array>
+    <string-array name="slideshow_interval">
+        <item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>15 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>5 minutes</item>
+    </string-array>
+</resources>

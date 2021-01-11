@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_users_user_management"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/users"
+        android:textColor="@color/text"
+        android:textSize="@dimen/sp_24"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_40"
+        app:layout_constraintHorizontal_weight="0.4"
+        app:layout_constraintEnd_toStartOf="@id/tv_accept_new_users_user_management"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_accept_new_users_user_management"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:text="@string/accept_new_users"
+        android:textColor="@color/text"
+        android:textSize="@dimen/sp_24"
+        android:gravity="end"
+        android:layout_marginStart="@dimen/dp_20"
+        app:layout_constraintHorizontal_weight="0.6"
+        app:layout_constraintStart_toEndOf="@id/tv_users_user_management"
+        app:layout_constraintBottom_toBottomOf="@id/tv_users_user_management"
+        app:layout_constraintEnd_toStartOf="@id/switch_accept_new_users_user_management"
+        app:layout_constraintTop_toTopOf="@id/tv_users_user_management" />
+
+    <Switch
+        android:visibility="gone"
+        android:id="@+id/switch_accept_new_users_user_management"
+        style="@style/SwitchStyle"
+        android:layout_marginEnd="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="@id/tv_users_user_management"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_users_user_management" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_users_user_management"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:layout_marginTop="@dimen/dp_40"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toTopOf="@id/tv_new_users_user_management"
+        app:layout_constraintEnd_toEndOf="@id/switch_accept_new_users_user_management"
+        app:layout_constraintStart_toStartOf="@id/tv_users_user_management"
+        app:layout_constraintTop_toBottomOf="@id/tv_users_user_management" />
+
+    <TextView
+        android:id="@+id/tv_new_users_user_management"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pending_user_requests"
+        android:textColor="@color/text"
+        android:textSize="@dimen/sp_24"
+        app:layout_constraintBottom_toTopOf="@id/rv_new_users_user_management"
+        app:layout_constraintTop_toBottomOf="@id/rv_users_user_management"
+        app:layout_constraintStart_toStartOf="@id/tv_users_user_management" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_new_users_user_management"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:layout_marginTop="@dimen/dp_20"
+        app:layout_constraintVertical_weight="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/switch_accept_new_users_user_management"
+        app:layout_constraintStart_toStartOf="@id/tv_users_user_management"
+        app:layout_constraintTop_toBottomOf="@id/tv_new_users_user_management" />
+</androidx.constraintlayout.widget.ConstraintLayout>

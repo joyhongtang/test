@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Weather-->
+    <string-array name="weeks">
+        <item>星期日</item>
+        <item>星期一</item>
+        <item>星期二</item>
+        <item>星期三</item>
+        <item>星期四</item>
+        <item>星期五</item>
+        <item>星期六</item>
+    </string-array>
+    <!--Alarm-->
+    <string-array name="repeats">
+        <item>一次</item>
+        <item>周一至周五</item>
+        <item>每天</item>
+        <item>自定义</item>
+    </string-array>
+    <string-array name="weeks_abbr">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+    <!--Calendar-->
+    <string-array name="months">
+        <item>1月</item>
+        <item>2月</item>
+        <item>3月</item>
+        <item>4月</item>
+        <item>5月</item>
+        <item>6月</item>
+        <item>7月</item>
+        <item>8月</item>
+        <item>9月</item>
+        <item>10月</item>
+        <item>11月</item>
+        <item>12月</item>
+    </string-array>
+    <string-array name="week_string_array">
+        <item>日</item>
+        <item>一</item>
+        <item>二</item>
+        <item>三</item>
+        <item>四</item>
+        <item>五</item>
+        <item>六</item>
+    </string-array>
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>弱</item>
+        <item>一般</item>
+        <item>较强</item>
+        <item>强</item>
+    </string-array>
+    <!--Album Settings-->
+    <string-array name="slideshow_mode">
+        <item>顺序</item>
+        <item>随机</item>
+    </string-array>
+    <string-array name="slideshow_animation">
+        <item>默认</item>
+        <item>渐变</item>
+        <item>旋转</item>
+        <item>立方体</item>
+        <item>翻动</item>
+        <item>手风琴</item>
+        <item>缩放淡出</item>
+        <item>淡出</item>
+        <item>缩放中心</item>
+        <item>缩放堆叠</item>
+        <item>深度</item>
+        <item>缩放</item>
+        <item>随机</item>
+    </string-array>
+    <string-array name="slideshow_interval">
+        <item>5秒</item>
+        <item>10秒</item>
+        <item>15秒</item>
+        <item>30秒</item>
+        <item>1分钟</item>
+        <item>5分钟</item>
+    </string-array>
+</resources>

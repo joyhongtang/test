@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <com.idwell.cloudframe.widget.AnalogClock
+        android:id="@+id/ac_clock6"
+        android:layout_width="@dimen/dp_600"
+        android:layout_height="@dimen/dp_600"
+        app:center_x="@dimen/dp_300"
+        app:center_y="@dimen/dp_300"
+        app:d_height="@dimen/dp_600"
+        app:d_width="@dimen/dp_600"
+        app:disc_height="@dimen/dp_30"
+        app:disc_width="@dimen/dp_30"
+        app:h_height="@dimen/dp_40"
+        app:h_width="@dimen/dp_150"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:m_dial_id="@drawable/ic_dial_clock5"
+        app:m_disc_id="@drawable/ic_disc_clock4"
+        app:m_height="@dimen/dp_30"
+        app:m_hour_id="@drawable/ic_hour_hand5"
+        app:m_minute_id="@drawable/ic_minute_hand5"
+        app:m_second_id="@drawable/ic_second_hand5"
+        app:m_width="@dimen/dp_180"
+        app:s_height="@dimen/dp_20"
+        app:s_width="@dimen/dp_220" />
+</androidx.constraintlayout.widget.ConstraintLayout>

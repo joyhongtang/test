@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CloudPhotoFrame</string>
+    <string name="on">Вкл.</string>
+    <string name="off">Выкл.</string>
+    <string name="back">Назад</string>
+    <string name="home">Главная</string>
+    <string name="vol_minus">Громче</string>
+    <string name="vol_plus">Тише</string>
+    <string name="power">Мощность</string>
+    <string name="out_of_memory">Недостаточно памяти, восстановите состояние очисткой памяти устройства</string>
+    <!--Welcome-->
+    <string name="prev">Пред.</string>
+    <string name="next">След.</string>
+    <string name="skip">Пропускать</string>
+    <string name="choose_a_network">Выберите сеть</string>
+    <string name="skip_wizard_title">Пропустить Мастер Установки</string>
+    <string name="skip_wizard_content">\t\tПосле пропуска Мастера Установки, фоторамка временно не поддерживает облачный обмен фотографиями.</string>
+    <string name="city">город</string>
+    <string name="time_zone">Часовой пояс</string>
+    <string name="city_name_cannot_be_empty">Название города не может быть пустым</string>
+    <string name="invalid_city_name">Неверное название города</string>
+    <string name="sleep_schedule_title">Расписание сна</string>
+    <string name="sleep_schedule_summary">Установите ежедневное расписание, чтобы ваше устройство могло спать и просыпаться</string>
+    <string name="device_bind">Привязка устройства</string>
+    <string name="complete">Завершение</string>
+    <string name="please_connect_to_the_network">Пожалуйста, подключитесь к сети</string>
+    <string name="device_information_not_obtained">Информация об устройстве не получена</string>
+    <!--Main-->
+    <string name="photo">Фото</string>
+    <string name="music">Музыка</string>
+    <string name="video">Видео</string>
+    <string name="calendar">Календарь</string>
+    <string name="clock">Часы</string>
+    <string name="alarm">Будильник</string>
+    <string name="weather">Погода</string>
+    <string name="files">Файлы</string>
+    <string name="settings">Настройки</string>
+    <!--Photo-->
+    <string name="cloud_photo">Облачные фото</string>
+    <string name="favorites">Любимые</string>
+    <string name="all">Все</string>
+    <string name="internal_storage">Внутренняя память</string>
+    <string name="sd_card">SD Card</string>
+    <string name="usb">USB</string>
+    <string name="usb_sd_card">USB / SD-карта</string>
+    <string name="digital_indicator">%1$d/%2$d</string>
+    <!--Music-->
+    <string name="unknown">Неизвестный</string>
+    <string name="no_music_files_found">Музыкальные файлы не найдены</string>
+    <string name="play_time_start">00:00</string>
+    <string name="mode_loop">Повтор плейлиста</string>
+    <string name="mode_shuffle">Вразнобой</string>
+    <string name="mode_one">Один цикл</string>
+    <string name="playback_failed">Плеер не поддерживает этот тип аудиофайлов.</string>
+    <!--Video-->
+    <string name="tips_not_wifi">В настоящее время вы используете мобильный интернет, плеер увеличит расход трафика.</string>
+    <string name="tips_not_wifi_confirm">Продолжить</string>
+    <string name="tips_not_wifi_cancel">Остановить</string>
+    <string name="no_url">Нет URL</string>
+    <string name="replay">Повторить</string>
+    <string name="click_to_restart">Нажмите, чтобы попробовать еще раз</string>
+    <string name="video_loading_faild">Не удалось загрузить видео</string>
+    <!--Weather-->
+    <string name="positioning_desc">Показать погоду после подключения к интерету и позиционирования</string>
+    <string name="refresh_success">Успешно обновлено</string>
+    <string name="temp_c">%1$.1f°C</string>
+    <string name="temp_f">%1$.1f°F</string>
+    <string name="humidity_current">Влажность %1$d&#037;&#037;</string>
+    <string name="wind_speed_current">Скорость ветра&#160;%1$.1f</string>
+    <string name="date_weather">%1$s, %2$s</string>
+    <string name="temp_c_range">%1$.1f ~ %2$.1f°C</string>
+    <string name="temp_f_range">%1$.1f ~ %2$.1f°F</string>
+    <string name="search_city">Поиск города</string>
+    <string name="no_cities_found">Город не найдены</string>
+    <string name="please_enter_the_city_name">Пожалуйста, введите название города</string>
+    <string name="geo_coords">Географические координаты [%1$s]</string>
+    <!--Clock-->
+    <string name="choose_clock_skin">Выберите вид циферблата часов</string>
+    <!--Alarm-->
+    <string name="edit">Настроить</string>
+    <string name="add">Добавить</string>
+    <string name="repeat">Повтор</string>
+    <string name="ringtone">Мелодия</string>
+    <string name="label">Имя будильника</string>
+    <string name="set_time">Установить время будильника</string>
+    <string name="cancel">Отмена</string>
+    <string name="ok">ОК</string>
+    <string name="once">Однократно</string>
+    <string name="monday_to_friday">с понедельника по пятницу</string>
+    <string name="everyday">Каждый день</string>
+    <string name="custom">Особый выбор</string>
+    <string name="right_slide_close_alarm_clock">Для отключения будильника проведите по экрану слева направо</string>
+    <!--Calendar-->
+    <string name="sun">ВС</string>
+    <string name="mon">ПН</string>
+    <string name="tue">ВТ</string>
+    <string name="wed">СР</string>
+    <string name="thu">ЧТ</string>
+    <string name="fri">ПТ</string>
+    <string name="sat">СБ</string>
+    <!--Files-->
+    <string name="file_path">Путь: %1$s</string>
+    <string name="file_size">Размер: %1$s</string>
+    <string name="file_date">Дата: %1$s</string>
+    <string name="file_desc">Описание: %1$s</string>
+    <string name="files_import">Загрузка</string>
+    <string name="import_files_to_memory">Загрузка файлов в память</string>
+    <string name="files_export">Выгрузка</string>
+    <string name="export_files_to_external_storage">Выгрузка файлов на внешнее хранилище</string>
+    <string name="import_success">Загрузка завершена</string>
+    <string name="import_failure">Ошибка загрузки</string>
+    <string name="export_success">Выгрузка завершена</string>
+    <string name="export_failure">Ошибка выгрузки</string>
+    <string name="please_select_a_storage_device_first">Пожалуйста, сначала выберите устройство памяти</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_file">Удалить файл?</string>
+    <string name="delete_the_selected_files">Удалить выбранный файл?</string>
+    <string name="delete_success">Удалено</string>
+    <string name="delete_failure">Ошибка удаления</string>
+    <string name="selected">Выбрано %1$d</string>
+    <string name="select_all">Выбрать все</string>
+    <string name="unselect_all">Снять все</string>
+    <!--Settings-->
+    <string name="device_info">Сведения о фоторамке</string>
+    <string name="user_management">Пользователи фоторамки</string>
+    <string name="pc_control">Подключение к компьютеру</string>
+    <string name="album_settings">Настройки воспроизведения</string>
+    <string name="system_settings">Системные настройки</string>
+    <string name="about">Основные сведения</string>
+    <!--Device Information-->
+    <string name="refreshing">Обновить</string>
+    <string name="refresh_desc">Пожалуйста, подключитесь к сети, нажмите "Обновить".</string>
+    <string name="display_device_info">Информация об устройстве отображается после подключения к сети</string>
+    <string name="frame_id_desc">ID фоторамки: %1$s</string>
+    <string name="frame_id">ID фоторамки</string>
+    <string name="users">Пользователи</string>
+    <string name="accept_new_users">Принять новых пользователей</string>
+    <string name="view_photos">Фотографии пользователя</string>
+    <string name="remark_name">Изменить имя</string>
+    <string name="delete_user">Удалить пользователя</string>
+    <string name="delete_user_photos">Удалить пользователя и его фотографии</string>
+    <string name="no_photos_found">Фотографии не найдены</string>
+    <string name="block">Блокировка</string>
+    <string name="blocked">Заблокировано</string>
+    <string name="unblock">Разблокировать</string>
+    <string name="after_blocking_files_that_the_user_uploads_can_not_be_received">После блокировки загружаемые пользователем файлы не могут быть получены.</string>
+    <string name="after_unblocking_you_can_receive_files_uploaded_by_the_user">После разблокировки Вы можете получать файлы, загруженные пользователем.</string>
+    <string name="after_deleting_the_user_can_not_upload_files_to_the_device">После удаления пользователь не сможет загружать файлы на эту фоторамку.</string>
+    <!--User Management-->
+    <string name="pending_user_requests">Ожидающие пользовательские запросы</string>
+    <string name="accept">Принять</string>
+    <string name="refuse">Отказать</string>
+    <!--PC control-->
+    <string name="wlan_name">W-iFi сеть: %1$s</string>
+    <string name="please_connect_an_available_wifi">Пожалуйста, подключитесь к доступной Wi-Fi сети</string>
+    <string name="start_service_to_enable_ftp_server">Подключитесь к FTP серверу</string>
+    <string name="enter_the_following_address_into_your_ftp_client">Войдите по следующему адресу для подключения FTP-клиента:</string>
+    <string name="start">Старт</string>
+    <string name="stop">Стоп</string>
+
+    <!-- HTTP proxy settings title -->
+    <string name="proxy_settings_title">"Прокси-сервер"</string>
+    <string name="proxy_clear_text">"Очистить"</string>
+    <string name="proxy_port_label">"Порт прокси-сервера"</string>
+    <string name="proxy_exclusionlist_label">"Не использовать прокси-сервер для:"</string>
+    <string name="proxy_exclusionlist_hint">"example.com,mycomp.test.com,localhost"</string>
+    <string name="proxy_defaultView_text">"Восстановить настройки по умолчанию"</string>
+    <string name="proxy_action_text">"Готово"</string>
+    <string name="proxy_hostname_label">"Имя хоста прокси-сервера"</string>
+    <string name="proxy_hostname_hint">"proxy.example.com"</string>
+    <string name="proxy_error">"Внимание!"</string>
+    <string name="proxy_error_dismiss">"ОК"</string>
+    <string name="proxy_error_invalid_host">"Введено недействительное имя хоста."</string>
+    <string name="proxy_error_invalid_exclusion_list">"Список исключений отформатирован неверно. Перечислите исключаемые домены через запятую."</string>
+    <string name="proxy_error_empty_port">"Укажите порт."</string>
+    <string name="proxy_error_empty_host_set_port">"Если поле хоста не заполнено, поле порта также следует оставить пустым."</string>
+    <string name="proxy_error_invalid_port">"Указанный порт недействителен."</string>
+    <string name="proxy_warning_limited_support">"Прокси-сервер HTTP используется браузером, но недоступен для других приложений."</string>
+
+    <!-- Wi-Fi Settings --> <skip />
+    <!-- Used in the 1st-level settings screen to turn on Wi-Fi -->
+    <string name="wifi_quick_toggle_title">"Wi-Fi"</string>
+    <string name="wifi_quick_toggle_summary">"Включить Wi‑Fi"</string>
+    <string name="wifi_settings">"Wi-Fi"</string>
+    <string name="wifi_settings_category">"Настройки Wi-Fi"</string>
+    <string name="wifi_settings_title">"Wi-Fi"</string>
+    <string name="wifi_settings_summary">"Настройка и управление точками доступа беспроводной сети"</string>
+    <string name="wifi_setup_wizard_title">"Выбор сети Wi-Fi"</string>
+    <string name="wifi_starting">"Включение Wi-Fi…"</string>
+    <string name="wifi_stopping">"Отключение Wi-Fi…"</string>
+    <string name="wifi_error">"Ошибка"</string>
+    <string name="wifi_in_airplane_mode">"Режим полета"</string>
+    <string name="wifi_fail_to_scan">"Не удалось начать поиск сетей."</string>
+    <string name="wifi_notify_open_networks">"Уведомления о сетях"</string>
+    <string name="wifi_notify_open_networks_summary">"Сообщать при обнаружении открытой сети"</string>
+    <string name="wifi_poor_network_detection">"Фильтр сетей Wi-Fi"</string>
+    <string name="wifi_poor_network_detection_summary">"Не использовать сети Wi-Fi с плохим интернет-соединением"</string>
+    <string name="wifi_scan_always_available">"Всегда искать сети"</string>
+    <string name="wifi_scan_always_available_summary">"Разрешить службе геопозиционирования и другим приложениям Google искать сети, даже если модуль Wi-Fi выключен"</string>
+    <string name="wifi_install_credentials">"Установка сертификатов"</string>
+    <string name="wifi_scan_notify_text_location_on">"Чтобы улучшить определение местоположения, а также для достижения других целей, Google и другие приложения могут выполнять поиск сетей поблизости, даже если сеть Wi-Fi отключена. Чтобы изменить эти настройки, перейдите в меню \"Дополнительно &gt; Всегда искать сети\"."</string>
+    <string name="wifi_scan_notify_text_location_off">"Приложения могут выполнять поиск сетей поблизости, даже если сеть Wi-Fi отключена. Чтобы изменить эти настройки, перейдите в меню \"Дополнительно &gt; Всегда искать сети\"."</string>
+    <string name="wifi_scan_notify_remember_choice">"Больше не показывать"</string>
+    <string name="wifi_setting_sleep_policy_title">"Wi-Fi в спящем режиме"</string>
+    <string name="wifi_setting_sleep_policy_error">"Не удалось изменить этот параметр"</string>
+    <string name="wifi_suspend_optimizations">"Оптимизация Wi-Fi"</string>
+    <string name="wifi_suspend_optimizations_summary">"Экономить заряд батареи, когда используется Wi-Fi"</string>
+    <string name="wifi_add_network">"Добавить сеть"</string>
+    <string name="wifi_access_points">"Сети Wi-Fi"</string>
+    <string name="wifi_menu_wps_pbc">"Кнопка WPS"</string>
+    <string name="wifi_menu_more_options">"Ещё"</string>
+    <string name="wifi_menu_wps_pin">"Вход по PIN-коду WPS"</string>
+    <string name="wifi_menu_p2p">"Wi-Fi Direct"</string>
+    <string name="wifi_menu_scan">"Поиск"</string>
+    <string name="wifi_menu_advanced">"Дополнительные функции"</string>
+    <string name="wifi_menu_connect">"Подключиться к сети"</string>
+    <string name="wifi_menu_forget">"Удалить эту сеть"</string>
+    <string name="wifi_menu_modify">"Изменить сеть"</string>
+    <string name="wifi_empty_list_wifi_off">"Чтобы посмотреть доступные сети, включите Wi-Fi."</string>
+    <string name="wifi_empty_list_wifi_on">"Поиск сетей Wi-Fi…"</string>
+    <string name="wifi_empty_list_user_restricted">"У вас недостаточно прав для изменения настроек сети Wi‑Fi"</string>
+    <string name="wifi_other_network">"Другая сеть…"</string>
+    <string name="wifi_more">"Ещё"</string>
+    <string name="wifi_setup_wps">"Автонастройка (WPS)"</string>
+    <string name="wifi_required_info_text">"Для завершения настройки необходимо подключение к сети Wi-Fi."</string>
+
+    <!-- Dialog for Access Points --> <skip />
+    <!-- Label to show/hide advanced options -->
+    <string name="wifi_show_advanced">"Дополнительно"</string>
+    <string name="wifi_wps_setup_title">"Безопасная настройка Wi-Fi"</string>
+    <string name="wifi_wps_setup_msg">"Запуск WPS…"</string>
+    <string name="wifi_wps_onstart_pbc">"Нажмите кнопку \"Безопасная настройка Wi-Fi\" на маршрутизаторе. Она может называться WPS или быть обозначена следующим символом:"</string>
+    <string name="wifi_wps_onstart_pin">"Введите PIN-код %1$s на маршрутизаторе Wi-Fi. Для завершения настройки потребуется не более двух минут."</string>
+    <string name="wifi_wps_complete">"Ошибок нет. Подключение к сети…"</string>
+    <string name="wifi_wps_connected">"Установлено подключение к сети Wi-Fi %s"</string>
+    <string name="wifi_wps_in_progress">"Выполняется настройка WPS. Для завершения потребуется не более двух минут."</string>
+    <string name="wifi_wps_failed_generic">"Ошибка. Повторите попытку через несколько минут."</string>
+    <string name="wifi_wps_failed_wep">"Безопасная настройка беспроводного маршрутизатора (WEP) не поддерживается"</string>
+    <string name="wifi_wps_failed_tkip">"Безопасная настройка беспроводного маршрутизатора (TKIP) не поддерживаются"</string>
+    <string name="wifi_wps_failed_auth">"Ошибка аутентификации. Повторите попытку."</string>
+    <string name="wifi_wps_failed_overlap">"Обнаружен другой сеанс WPS. Повторите попытку через несколько минут."</string>
+    <string name="wifi_ssid">"Имя сети (SSID)"</string>
+    <string name="wifi_ssid_hint">"Введите имя сети SSID"</string>
+    <string name="wifi_security">"Защита"</string>
+    <string name="wifi_signal">"Уровень сигнала"</string>
+    <string name="wifi_status">"Статус"</string>
+    <string name="wifi_speed">"Скорость связи"</string>
+    <string name="wifi_ip_address">"IP-адрес"</string>
+    <string name="wifi_eap_method">"Метод EAP"</string>
+    <string name="please_select_phase2">"2-й этап аутентификации"</string>
+    <string name="wifi_eap_ca_cert">"Сертификат центра сертификации"</string>
+    <string name="wifi_eap_user_cert">"Сертификат пользователя"</string>
+    <string name="wifi_eap_identity">"Пользователь"</string>
+    <string name="wifi_eap_anonymous">"Неизвестный"</string>
+    <string name="wifi_password">"Пароль"</string>
+    <string name="wifi_show_password">"Показать пароль"</string>
+    <string name="wifi_ip_settings">"Настройки IP"</string>
+    <string name="wifi_unchanged">"(без изменений)"</string>
+    <string name="wifi_unspecified">"(не указано)"</string>
+    <string name="wifi_remembered">"Сохранено"</string>
+    <string name="wifi_disabled_generic">"Отключено"</string>
+    <string name="wifi_disabled_network_failure">"Включено"</string>
+    <string name="wifi_disabled_password_failure">"Ошибка аутентификации"</string>
+    <string name="wifi_not_in_range">"Недоступна"</string>
+    <string name="wifi_wps_available_first_item">"Поддерживает WPS"</string>
+    <string name="wifi_wps_available_second_item">" (доступно WPS)"</string>
+    <string name="wifi_secured_first_item">"Защита %1$s"</string>
+    <string name="wifi_secured_second_item">", защита %1$s"</string>
+
+    <!-- Used in Wi-Fi settings dialogs when Wi-Fi does not have any security. -->
+    <string name="wifi_security_none">"Нет"</string>
+
+    <string name="wifi_scan_always_turnon_message">"Чтобы определение местоположения и некоторые другие функции работали лучше, приложению \"%1$s\" необходимо выполнять поиск сетей, даже если модуль Wi-Fi отключен.\n\nРазрешить?"</string>
+    <string name="wifi_scan_always_confirm_allow">"Разрешить"</string>
+    <string name="wifi_scan_always_confirm_deny">"Отклонить"</string>
+
+    <!-- Button label to connect to a Wi-Fi network -->
+    <string name="wifi_connect">"Подключить"</string>
+    <string name="wifi_failed_connect_message">"Не удалось подключиться к сети."</string>
+    <string name="wifi_forget">"Удалить"</string>
+    <string name="wifi_failed_forget_message">"Не удалось удалить сеть."</string>
+    <string name="wifi_save">"Сохранить"</string>
+    <string name="wifi_failed_save_message">"Не удалось сохранить сеть."</string>
+    <string name="wifi_cancel">"Отмена"</string>
+    <string name="wifi_skip_anyway">"ОК"</string>
+    <string name="wifi_dont_skip">"Отмена"</string>
+
+    <!-- Text warning about skipping Wi-Fi with a mobile connect (tablet) [CHAR LIMIT=NONE]-->
+    <string name="wifi_skipped_message">"ВНИМАНИЕ! Возможны дополнительные расходы на услуги оператора связи.\n\nНастройка устройства может потребовать передачи большого объема данных по сети."</string>
+    <string name="wifi_and_mobile_skipped_message">"ВНИМАНИЕ! Без подключения к Интернету невозможно проверить наличие обновлений для ПО."</string>
+    <string name="wifi_connect_failed_message">"Не удалось подключиться к сети Wi-Fi."</string>
+
+    <!-- Wi-Fi Advanced Settings --> <skip />
+    <!-- Wi-Fi settings screen, advanced, settings section.  This is a header shown above advanced wifi settings. -->
+    <string name="wifi_advanced_titlebar">"Дополнительные функции"</string>
+    <string name="wifi_setting_frequency_band_title">"Полоса частот Wi-Fi"</string>
+    <string name="wifi_setting_frequency_band_summary">"Укажите рабочий диапазон частот"</string>
+    <string name="wifi_setting_frequency_band_error">"При настройке полосы частот возникла неполадка."</string>
+    <string name="wifi_advanced_mac_address_title">"MAC-адрес"</string>
+    <string name="wifi_advanced_ip_address_title">"IP-адрес"</string>
+
+    <!-- Wifi Advanced settings.  Used as a label under the shortcut icon that goes to Wifi advanced settings. [CHAR LIMIT=20]-->
+    <string name="wifi_advanced_settings_label">"Настройки IP"</string>
+    <string name="wifi_ip_settings_menu_save">"Сохранить"</string>
+    <string name="wifi_ip_settings_menu_cancel">"Отмена"</string>
+    <string name="wifi_ip_settings_invalid_ip_address">"Введите действительный IP-адрес."</string>
+    <string name="wifi_ip_settings_invalid_gateway">"Введите действительный адрес шлюза."</string>
+    <string name="wifi_ip_settings_invalid_dns">"Введите действительный DNS-адрес."</string>
+    <string name="wifi_ip_settings_invalid_network_prefix_length">"Укажите длину префикса сети (от 0 до 32)."</string>
+    <string name="wifi_dns1">"DNS 1"</string>
+    <string name="wifi_dns2">"DNS 2"</string>
+    <string name="wifi_gateway">"Шлюз"</string>
+    <string name="wifi_network_prefix_length">"Длина префикса сети"</string>
+
+    <!--  Help URLs for some screens. Not specified here. Specified in product overlays --><skip/>
+    <!-- Help menu label [CHAR LIMIT=20] -->
+    <string name="help_label">"Справка"</string>
+
+    <!--Album settings-->
+    <string name="full_screen">Полноэкранный</string>
+    <string name="the_photo_will_be_displayed_in_full_screen">Фотография будет отображаться во весь экран</string>
+    <string name="slideshow">Слайд-шоу</string>
+    <string name="background_music">Фоновая музыка</string>
+    <string name="slideshow_mode">Режим слайд-шоу</string>
+    <string name="random">случайный</string>
+    <string name="sequential">последовательный</string>
+    <string name="slideshow_transition_effect">Эффект перехода слайд-шоу</string>
+    <string name="Default">По умолчанию</string>
+    <string name="alpha">Альфа</string>
+    <string name="rotate">Поворот</string>
+    <string name="cube">куб</string>
+    <string name="flip">кувырок</string>
+    <string name="accordion">аккордеон</string>
+    <string name="zoom_fade">зум исчезает</string>
+    <string name="fade">увядать</string>
+    <string name="zoom_center">зум центр</string>
+    <string name="zoom_stack">стек масштабирования</string>
+    <string name="stack">стек</string>
+    <string name="depth">глубина</string>
+    <string name="zoom">Увеличить</string>
+    <string name="slideshow_interval">Интервал слайд-шоу</string>
+    <string name="seconds">%1$d секунд</string>
+    <string name="minute">%1$d минут</string>
+    <string name="minutes">%1$d минут</string>
+    <string name="delete_photos">Удалить фотографии</string>
+    <string name="delete_photos_desc">Удалить фотографии из внутреннего хранилища, в том числе облачные фотографии</string>
+    <string name="restore_default_settings">Восстановить настройки по умолчанию</string>
+    <!--System settings-->
+    <string name="system">система</string>
+    <string name="sound">звук</string>
+    <string name="display">дисплей</string>
+    <string name="suspended_ball_title">Подвесной мяч</string>
+    <string name="suspended_ball_desc">Клавиша быстрой навигации</string>
+    <string name="date_and_time">Дата и время</string>
+    <string name="language">язык</string>
+    <string name="master_clear_title">Сброс данных</string>
+    <string name="master_clear_desc">"Это удалит все данные из\u2019s <b> внутреннего хранилища </b> вашего устройства, включая:\n\n<li> данные и настройки системы и приложения </li>\n<li> Музыка </li>\n<li> Фотографии </li>\n<li> Другие данные пользователя </li>"</string>
+    <string name="master_clear_button_text">Сброс устройства</string>
+    <string name="master_clear_confirm_title">Сброс?</string>
+    <string name="delete_all_users_and_restore_the_device_to_inactive">Удалить всех пользователей и восстановить устройство до неактивного</string>
+    <string name="media_volume">Медиа Том</string>
+    <string name="notification_volume">Объем уведомлений</string>
+    <string name="touch_sounds">Звуки касания</string>
+    <string name="brightness">яркость</string>
+    <string name="automatic_date_time">Автоматическая дата</string>
+    <string name="use_network_provided_time">Используйте сетевое время</string>
+    <string name="set_date">Установить дату</string>
+    <string name="select_time_zone">Выберите часовой пояс</string>
+    <string name="use_24_hour_format">Используйте 24-часовой формат</string>
+    <string name="choose_date_format">Выберите формат даты</string>
+    <string name="auto_on_off">Авто вкл. И выкл.</string>
+    <string name="auto_power_on_off">Авто вкл / выкл</string>
+    <string name="power_off">Выключение</string>
+    <string name="auto_off_time">Время автоотключения</string>
+    <string name="auto_on_time">Время авто-включения</string>
+    <string name="shutdown_confirm">Ваш планшет выключится</string>
+    <string name="motion_sensor">Датчик движения</string>
+    <string name="sleep">Спать</string>
+    <string name="accelerometer_title">Авто-поворот экрана</string>
+    <!--About-->
+    <string name="version">Версия</string>
+    <string name="check_for_updates">Проверьте наличие обновлений</string>
+    <string name="its_the_latest_version">Это последняя версия</string>
+    <string name="find_new_version">Найти новую версию</string>
+    <string name="download">Скачать</string>
+    <string name="install_new_version">Установить новую версию</string>
+    <string name="install">устанавливать</string>
+    <string name="status_wifi_mac_address">WiFi MAC-адрес</string>
+    <string name="model">модель</string>
+    <string name="build_number">Номер сборки</string>
+    <string name="serial_number">Серийный номер</string>
+    <string name="data_flow">Поток данных</string>
+    <string name="top_up">Пополнить</string>
+    <string name="total">Всего %1$s</string>
+    <string name="available">Имеется в наличии %1$s</string>
+    <string name="data_top_up">Пополнение данных</string>
+    <string name="top_up_link">Ссылка на пополнение: %1$s</string>
+    <string name="feedback_settings_title">Обратная связь</string>
+    <string name="feedback_settings_summary">Поделитесь журналом приложения, чтобы помочь нам определить проблему</string>
+    <string name="feedback_settings_dialog_title">Поделиться журналом приложения?</string>
+    <string name="no_log_files">Нет файлов журнала</string>
+    <string name="uploading">Загрузка</string>
+    <string name="log_upload_successfully">Журнал загружен успешно</string>
+    <string name="log_upload_failed">Ошибка загрузки журнала</string>
+    <!--External storage-->
+    <string name="storage_card_is_inserted">Карта памяти вставлена.</string>
+    <string name="storage_card_has_been_taken_out">Карта памяти удалена.</string>
+    <string name="usb_flash_disk_is_inserted">USB-флешка вставлена.</string>
+    <string name="usb_flash_disk_has_been_taken_out">USB флешка была вынута.</string>
+    <!--Message-->
+    <string name="message_recharged">Перезаряжаемый %1$s</string>
+    <string name="message_photo">1 фото</string>
+    <string name="message_photos">%1$d фото</string>
+    <string name="message_video">1 видео</string>
+    <string name="message_bind">%1$s просит связать ваше устройство.</string>
+    <string name="message_unbind">%1$s отменил привязку вашего устройства.</string>
+    <!--Network exception-->
+    <string name="unconnected_network">Несвязанная сеть</string>
+    <string name="network_unavailable">Текущая сеть недоступна</string>
+    <string name="network_connection_timeout">Тайм-аут подключения к сети</string>
+    <!--Device controller error-->
+    <string name="e101">Невозможно найти устройство</string>
+    <string name="e102">Не удалось обновить устройство, повторите попытку позже</string>
+    <string name="e103">Невозможно найти связь между пользователем и устройством</string>
+    <string name="e104">Не удалось обновить статус пользователя, повторите попытку позже</string>
+    <string name="e105">Пользователь был удален</string>
+    <string name="e106">неизвестный</string>
+    <string name="e107">Не удалось обновить связь между устройством и пользователем. Повторите попытку позже.</string>
+    <string name="e108">Устройство уже было связано</string>
+    <string name="e109">Невозможно найти пользователя</string>
+    <string name="e110">Не удалось обновить имя устройства, повторите попытку позже</string>
+    <string name="e111">Не удалось обновить состояние устройства. Повторите попытку позже.</string>
+    <string name="e112">Невозможно найти заказ</string>
+    <string name="e113">результаты не найдены</string>
+    <string name="e114">Запрос отклонен</string>
+    <string name="e115">Неверный запрос</string>
+    <string name="e116">неизвестный</string>
+    <string name="e117">Количество связанных пользователей превышает лимит</string>
+    <string name="e118">Это последняя версия</string>
+    <string name="e119">Ошибка серийного номера</string>
+    <string name="e120">Устройство активировано</string>
+    <string name="e121">Устройство не существует</string>
+    <string name="e122">Недостаточный баланс</string>
+    <string name="e123">Недостаточный поток данных</string>
+    <string name="e124">Пользователь заблокирован</string>
+    <string name="e125">Устройство отказывается связывать новых пользователей</string>
+    <string name="e126">Устройство связано и не может быть связано снова</string>
+    <string name="e127">Ошибка типа привязки</string>
+    <string name="e128">Ошибка названия компании</string>
+    <string name="e129">Не удалось выполнить привязку</string>
+    <string name="e130">Принять ошибку типа привязки</string>
+    <string name="e131">Устройство активировано и не может быть повторно активировано</string>
+    <string name="e132">Устройство не активировано</string>
+    <string name="e133">Устройство активировано и не может быть повторно активировано</string>
+    <string name="e134">Имя устройства уже существует</string>
+    <string name="e135">Устройство активировано и не может быть повторно активировано</string>
+    <!--Upload controller error-->
+    <string name="e313">Ошибка формата свойства идентификатора пользователя</string>
+    <string name="e318">Не удалось сохранить URL файла в базе данных, повторите попытку позже</string>
+    <string name="e327">Изменение привязанного пользователем устройства</string>
+    <!--User controller error-->
+    <string name="e404">Не удалось обновить профиль пользователя, повторите попытку позже</string>
+    <string name="e405">Неверное имя пользователя или пароль</string>
+    <string name="e406">Невозможно найти приложение</string>
+    <string name="e407">Невозможно зарегистрировать пользователя электронной почты</string>
+    <string name="e408">Тайм-аут кода подтверждения</string>
+    <string name="e409">Ошибка кода подтверждения</string>
+    <string name="e410">Такое имя пользователя уже существует</string>
+    <string name="e411">Адрес электронной почты пользователя уже существует</string>
+    <string name="e412">Адрес электронной почты пользователя не существует</string>
+    <string name="e413">Обновление базы данных не удалось</string>
+    <string name="e414">Неправильный пароль</string>
+    <string name="e415">Такое имя пользователя уже существует</string>
+    <string name="e416">Не удалось отправить электронное письмо</string>
+    <string name="e417">Пользовательский push-токен или ошибка платформы</string>
+    <string name="e418">Пользователь был офлайн</string>
+    <!--Service error-->
+    <string name="e901">Файл не существует</string>
+    <string name="e902">Файл уже существует</string>
+    <string name="error_code">код ошибки: %1$d</string>
+</resources>

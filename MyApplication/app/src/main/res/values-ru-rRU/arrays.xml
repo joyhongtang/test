@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Weather-->
+    <string-array name="weeks">
+        <item>Воскресенье</item>
+        <item>Понедельник</item>
+        <item>Вторник</item>
+        <item>Среда</item>
+        <item>Четверг</item>
+        <item>Пятница</item>
+        <item>Суббота</item>
+    </string-array>
+    <!--Alarm-->
+    <string-array name="repeats">
+        <item>Однократно</item>
+        <item>С понедельника по пятницу</item>
+        <item>Ежедневно</item>
+        <item>Особый выбор</item>
+    </string-array>
+    <string-array name="weeks_abbr">
+        <item>ВС</item>
+        <item>ПН</item>
+        <item>ВТ</item>
+        <item>СР</item>
+        <item>ЧТ</item>
+        <item>ПТ</item>
+        <item>СБ</item>
+    </string-array>
+    <!--Calendar-->
+    <string-array name="months">
+        <item>Январь</item>
+        <item>Февраль</item>
+        <item>Март</item>
+        <item>Апрель</item>
+        <item>Май</item>
+        <item>Июнь</item>
+        <item>Июль</item>
+        <item>Август</item>
+        <item>Сентябрь</item>
+        <item>Октябрь</item>
+        <item>Ноябрь</item>
+        <item>Декабрь</item>
+    </string-array>
+    <string-array name="week_string_array">
+        <item>ВС</item>
+        <item>ПН</item>
+        <item>ВТ</item>
+        <item>СР</item>
+        <item>ЧТ</item>
+        <item>ПТ</item>
+        <item>СБ</item>
+    </string-array>
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>Слабый</item>
+        <item>Нормальный</item>
+        <item>Хороший</item>
+        <item>Отличный</item>
+    </string-array>
+    <!--Album Settings-->
+    <string-array name="slideshow_mode">
+        <item>По порядку</item>
+        <item>Вразнобой</item>
+    </string-array>
+    <string-array name="slideshow_animation">
+        <item>Выключен</item>
+        <item>Альфа</item>
+        <item>Поворот</item>
+        <item>Куб</item>
+        <item>Реверс</item>
+        <item>Аккордеон</item>
+        <item>Стирание в центр</item>
+        <item>Стирание</item>
+        <item>Из центра</item>
+        <item>Взлет</item>
+        <item>Слайд</item>
+        <item>Сдвиг</item>
+        <item>Вразнобой</item>
+    </string-array>
+    <string-array name="slideshow_interval">
+        <item>5 секунд</item>
+        <item>10 секунд</item>
+        <item>15 секунд</item>
+        <item>30 секунд</item>
+        <item>1 минута</item>
+        <item>5 минут</item>
+    </string-array>
+</resources>

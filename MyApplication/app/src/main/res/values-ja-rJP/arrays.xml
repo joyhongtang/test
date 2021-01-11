@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Weather-->
+    <string-array name="weeks">
+        <item>日曜日</item>
+        <item>月曜日</item>
+        <item>火曜日</item>
+        <item>水曜日</item>
+        <item>木曜日</item>
+        <item>金曜日</item>
+        <item>土曜日</item>
+    </string-array>
+    <!--Alarm-->
+    <string-array name="repeats">
+        <item>一回だけ</item>
+        <item>月～金曜日</item>
+        <item>毎日</item>
+        <item>偶に</item>
+    </string-array>
+    <string-array name="weeks_abbr">
+        <item>日</item>
+        <item>月</item>
+        <item>火</item>
+        <item>水</item>
+        <item>木</item>
+        <item>金</item>
+        <item>土</item>
+    </string-array>
+    <!--Calendar-->
+    <string-array name="months">
+        <item>一月</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>十一月</item>
+        <item>十二月</item>
+    </string-array>
+    <string-array name="week_string_array">
+        <item>日</item>
+        <item>月</item>
+        <item>火</item>
+        <item>水</item>
+        <item>木</item>
+        <item>金</item>
+        <item>土</item>
+    </string-array>
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>悪い</item>
+        <item>普通</item>
+        <item>良い</item>
+        <item>非常に良い</item>
+    </string-array>
+    <!--Album Settings-->
+    <string-array name="slideshow_mode">
+        <item>順次</item>
+        <item>ランダム</item>
+    </string-array>
+    <string-array name="slideshow_animation">
+        <item>デフォルト</item>
+        <item>アルファ</item>
+        <item>回転</item>
+        <item>キューブ</item>
+        <item>反転</item>
+        <item>アコーディオン</item>
+        <item>ズームフェード</item>
+        <item>フェード</item>
+        <item>ズームセンター</item>
+        <item>ズームスタック</item>
+        <item>深い</item>
+        <item>ズーム</item>
+        <item>ランダム</item>
+    </string-array>
+    <string-array name="slideshow_interval">
+        <item>5 秒</item>
+        <item>10 秒</item>
+        <item>15 秒</item>
+        <item>30 秒</item>
+        <item>1 分</item>
+        <item>5 分</item>
+    </string-array>
+</resources>

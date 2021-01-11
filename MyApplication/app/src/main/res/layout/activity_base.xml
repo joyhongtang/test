@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_base"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_navigation_base"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80"
+        android:background="@color/main"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back_base"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_80"
+            android:contentDescription="@null"
+            android:padding="@dimen/dp_14"
+            android:src="@drawable/ic_back_selector"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.04"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"
+            android:textSize="@dimen/sp_32"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_back_base"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_title_base"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:contentDescription="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_back_base"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_more_base"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_more_base"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_icon_selector"
+                android:contentDescription="@null"
+                android:padding="@dimen/dp_20"
+                android:src="@drawable/ic_more"
+                android:visibility="invisible"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_total_base"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/text"
+                android:textSize="@dimen/sp_32"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_more_base"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_check_base"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_icon_selector"
+                android:contentDescription="@null"
+                android:padding="@dimen/dp_20"
+                android:src="@drawable/ic_unchecked"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@id/tv_total_base" />
+
+            <ImageView
+                android:id="@+id/iv_delete_base"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_icon_selector"
+                android:contentDescription="@null"
+                android:padding="@dimen/dp_20"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@id/iv_check_base" />
+
+            <ImageView
+                android:id="@+id/iv_copy_base"
+                android:layout_width="@dimen/dp_80"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_icon_selector"
+                android:contentDescription="@null"
+                android:padding="@dimen/dp_20"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@id/iv_delete_base" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_content_base"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/bg_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_navigation_base" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

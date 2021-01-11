@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="banner_indicatorId" type="id" />
+
+    <item name="iv_icon" type="id" />
+
+    <item name="jz_fullscreen_id" type="id" />
+    <item name="jz_tiny_id" type="id" />
+
+    <item name="info" type="id" />
+    <item name="type" type="id" />
+    <item name="ssid" type="id" />
+    <item name="security" type="id" />
+    <item name="security_fields" type="id" />
+    <item name="eap" type="id" />
+    <item name="l_method" type="id" />
+    <item name="method" type="id" />
+    <item name="l_phase2" type="id" />
+    <item name="phase2" type="id" />
+    <item name="l_ca_cert" type="id" />
+    <item name="ca_cert" type="id" />
+    <item name="l_user_cert" type="id" />
+    <item name="user_cert" type="id" />
+    <item name="l_identity" type="id" />
+    <item name="identity" type="id" />
+    <item name="l_anonymous" type="id" />
+    <item name="anonymous" type="id" />
+    <item name="password_layout" type="id" />
+    <item name="password" type="id" />
+    <item name="show_password_layout" type="id" />
+    <item name="show_password" type="id" />
+    <item name="wifi_advanced_toggle" type="id" />
+    <item name="wifi_advanced_togglebox" type="id" />
+    <item name="wifi_advanced_fields" type="id" />
+    <item name="proxy_settings_fields" type="id" />
+    <item name="proxy_settings_title" type="id" />
+    <item name="proxy_settings" type="id" />
+    <item name="proxy_pac_info" type="id" />
+    <item name="proxy_warning_limited_support" type="id" />
+    <item name="proxy_fields" type="id" />
+    <item name="proxy_hostname" type="id" />
+    <item name="proxy_port" type="id" />
+    <item name="proxy_exclusionlist" type="id" />
+    <item name="ip_fields" type="id" />
+    <item name="ip_settings" type="id" />
+    <item name="staticip" type="id" />
+    <item name="ipaddress" type="id" />
+    <item name="gateway" type="id" />
+    <item name="network_prefix_length" type="id" />
+    <item name="dns1" type="id" />
+    <item name="dns2" type="id" />
+    <item name="name" type="id" />
+    <item name="value" type="id" />
+    <item name="signal" type="id" />
+
+    <!--<item type="id" name="info">false</item>-->
+    <!--<item type="id" name="type">false</item>-->
+    <!--<item type="id" name="ssid">false</item>-->
+    <!--<item type="id" name="security">false</item>-->
+    <!--<item type="id" name="security_fields">false</item>-->
+    <!--<item type="id" name="eap">false</item>-->
+    <!--<item type="id" name="l_method">false</item>-->
+    <!--<item type="id" name="method">false</item>-->
+    <!--<item type="id" name="l_phase2">false</item>-->
+    <!--<item type="id" name="phase2">false</item>-->
+    <!--<item type="id" name="l_ca_cert">false</item>-->
+    <!--<item type="id" name="ca_cert">false</item>-->
+    <!--<item type="id" name="l_user_cert">false</item>-->
+    <!--<item type="id" name="user_cert">false</item>-->
+    <!--<item type="id" name="l_identity">false</item>-->
+    <!--<item type="id" name="identity">false</item>-->
+    <!--<item type="id" name="l_anonymous">false</item>-->
+    <!--<item type="id" name="anonymous">false</item>-->
+    <!--<item type="id" name="password_layout">false</item>-->
+    <!--<item type="id" name="password">false</item>-->
+    <!--<item type="id" name="show_password_layout">false</item>-->
+    <!--<item type="id" name="show_password">false</item>-->
+    <!--<item type="id" name="wifi_advanced_toggle">false</item>-->
+    <!--<item type="id" name="wifi_advanced_togglebox">false</item>-->
+    <!--<item type="id" name="wifi_advanced_fields">false</item>-->
+    <!--<item type="id" name="proxy_settings_fields">false</item>-->
+    <!--<item type="id" name="proxy_settings_title">false</item>-->
+    <!--<item type="id" name="proxy_settings">false</item>-->
+    <!--<item type="id" name="proxy_pac_info">false</item>-->
+    <!--<item type="id" name="proxy_warning_limited_support">false</item>-->
+    <!--<item type="id" name="proxy_fields">false</item>-->
+    <!--<item type="id" name="proxy_hostname">false</item>-->
+    <!--<item type="id" name="proxy_port">false</item>-->
+    <!--<item type="id" name="proxy_exclusionlist">false</item>-->
+    <!--<item type="id" name="ip_fields">false</item>-->
+    <!--<item type="id" name="ip_settings">false</item>-->
+    <!--<item type="id" name="staticip">false</item>-->
+    <!--<item type="id" name="ipaddress">false</item>-->
+    <!--<item type="id" name="gateway">false</item>-->
+    <!--<item type="id" name="network_prefix_length">false</item>-->
+    <!--<item type="id" name="dns1">false</item>-->
+    <!--<item type="id" name="dns2">false</item>-->
+    <!--<item type="id" name="username">false</item>-->
+    <!--<item type="id" name="value">false</item>-->
+    <!--<item type="id" name="signal">false</item>-->
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Weather-->
+    <string-array name="weeks">
+        <item>domingo</item>
+        <item>lunes</item>
+        <item>martes</item>
+        <item>miércoles</item>
+        <item>jueves</item>
+        <item>viernes</item>
+        <item>sábado</item>
+    </string-array>
+    <!--Alarm-->
+    <string-array name="repeats">
+        <item>Una vez</item>
+        <item>de lunes a viernes</item>
+        <item>Cada día</item>
+        <item>Personalizado</item>
+    </string-array>
+    <string-array name="weeks_abbr">
+        <item>Dom</item>
+        <item>Lun</item>
+        <item>Mar</item>
+        <item>Mie</item>
+        <item>Jue</item>
+        <item>Vie</item>
+        <item>Sab</item>
+    </string-array>
+    <!--Calendar-->
+    <string-array name="months">
+        <item>enero</item>
+        <item>febrero</item>
+        <item>marzo</item>
+        <item>abril</item>
+        <item>Mayo</item>
+        <item>junio</item>
+        <item>julio</item>
+        <item>agosto</item>
+        <item>septiembre</item>
+        <item>octubre</item>
+        <item>noviembre</item>
+        <item>diciembre</item>
+    </string-array>
+    <string-array name="week_string_array">
+        <item>Dom</item>
+        <item>Lun</item>
+        <item>Mar</item>
+        <item>Mie</item>
+        <item>Jue</item>
+        <item>Vie</item>
+        <item>Sab</item>
+    </string-array>
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>Pobre</item>
+        <item>Justa</item>
+        <item>Bueno</item>
+        <item>Excelente</item>
+    </string-array>
+    <!--Album Settings-->
+    <string-array name="slideshow_mode">
+        <item>Secuencial</item>
+        <item>Aleatorio</item>
+    </string-array>
+    <string-array name="slideshow_animation">
+        <item>Defecto</item>
+        <item>Alfa</item>
+        <item>Girar</item>
+        <item>Cubo</item>
+        <item>Dar la vuelta</item>
+        <item>Acordeón</item>
+        <item>Zoom Fade</item>
+        <item>Descolorarse</item>
+        <item>Zoom Center</item>
+        <item>Pila de Zoom</item>
+        <item>Profundidad</item>
+        <item>Enfocar</item>
+        <item>Aleatorio</item>
+    </string-array>
+    <string-array name="slideshow_interval">
+        <item>5 segundos</item>
+        <item>10 segundos</item>
+        <item>15 segundos</item>
+        <item>30 segundos</item>
+        <item>1 minuto</item>
+        <item>5 minutos</item>
+    </string-array>
+</resources>

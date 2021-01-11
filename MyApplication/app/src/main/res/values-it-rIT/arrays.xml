@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Weather-->
+    <string-array name="weeks">
+        <item>Domenica</item>
+        <item>Lunedi</item>
+        <item>Tmartedì</item>
+        <item>mercoledì</item>
+        <item>giovedi</item>
+        <item>Venerdì</item>
+        <item>Sabato</item>
+    </string-array>
+    <!--Alarm-->
+    <string-array name="repeats">
+        <item>Una volta</item>
+        <item>lunedi al venerdì</item>
+        <item>Ogni giorno</item>
+        <item>costume</item>
+    </string-array>
+    <string-array name="weeks_abbr">
+        <item>Dom</item>
+        <item>Lun</item>
+        <item>Mar</item>
+        <item>Mer</item>
+        <item>Gio</item>
+        <item>Ven</item>
+        <item>Sab</item>
+    </string-array>
+    <!--Calendar-->
+    <string-array name="months">
+        <item>gennaio</item>
+        <item>febbraio</item>
+        <item>marzo</item>
+        <item>aprile</item>
+        <item>potrebbe</item>
+        <item>giugno</item>
+        <item>luglio</item>
+        <item>agosto</item>
+        <item>settembre</item>
+        <item>ottobre</item>
+        <item>novembre</item>
+        <item>dicembre</item>
+    </string-array>
+    <string-array name="week_string_array">
+        <item>Dom</item>
+        <item>Lun</item>
+        <item>Mar</item>
+        <item>Mer</item>
+        <item>Gio</item>
+        <item>Ven</item>
+        <item>Sab</item>
+    </string-array>
+    <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
+    <string-array name="wifi_signal">
+        <item>Povero</item>
+        <item>Giusto</item>
+        <item>Buona</item>
+        <item>Eccellente</item>
+    </string-array>
+    <!--Album Settings-->
+    <string-array name="slideshow_mode">
+        <item>Sequenziale</item>
+        <item>Casuale</item>
+    </string-array>
+    <string-array name="slideshow_animation">
+        <item>Predefinito</item>
+        <item>Alfa</item>
+        <item>Ruotare</item>
+        <item>Cubo</item>
+        <item>Flip</item>
+        <item>Fisarmonica</item>
+        <item>Zoom Dissolvenza</item>
+        <item>dissolvenza</item>
+        <item>Centro dello zoom</item>
+        <item>Zoom Stack</item>
+        <item>Profondità</item>
+        <item>Zoom</item>
+        <item>Casuale</item>
+    </string-array>
+    <string-array name="slideshow_interval">
+        <item>5 secondi</item>
+        <item>10 secondi</item>
+        <item>15 secondi</item>
+        <item>30 secondi</item>
+        <item>1 minuto</item>
+        <item>5 minuti</item>
+    </string-array>
+</resources>

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CloudPhotoFrame</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="back">戻り</string>
+    <string name="home">ホーム</string>
+    <string name="vol_minus">Vol -</string>
+    <string name="vol_plus">Vol +</string>
+    <string name="power">電源</string>
+    <string name="out_of_memory">メモリーディバイスの容量が不足、メモリーディバイスをリセットしてから、もう一回を試してください。</string>
+    <!--Welcome-->
+    <string name="prev">前へ</string>
+    <string name="next">次へ</string>
+    <string name="skip">スキップ</string>
+    <string name="choose_a_network">ネットを選択</string>
+    <string name="skip_wizard_title">ガイドを停止</string>
+    <string name="skip_wizard_content">\t\ガイドを停止すると、デジタルフォトフレームはcloudの写真を共有する機能を一回に止めます。</string>
+    <string name="city">シティ</string>
+    <string name="time_zone">タイムゾーン</string>
+    <string name="city_name_cannot_be_empty">都市名は空にできません</string>
+    <string name="invalid_city_name">無効な都市名</string>
+    <string name="sleep_schedule_title">睡眠スケジュール</string>
+    <string name="sleep_schedule_summary">デバイスがスリープしてスリープ解除できるように、毎日のスケジュールを設定します</string>
+    <string name="device_bind">デバイスバインド</string>
+    <string name="complete">コンプリート</string>
+    <string name="please_connect_to_the_network">ネットワークに接続してください</string>
+    <string name="device_information_not_obtained">デバイス情報が取得されていません</string>
+    <!--Main-->
+    <string name="photo">フォト</string>
+    <string name="music">ミュージック</string>
+    <string name="video">ビデオ</string>
+    <string name="calendar">カレンダー</string>
+    <string name="clock">時計</string>
+    <string name="alarm">アラーム</string>
+    <string name="weather">天気</string>
+    <string name="files">フィルタ</string>
+    <string name="settings">セッティング</string>
+    <!--Photo-->
+    <string name="cloud_photo">Cloudの写真</string>
+    <string name="favorites">お気に入り</string>
+    <string name="all">全部</string>
+    <string name="internal_storage">内部記憶装置</string>
+    <string name="sd_card">SD カード </string>
+    <string name="usb">USBカード</string>
+    <string name="usb_sd_card">USB/SD カード</string>
+    <string name="digital_indicator">%1$d/%2$d</string>
+    <!--Music-->
+    <string name="unknown">不明</string>
+    <string name="no_music_files_found">音楽フィルを見つからなかった</string>
+    <string name="play_time_start">00:00</string>
+    <string name="mode_loop">リストループ</string>
+    <string name="mode_shuffle">シャッフル再生</string>
+    <string name="mode_one">シングルループ</string>
+    <string name="playback_failed">このタイプのフィルを支持しておりません</string>
+    <!--Video-->
+    <string name="tips_not_wifi">現在、モバイルネットワークをご利用されており、続くとデータの費用を発生されます</string>
+    <string name="tips_not_wifi_confirm">履歴</string>
+    <string name="tips_not_wifi_cancel">プレイ停止</string>
+    <string name="no_url">URLを見つかりません</string>
+    <string name="replay">リプレイ</string>
+    <string name="click_to_restart">もう一回クリック</string>
+    <string name="video_loading_faild">VTRの再生が失敗</string>
+    <!--Weather-->
+    <string name="positioning_desc">ネットに繋がると、天気を表示します</string>
+    <string name="refresh_success">更新が成功</string>
+    <string name="temp_c">%1$.1f°C</string>
+    <string name="temp_f">%1$.1f°F</string>
+    <string name="humidity_current">湿度%1$d&#037;&#037;</string>
+    <string name="wind_speed_current">風 Speed&#160;%1$.1f</string>
+    <string name="date_weather">%1$s, %2$s</string>
+    <string name="temp_c_range">%1$.1f ~ %2$.1f°C</string>
+    <string name="temp_f_range">%1$.1f ~ %2$.1f°F</string>
+    <string name="search_city">市の検索</string>
+    <string name="no_cities_found">検索内容を見つからなかった</string>
+    <string name="please_enter_the_city_name">正しく名称をもう一回入力しください</string>
+    <string name="geo_coords">郵便番号 [%1$s]</string>
+    <!--Clock-->
+    <string name="choose_clock_skin">時計のスキンを選びます</string>
+    <!--Alarm-->
+    <string name="edit">編集</string>
+    <string name="add">追加</string>
+    <string name="repeat">繰り返す</string>
+    <string name="ringtone">着メロ</string>
+    <string name="label">ラベル</string>
+    <string name="set_time">時間の設定</string>
+    <string name="cancel">キャンセル</string>
+    <string name="ok">OK</string>
+    <string name="once">もう一度</string>
+    <string name="monday_to_friday">月～金曜日</string>
+    <string name="everyday">毎日</string>
+    <string name="custom">カスタム</string>
+    <string name="right_slide_close_alarm_clock">右へスライドすると目指し時を閉じます。</string>
+    <!--Calendar-->
+    <string name="sun">日</string>
+    <string name="mon">月</string>
+    <string name="tue">火</string>
+    <string name="wed">水</string>
+    <string name="thu">木</string>
+    <string name="fri">金</string>
+    <string name="sat">土</string>
+    <!--Files-->
+    <string name="file_path">パス: %1$s</string>
+    <string name="file_size">サイズ: %1$s</string>
+    <string name="file_date">データ: %1$s</string>
+    <string name="file_desc">説明: %1$s</string>
+    <string name="files_import">入力</string>
+    <string name="import_files_to_memory">メモリーへフィルを導入</string>
+    <string name="files_export">出力</string>
+    <string name="export_files_to_external_storage">フィルを外部のメモリーカードへ輸出</string>
+    <string name="import_success">インポート成功</string>
+    <string name="import_failure">インポート失敗</string>
+    <string name="export_success">出力成功</string>
+    <string name="export_failure">出力失敗</string>
+    <string name="please_select_a_storage_device_first">ストレージデバイスを選択</string>
+    <string name="delete">削除</string>
+    <string name="delete_file">削除を確定しますか?</string>
+    <string name="delete_the_selected_files">選択したフィルを削除します?</string>
+    <string name="delete_success">削除成功</string>
+    <string name="delete_failure">削除失敗</string>
+    <string name="selected">選択 %1$d</string>
+    <string name="select_all">全部を選択</string>
+    <string name="unselect_all">全ての選択を解除</string>
+    <!--Settings-->
+    <string name="device_info">デバイス情報</string>
+    <string name="user_management">ユーザー管理</string>
+    <string name="pc_control">PC コントロール</string>
+    <string name="album_settings">アルバムをセッティング</string>
+    <string name="system_settings">システムをセッティング</string>
+    <string name="about">サポート</string>
+    <!--Device Information-->
+    <string name="refreshing">さわやか</string>
+    <string name="refresh_desc">レットに繋がり、リフレッシュ・ボタンを押してください。</string>
+    <string name="display_device_info">ネットワーキング後のデバイス情報</string>
+    <string name="frame_id_desc">フレーム ID: %1$s</string>
+    <string name="frame_id">フレーム ID</string>
+    <string name="users">利用者</string>
+    <string name="accept_new_users">新しいユーザーを受けいれる</string>
+    <string name="view_photos">フォトを観る</string>
+    <string name="remark_name">名称</string>
+    <string name="delete_user">ユーザーを削除</string>
+    <string name="delete_user_photos">ユーザーと写真を削除</string>
+    <string name="no_photos_found">写真がなし</string>
+    <string name="block">ブロック</string>
+    <string name="blocked">ブラック済み</string>
+    <string name="unblock">ブロック解除</string>
+    <string name="after_blocking_files_that_the_user_uploads_can_not_be_received">ブロックを確定すると、ユーザーがアップロードするフィルを受信することができなくなります。</string>
+    <string name="after_unblocking_you_can_receive_files_uploaded_by_the_user">アンブロッキング後、ユーザーがアップロードしたファイルを受信できます。</string>
+    <string name="after_deleting_the_user_can_not_upload_files_to_the_device">削除後、ユーザーはデバイスにファイルをアップロードできません。</string>
+    <!--User Management-->
+    <string name="pending_user_requests">ユーザー保留</string>
+    <string name="accept">確定</string>
+    <string name="refuse">断り</string>
+    <!--PC control-->
+    <string name="wlan_name">WLAN ネーム: %1$s</string>
+    <string name="please_connect_an_available_wifi">利用可能なWi-Fi に接続</string>
+    <string name="start_service_to_enable_ftp_server">FTPサーバーを有効にします</string>
+    <string name="enter_the_following_address_into_your_ftp_client"> FTPのアドレスを入力してください:</string>
+    <string name="start">開始</string>
+    <string name="stop">停止</string>
+
+    <!-- HTTP proxy settings title -->
+    <string name="proxy_settings_title">"プロキシ"</string>
+    <string name="proxy_clear_text">"消去"</string>
+    <string name="proxy_port_label">"プロキシポート"</string>
+    <string name="proxy_exclusionlist_label">"プロキシを不使用"</string>
+    <string name="proxy_exclusionlist_hint">"example.com,mycomp.test.com,localhost"</string>
+    <string name="proxy_defaultView_text">"初期設定に戻す"</string>
+    <string name="proxy_action_text">"終了"</string>
+    <string name="proxy_hostname_label">"プロキシのホスト名"</string>
+    <string name="proxy_hostname_hint">"proxy.example.com"</string>
+    <string name="proxy_error">"注意"</string>
+    <string name="proxy_error_dismiss">"OK"</string>
+    <string name="proxy_error_invalid_host">"入力したホスト名は無効です。"</string>
+    <string name="proxy_error_invalid_exclusion_list">"入力された除外リストの形式が正しくありません。除外するドメインをカンマ区切りリスト形式で入力してください。"</string>
+    <string name="proxy_error_empty_port">"ポートフィールドを入力してください。"</string>
+    <string name="proxy_error_empty_host_set_port">"[ホスト]フィールドが空の場合は、[ポート]フィールドも空にしてください。"</string>
+    <string name="proxy_error_invalid_port">"入力したポートは無効です。"</string>
+    <string name="proxy_warning_limited_support">"HTTPプロキシはブラウザで使用されていますが、他のアプリでは使用できません。"</string>
+
+    <!-- Wi-Fi Settings --> <skip />
+    <!-- Used in the 1st-level settings screen to turn on Wi-Fi -->
+    <string name="wifi_quick_toggle_title">"Wi-Fi"</string>
+    <string name="wifi_quick_toggle_summary">"Wi-FiをONにする"</string>
+    <string name="wifi_settings">"Wi-Fi"</string>
+    <string name="wifi_settings_category">"Wi-Fiの設定"</string>
+    <string name="wifi_settings_title">"Wi-Fi"</string>
+    <string name="wifi_settings_summary">"ワイヤレスアクセスポイントを設定する"</string>
+    <string name="wifi_setup_wizard_title">"Wi-Fiの選択"</string>
+    <string name="wifi_starting">"Wi-FiをONにしています…"</string>
+    <string name="wifi_stopping">"Wi-FiをOFFにしています…"</string>
+    <string name="wifi_error">"エラー"</string>
+    <string name="wifi_in_airplane_mode">"機内モード"</string>
+    <string name="wifi_fail_to_scan">"ネットワークをスキャンできません"</string>
+    <string name="wifi_notify_open_networks">"ネットワークの通知"</string>
+    <string name="wifi_notify_open_networks_summary">"オープンネットワークが利用可能なときに通知する"</string>
+    <string name="wifi_poor_network_detection">"接続不良のとき無効にする"</string>
+    <string name="wifi_poor_network_detection_summary">"安定したインターネット接続があるときのみWi-Fiネットワークを使用する"</string>
+    <string name="wifi_scan_always_available">"スキャンを常に実行する"</string>
+    <string name="wifi_scan_always_available_summary">"Wi-FiがOFFになっていても、Googleの位置情報サービスと他のアプリでネットワークをスキャンする"</string>
+    <string name="wifi_install_credentials">"証明書のインストール"</string>
+    <string name="wifi_scan_notify_text_location_on">"位置情報の精度を向上させるため、Wi-FiがOFFの場合でもGoogleやその他のアプリは近くのネットワークをスキャンすることができます。このスキャンが必要ない場合は、[詳細設定] &gt; [スキャンを常に実行する]にアクセスします。"</string>
+    <string name="wifi_scan_notify_text_location_off">"Wi-FiがOFFの場合でもアプリは近くのネットワークをスキャンできます。このスキャンが必要ない場合は、[詳細設定] &gt; [スキャンを常に実行する]にアクセスします。"</string>
+    <string name="wifi_scan_notify_remember_choice">"次回から表示しない"</string>
+    <string name="wifi_setting_sleep_policy_title">"スリープ時にWi-Fi接続を維持"</string>
+    <string name="wifi_setting_sleep_policy_error">"設定の変更中に問題が発生しました"</string>
+    <string name="wifi_suspend_optimizations">"Wi-Fi最適化"</string>
+    <string name="wifi_suspend_optimizations_summary">"Wi-FiがONのときに電池使用を節約する"</string>
+    <string name="wifi_add_network">"ネットワークを追加"</string>
+    <string name="wifi_access_points">"Wi-Fiネットワーク"</string>
+    <string name="wifi_menu_wps_pbc">"WPSプッシュボタン"</string>
+    <string name="wifi_menu_more_options">"その他のオプション"</string>
+    <string name="wifi_menu_wps_pin">"WPS PIN入力"</string>
+    <string name="wifi_menu_p2p">"Wi-Fi Direct"</string>
+    <string name="wifi_menu_scan">"スキャン"</string>
+    <string name="wifi_menu_advanced">"詳細設定"</string>
+    <string name="wifi_menu_connect">"ネットワークに接続"</string>
+    <string name="wifi_menu_forget">"ネットワークから切断"</string>
+    <string name="wifi_menu_modify">"ネットワークを変更"</string>
+    <string name="wifi_empty_list_wifi_off">"利用可能なネットワークを表示するにはWi-FiをON"</string>
+    <string name="wifi_empty_list_wifi_on">"Wi-Fiネットワークを検索しています…"</string>
+    <string name="wifi_empty_list_user_restricted">"Wi-Fiネットワークを変更する権限がありません。"</string>
+    <string name="wifi_other_network">"他のネットワーク…"</string>
+    <string name="wifi_more">"その他"</string>
+    <string name="wifi_setup_wps">"自動設定（WPS）"</string>
+    <string name="wifi_required_info_text">"セットアップを完了するには、タブレットでWi-Fiに接続する必要があります。セットアップ後にモバイルデータ通信とWi-Fiを切り替えられます。"</string>
+
+    <!-- Dialog for Access Points --> <skip />
+    <!-- Label to show/hide advanced options -->
+    <string name="wifi_show_advanced">"詳細オプションを表示"</string>
+    <string name="wifi_wps_setup_title">"Wi-Fi保護設定"</string>
+    <string name="wifi_wps_setup_msg">"WPSを開始しています…"</string>
+    <string name="wifi_wps_onstart_pbc">"ルーターのWi-Fi保護設定ボタンを押します。「WPS」と表記されている場合や、次のような記号が表示されている場合もあります:"</string>
+    <string name="wifi_wps_onstart_pin">"Wi-FiルーターでPIN「%1$s」を入力します。セットアップの完了まで最大2分ほどかかることがあります。"</string>
+    <string name="wifi_wps_complete">"WPSの設定に成功しました。ネットワークに接続しています…"</string>
+    <string name="wifi_wps_connected">"Wi-Fiネットワーク「%s」に接続しました"</string>
+    <string name="wifi_wps_in_progress">"WPSを設定中です。完了まで最大2分程度かかることがあります。"</string>
+    <string name="wifi_wps_failed_generic">"WPSの設定に失敗しました。数分後にもう一度お試しください。"</string>
+    <string name="wifi_wps_failed_wep">"無線ルーターのセキュリティ設定（WEP）はサポートされていません"</string>
+    <string name="wifi_wps_failed_tkip">"無線ルーターのセキュリティ設定（TKIP）はサポートされていません"</string>
+    <string name="wifi_wps_failed_auth">"認証に失敗しました。もう一度お試しください。"</string>
+    <string name="wifi_wps_failed_overlap">"別のWPSセッションが検出されました。数分後にもう一度お試しください。"</string>
+    <string name="wifi_ssid">"ネットワークSSID"</string>
+    <string name="wifi_ssid_hint">"SSIDを入力します"</string>
+    <string name="wifi_security">"セキュリティ"</string>
+    <string name="wifi_signal">"電波強度"</string>
+    <string name="wifi_status">"接続状況"</string>
+    <string name="wifi_speed">"リンク速度"</string>
+    <string name="wifi_ip_address">"IPアドレス"</string>
+    <string name="wifi_eap_method">"EAP方式"</string>
+    <string name="please_select_phase2">"フェーズ2認証"</string>
+    <string name="wifi_eap_ca_cert">"CA証明書"</string>
+    <string name="wifi_eap_user_cert">"ユーザー証明書"</string>
+    <string name="wifi_eap_identity">"ID"</string>
+    <string name="wifi_eap_anonymous">"匿名ID"</string>
+    <string name="wifi_password">"パスワード"</string>
+    <string name="wifi_show_password">"パスワードを表示する"</string>
+    <string name="wifi_ip_settings">"IP設定"</string>
+    <string name="wifi_unchanged">"（変更なし）"</string>
+    <string name="wifi_unspecified">"（指定なし）"</string>
+    <string name="wifi_remembered">"保存済み"</string>
+    <string name="wifi_disabled_generic">"無効"</string>
+    <string name="wifi_disabled_network_failure">"インターネット接続不良により無効"</string>
+    <string name="wifi_disabled_password_failure">"認証に問題"</string>
+    <string name="wifi_not_in_range">"圏外"</string>
+    <string name="wifi_wps_available_first_item">"WPS利用可"</string>
+    <string name="wifi_wps_available_second_item">" （WPS利用可）"</string>
+    <string name="wifi_secured_first_item">"%1$sで保護"</string>
+    <string name="wifi_secured_second_item">"、%1$sで保護"</string>
+
+    <!-- Used in Wi-Fi settings dialogs when Wi-Fi does not have any security. -->
+    <string name="wifi_security_none">"なし"</string>
+
+    <string name="wifi_scan_always_turnon_message">"現在地情報の精度向上やその他の目的で、%1$sではWi-FiがOFFのときでもネットワークスキャンをオンにすることを要求しています。\n\nスキャンを必要とするすべてのアプリでスキャンを許可しますか？"</string>
+    <string name="wifi_scan_always_confirm_allow">"許可する"</string>
+    <string name="wifi_scan_always_confirm_deny">"許可しない"</string>
+
+    <!-- Button label to connect to a Wi-Fi network -->
+    <string name="wifi_connect">"接続"</string>
+    <string name="wifi_failed_connect_message">"ネットワークに接続できませんでした"</string>
+    <string name="wifi_forget">"切断"</string>
+    <string name="wifi_failed_forget_message">"ネットワークから切断できませんでした"</string>
+    <string name="wifi_save">"保存"</string>
+    <string name="wifi_failed_save_message">"ネットワークを保存できませんでした"</string>
+    <string name="wifi_cancel">"キャンセル"</string>
+    <string name="wifi_skip_anyway">"無視してスキップ"</string>
+    <string name="wifi_dont_skip">"スキップしない"</string>
+
+    <!-- Text warning about skipping Wi-Fi with a mobile connect (tablet) [CHAR LIMIT=NONE]-->
+    <string name="wifi_skipped_message">"警告: 追加のデータ通信料が発生する可能性があります。\n\nタブレットのセットアップでは大量のネットワーク処理が必要となる場合があります。"</string>
+    <string name="wifi_and_mobile_skipped_message">"警告: インターネットに接続しないと、タブレットはソフトウェアが最新であることを確認できません。"</string>
+    <string name="wifi_connect_failed_message">"タブレットからこのWi-Fiネットワークに接続できませんでした。"</string>
+
+    <!-- Wi-Fi Advanced Settings --> <skip />
+    <!-- Wi-Fi settings screen, advanced, settings section.  This is a header shown above advanced wifi settings. -->
+    <string name="wifi_advanced_titlebar">"Wi-Fi詳細設定"</string>
+    <string name="wifi_setting_frequency_band_title">"Wi-Fi周波数帯域"</string>
+    <string name="wifi_setting_frequency_band_summary">"使用する周波数帯域を指定する"</string>
+    <string name="wifi_setting_frequency_band_error">"周波数帯域の設定中に問題が発生しました。"</string>
+    <string name="wifi_advanced_mac_address_title">"MACアドレス"</string>
+    <string name="wifi_advanced_ip_address_title">"IPアドレス"</string>
+
+    <!-- Wifi Advanced settings.  Used as a label under the shortcut icon that goes to Wifi advanced settings. [CHAR LIMIT=20]-->
+    <string name="wifi_advanced_settings_label">"IP設定"</string>
+    <string name="wifi_ip_settings_menu_save">"保存"</string>
+    <string name="wifi_ip_settings_menu_cancel">"キャンセル"</string>
+    <string name="wifi_ip_settings_invalid_ip_address">"有効なIPアドレスを入力してください。"</string>
+    <string name="wifi_ip_settings_invalid_gateway">"有効なゲートウェイアドレスを入力してください。"</string>
+    <string name="wifi_ip_settings_invalid_dns">"有効なDNSアドレスを入力してください。"</string>
+    <string name="wifi_ip_settings_invalid_network_prefix_length">"ネットワークプレフィックス長は0～32で指定します。"</string>
+    <string name="wifi_dns1">"DNS 1"</string>
+    <string name="wifi_dns2">"DNS 2"</string>
+    <string name="wifi_gateway">"ゲートウェイ"</string>
+    <string name="wifi_network_prefix_length">"ネットワークプレフィックス長"</string>
+
+    <!--  Help URLs for some screens. Not specified here. Specified in product overlays --><skip/>
+    <!-- Help menu label [CHAR LIMIT=20] -->
+    <string name="help_label">"ヘルプ"</string>
+
+    <!--Album settings-->
+    <string name="full_screen">全画面表示</string>
+    <string name="the_photo_will_be_displayed_in_full_screen">フォトを全画面で再生</string>
+    <string name="slideshow">スライドショー</string>
+    <string name="background_music">背景ミュージック</string>
+    <string name="slideshow_mode">スライドショー・モード</string>
+    <string name="random">ランダム</string>
+    <string name="sequential">順次</string>
+    <string name="slideshow_transition_effect">スライド・トランジション</string>
+    <string name="Default">デフォルト</string>
+    <string name="alpha">アルファ</string>
+    <string name="rotate">回転</string>
+    <string name="cube">キューブ</string>
+    <string name="flip">反転</string>
+    <string name="accordion">アコーディオン</string>
+    <string name="zoom_fade">ズーム・フェード</string>
+    <string name="fade">フェード</string>
+    <string name="zoom_center">ズーム・センター</string>
+    <string name="zoom_stack">ズーム・スタック</string>
+    <string name="stack">スタック</string>
+    <string name="depth">奥行き</string>
+    <string name="zoom">ズーム</string>
+    <string name="slideshow_interval">スライドショー・間隔</string>
+    <string name="seconds">%1$d 秒</string>
+    <string name="minute">%1$d 分</string>
+    <string name="minutes">%1$d 分</string>
+    <string name="delete_photos">フォト削除</string>
+    <string name="delete_photos_desc">全てのフォトを削除</string>
+    <string name="restore_default_settings">設定をリセット</string>
+    <!--System settings-->
+    <string name="system">システム</string>
+    <string name="sound">音声</string>
+    <string name="display">ディスプレイ</string>
+    <string name="suspended_ball_title">中止</string>
+    <string name="suspended_ball_desc">早見</string>
+    <string name="date_and_time">日期&amp;時間</string>
+    <string name="language">言語</string>
+    <string name="master_clear_title">機能をリセット</string>
+    <string name="master_clear_desc">"この操作は全てのデータを削除されます。\u2019s <b>搭載のメモリ</b>, 含む:\n\n<li>システム・アプリデータ・セッティング</li>\n<li>ミュージック</li>\n<li>フォト</li>\n<li>他のデータ</li>"</string>
+    <string name="master_clear_button_text">再起動</string>
+    <string name="master_clear_confirm_title">再起動？</string>
+    <string name="delete_all_users_and_restore_the_device_to_inactive">Delete all users and restore the device to inactive</string>
+    <string name="media_volume">メディア音声</string>
+    <string name="notification_volume">チャイム音声</string>
+    <string name="touch_sounds">タッチ音</string>
+    <string name="brightness">明るさのレベル</string>
+    <string name="automatic_date_time">自動日付 &#038; time</string>
+    <string name="use_network_provided_time">インターネットの時間を使用します</string>
+    <string name="set_date">日付設定</string>
+    <string name="select_time_zone">タイムゾーンを選択</string>
+    <string name="use_24_hour_format">24時間で表示</string>
+    <string name="choose_date_format">日付フォーマットを選択</string>
+    <string name="auto_on_off">自動 On &amp; Off</string>
+    <string name="auto_power_on_off">自動 On/Off</string>
+    <string name="power_off">パワー Off</string>
+    <string name="auto_off_time">自動-Off 時間</string>
+    <string name="auto_on_time">自動-On 時間</string>
+    <string name="shutdown_confirm">シャットダウン</string>
+    <string name="motion_sensor">モーションセンサー</string>
+    <string name="sleep">スリープ</string>
+    <string name="accelerometer_title">画面を自動に回転させ</string>
+    <!--About-->
+    <string name="version">バージョン</string>
+    <string name="check_for_updates">アップデートを確認</string>
+    <string name="its_the_latest_version">最新バージョン</string>
+    <string name="find_new_version">新しいバージョンを探す</string>
+    <string name="download">ダウンロード</string>
+    <string name="install_new_version">新しいバージョンをインストールする</string>
+    <string name="install">インストール</string>
+    <string name="status_wifi_mac_address">Wi\u2011Fi MAC アドレス</string>
+    <string name="model">モデル</string>
+    <string name="build_number">ビルドナンバー</string>
+    <string name="serial_number">シリアルナンバー</string>
+    <string name="data_flow">データフロー</string>
+    <string name="top_up">トップアップ</string>
+    <string name="total">合計%1$s</string>
+    <string name="available">利用可能 %1$s</string>
+    <string name="data_top_up">データ・トップアップ</string>
+    <string name="top_up_link">トップアップ・リンク: %1$s</string>
+    <string name="feedback_settings_title">フィードバック</string>
+    <string name="feedback_settings_summary">アプリのログを共有して、問題を特定するのに役立ててください</string>
+    <string name="feedback_settings_dialog_title">アプリログを共有しますか？</string>
+    <string name="no_log_files">ログファイルがありません</string>
+    <string name="uploading">アップロード</string>
+    <string name="log_upload_successfully">ログのアップロードに成功しました</string>
+    <string name="log_upload_failed">ログのアップロードに失敗しました</string>
+    <!--External storage-->
+    <string name="storage_card_is_inserted">メモリカードセット済み.</string>
+    <string name="storage_card_has_been_taken_out">メモリカードを外されました.</string>
+    <string name="usb_flash_disk_is_inserted">USBカードを挿入されています.</string>
+    <string name="usb_flash_disk_has_been_taken_out">USBカードを外されました.</string>
+    <!--Message-->
+    <string name="message_recharged">充電 %1$s</string>
+    <string name="message_photo">1 フォト</string>
+    <string name="message_photos">%1$d フォト</string>
+    <string name="message_video">1 ビデオ</string>
+    <string name="message_bind">%1$s バインドします.</string>
+    <string name="message_unbind">%1$s バインドを解除.</string>
+    <!--Network exception-->
+    <string name="unconnected_network">ネットワークに接続されていません</string>
+    <string name="network_unavailable">ネットワークを利用することができません</string>
+    <string name="network_connection_timeout">ネットワークの接続が終了</string>
+    <!--Device controller error-->
+    <string name="e101">デバイスが見つかりません</string>
+    <string name="e102">端末の更新に失敗しました。しばらくしてからもう一度お試しください</string>
+    <string name="e103">ユーザーとデバイスの関係が見つかりません</string>
+    <string name="e104">ユーザーステータスの更新に失敗しました。しばらくしてからもう一度お試しください</string>
+    <string name="e105">ユーザーは削除されました</string>
+    <string name="e106">未知の</string>
+    <string name="e107">ユーザーデバイスの関係の更新に失敗しました。しばらくしてからもう一度お試しください</string>
+    <string name="e108">デバイスは既にバインドされています</string>
+    <string name="e109">ユーザーが見つかりません</string>
+    <string name="e110">デバイス名の更新に失敗しました。しばらくしてからもう一度お試しください</string>
+    <string name="e111">端末ステータスの更新に失敗しました。しばらくしてからもう一度お試しください</string>
+    <string name="e112">注文が見つかりません</string>
+    <string name="e113">結果が見つかりません</string>
+    <string name="e114">要求は拒否されました</string>
+    <string name="e115">無効なリクエスト</string>
+    <string name="e116">未知の</string>
+    <string name="e117">バインドされたユーザー数が制限を超えています</string>
+    <string name="e118">最新版です</string>
+    <string name="e119">シリアル番号エラー</string>
+    <string name="e120">デバイスが起動しています</string>
+    <string name="e121">デバイスが存在しません</string>
+    <string name="e122">残高不足</string>
+    <string name="e123">不十分なデータフロー</string>
+    <string name="e124">ユーザーがロックされました</string>
+    <string name="e125">デバイスが新規ユーザーのバインドを拒否しました</string>
+    <string name="e126">装置はバインドされており、再度バインドすることはできません</string>
+    <string name="e127">束縛タイプエラー</string>
+    <string name="e128">会社名エラー</string>
+    <string name="e129">バインドを受け入れられませんでした</string>
+    <string name="e130">バインディングタイプエラーを受け入れる</string>
+    <string name="e131">デバイスはアクティブ化されていて再アクティブ化できません</string>
+    <string name="e132">デバイスが起動していません</string>
+    <string name="e133">デバイスはアクティブ化されていて再アクティブ化できません</string>
+    <string name="e134">デバイス名は既に存在します</string>
+    <string name="e135">デバイスはアクティブ化されていて再アクティブ化できません</string>
+    <!--Upload controller error-->
+    <string name="e313">ユーザーIDプロパティフォーマットエラー</string>
+    <string name="e318">データベースへのファイルURLの保存に失敗しました。しばらくしてからもう一度お試しください</string>
+    <string name="e327">ユーザーバインドデバイスの変更</string>
+    <!--User controller error-->
+    <string name="e404">ユーザープロフィールの更新に失敗しました。しばらくしてからもう一度お試しください</string>
+    <string name="e405">ユーザーが見つかりません</string>
+    <string name="e406">アプリケーションが見つかりません</string>
+    <string name="e407">メールユーザーを登録できません</string>
+    <string name="e408">確認コードのタイムアウト</string>
+    <string name="e409">確認コードエラー</string>
+    <string name="e410">ユーザー名は既に存在します</string>
+    <string name="e411">ユーザーのメールアドレスは既に存在します</string>
+    <string name="e412">ユーザーのメールアドレスが存在しません</string>
+    <string name="e413">データベースの更新に失敗しました</string>
+    <string name="e414">間違ったパスワード</string>
+    <string name="e415">ユーザー名は既に存在します</string>
+    <string name="e416">メールを送信できませんでした</string>
+    <string name="e417">ユーザープッシュトークンまたはプラットフォームエラー</string>
+    <string name="e418">ユーザーはオフラインです</string>
+    <!--Service error-->
+    <string name="e901">ファイルが存在しません</string>
+    <string name="e902">ファイルが既に存在します</string>
+    <string name="error_code">エラーコード: %1$d</string>
+</resources>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_back_user_manage"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginStart="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_10"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_back_selector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_avatar_user_manage"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_launcher_round"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_blocked_user_manage"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
+            android:background="@drawable/ic_round_translucent"
+            android:gravity="center"
+            android:text="@string/blocked"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_avatar_user_manage"
+            app:layout_constraintEnd_toEndOf="@+id/iv_avatar_user_manage"
+            app:layout_constraintStart_toStartOf="@+id/iv_avatar_user_manage"
+            app:layout_constraintTop_toTopOf="@+id/iv_avatar_user_manage" />
+
+        <TextView
+            android:id="@+id/tv_name_user_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:textColor="@color/main"
+            android:textSize="@dimen/sp_28"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_avatar_user_manage" />
+
+        <TextView
+            android:id="@+id/tv_desc_user_manage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:textColor="@color/main"
+            android:textSize="@dimen/sp_24"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_user_manage" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_desc_user_manage">
+
+            <TextView
+                android:id="@+id/tv_cancel_user_manage"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_60"
+                android:background="@drawable/pressed_gray"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="@color/main"
+                android:textSize="@dimen/sp_24"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_view_photo_user_manage"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_60"
+                android:background="@drawable/pressed_green"
+                android:gravity="center"
+                android:text="@string/view_photos"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_cancel_user_manage" />
+
+            <TextView
+                android:id="@+id/tv_rename_user_manage"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/pressed_cyan"
+                android:gravity="center"
+                android:text="@string/remark_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_view_photo_user_manage" />
+
+            <TextView
+                android:id="@+id/tv_block_user_manage"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/pressed_blue"
+                android:gravity="center"
+                android:text="@string/block"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_rename_user_manage" />
+
+            <TextView
+                android:id="@+id/tv_delete_user_manage"
+                android:layout_width="@dimen/dp_150"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginStart="@dimen/dp_20"
+                android:background="@drawable/pressed_red"
+                android:gravity="center"
+                android:text="@string/delete"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_block_user_manage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

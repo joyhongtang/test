@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_100"
+    android:background="@drawable/bg_selector_blue_8dp">
+
+    <TextView
+        android:id="@+id/tv_title_item_textst_textsb_texteb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:textColor="@color/text"
+        android:textSize="@dimen/sp_24"
+        app:layout_constraintBottom_toTopOf="@id/tv_content_item_textst_textsb_texteb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_content_item_textst_textsb_texteb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/sp_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_desc_item_textst_textsb_texteb"
+        app:layout_constraintStart_toStartOf="@id/tv_title_item_textst_textsb_texteb"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_item_textst_textsb_texteb" />
+
+    <TextView
+        android:id="@+id/tv_desc_item_textst_textsb_texteb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:gravity="center_vertical|end"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/sp_24"
+        app:layout_constraintBottom_toBottomOf="@id/tv_content_item_textst_textsb_texteb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_content_item_textst_textsb_texteb"
+        app:layout_constraintTop_toTopOf="@id/tv_content_item_textst_textsb_texteb" />
+</androidx.constraintlayout.widget.ConstraintLayout>

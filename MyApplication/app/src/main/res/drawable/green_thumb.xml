@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval" >
+
+    <!-- 高度 -->
+    <size android:height="@dimen/dp_40" android:width="@dimen/dp_40"/>
+
+    <!-- 变化率 -->
+    <gradient
+        android:endColor="#EEEEEE"
+        android:startColor="#EEEEEE" />
+
+    <stroke android:width="@dimen/dp_1"
+        android:color="#33DA33"/>
+
+</shape>
