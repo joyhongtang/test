@@ -128,11 +128,13 @@ class DeviceInfoTestActivity : BaseTestActivity() {
         super.onClick(v)
         when (v!!.id) {
             R.id.pass -> {
-                val testEntity =
-                    TestMainActivity.testResult["${TestConstant.PACKAGE_NAME}$localClassName"]
-                testEntity!!.testResultEnum = TestResultEnum.PASS
-                SPUtils.getInstance().put(testEntity.getTag(), 1)
-                finish()
+                if (!TestConstant.deviceToken.isNullOrEmpty()) {
+                    val testEntity =
+                        TestMainActivity.testResult["${TestConstant.PACKAGE_NAME}$localClassName"]
+                    testEntity!!.testResultEnum = TestResultEnum.PASS
+                    SPUtils.getInstance().put(testEntity.getTag(), 1)
+                    finish()
+                }
             }
             R.id.fail -> {
                 val testEntity2 =
