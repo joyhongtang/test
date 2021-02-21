@@ -61,6 +61,7 @@
     </com.joyhong.test.FocusView>
 
     <com.joyhong.test.FocusView
+        android:visibility="gone"
         android:layout_marginLeft="@dimen/dp_20"
         android:layout_alignBottom="@id/test_result_main"
         android:layout_toRightOf="@+id/clear_result_main"
@@ -112,6 +113,7 @@
 
 
     <com.joyhong.test.FocusView
+        android:visibility="gone"
         android:layout_marginRight="@dimen/dp_20"
         android:layout_alignBottom="@id/test_result_main"
         android:layout_toLeftOf="@+id/show_qr_code"

@@ -119,6 +119,7 @@ public class RecordActivity extends BaseTestActivity implements TextureView.Surf
      */
     private void startRecord() {
         initCamera();
+        if(null != mCamera)
         mCamera.unlock();
 //        initMediaRecorder();
 //        try {

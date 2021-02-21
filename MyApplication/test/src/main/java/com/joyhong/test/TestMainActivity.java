@@ -332,6 +332,9 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
                     testEntities.add(testEntity13);
                 } else if (line.contains("Rtc_1")) {
                     testEntities.add(testEntity14);
+                }else if (line.contains("autotest_1")) {
+                    findViewById(R.id.auto_test).setVisibility(View.VISIBLE);
+                    findViewById(R.id.reset_factory).setVisibility(View.VISIBLE);
                 }
             }
         } catch (Exception e) {
