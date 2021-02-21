@@ -76,6 +76,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
         TestConstant.isConfigTestMode = true;
         TestConstant.application = getApplication();
         testResult.clear();
+        testEntities.clear();
         hideBottomUIMenu();  //隐藏底部虚拟按键
         initConfig();
         setContentView(R.layout.activity_test_main);
