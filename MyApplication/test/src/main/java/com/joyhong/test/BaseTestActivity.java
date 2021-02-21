@@ -23,7 +23,6 @@ public class BaseTestActivity extends Activity implements View.OnClickListener {
 
     public void initListener() {
     }
-
     public boolean keepScreenOn = true;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
