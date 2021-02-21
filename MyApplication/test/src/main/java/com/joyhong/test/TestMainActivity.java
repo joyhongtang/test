@@ -71,6 +71,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        keepScreenOn = false;
         super.onCreate(savedInstanceState);
         SPUtils.getInstance().put("stepinto_test", true);
         TestConstant.isConfigTestMode = true;
