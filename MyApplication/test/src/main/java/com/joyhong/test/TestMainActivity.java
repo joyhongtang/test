@@ -148,6 +148,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
                             SPUtils.getInstance().put("isExternalStorage", 0);
                             SPUtils.getInstance().put("isUsbStorage", 0);
                             SPUtils.getInstance().put("isHeadSet", 0);
+                            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_ON));
                             checkResult(true);
                             refresh();
                         }
@@ -213,6 +214,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
             TestEntity testEntity = testResult.get(humanSensorTag);
             testEntity.setTestResultEnum(TestResultEnum.PASS);
             SPUtils.getInstance().put(testEntity.getTag(), 1);
+            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_OFF));
             homeTvAdapter.notifyDataSetChanged();
         }
     }
