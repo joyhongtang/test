@@ -162,27 +162,6 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
             autoTest = true;
             rv.getChildAt(0).performClick();
 
-            String filePath = MyTestUtils.INSTANCE.getTestFile().getAbsolutePath()+File.separator;
-//        String[] commands = new String[] { "mount -o remount rw /private/" ,"cp "+ filePath +" /private/" };
-//            String[] commands = new String[] { "su" };
-//            ShellUtils.CommandResult result = ShellUtils.execCommand(commands, false);
-//            Log.e("TTTTT","result success ooooooooo "+result.successMsg +"  result error  "+result.errorMsg+"  result code  "+result.result);
-//        if (!MyTestUtils.INSTANCE.getPrivateFile().exists()) {
-
-//            isRoot(new RootResult() {
-//                @Override
-//                public void success() {
-////                    String[] commands = new String[] { "mount -o remount rw /private/", "rm -rf /private/a.txt" };
-//                    String[] commands = new String[] { "rm -rf /private/a.txt" };
-//                    ShellUtils.CommandResult result = ShellUtils.execCommand(commands, false);
-//                    Log.e("TTTTT","result success ooooooooo "+result.successMsg +"  result error  "+result.errorMsg+"  result code  "+result.result);
-//                }
-//                @Override
-//                public void fail() {
-//
-//                }
-//            });
-
         }
     }
 
@@ -214,7 +193,6 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
             TestEntity testEntity = testResult.get(humanSensorTag);
             testEntity.setTestResultEnum(TestResultEnum.PASS);
             SPUtils.getInstance().put(testEntity.getTag(), 1);
-            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_OFF));
             homeTvAdapter.notifyDataSetChanged();
         }
     }
@@ -265,6 +243,8 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
         if (testEntity != null && SPUtils.getInstance().getInt(testEntity.getTag(), -1) != 1) {
             //setMotionSensor(true);
             EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_ON));
+        }else{
+            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_OFF));
         }
     }
 
