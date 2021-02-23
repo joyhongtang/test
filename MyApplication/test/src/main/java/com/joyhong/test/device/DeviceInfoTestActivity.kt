@@ -85,6 +85,7 @@ class DeviceInfoTestActivity : BaseTestActivity() {
 //        fail.requestFocus()
         Log.e("KKKKKK", "9")
 
+        fail.requestFocus()
     }
 
     override fun onResume() {
