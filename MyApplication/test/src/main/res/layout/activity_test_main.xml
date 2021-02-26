@@ -45,6 +45,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/dp_30"
+        android:focusable="true"
         android:background="@drawable/shape_actionsheet_top_normal">
 
         <TextView
@@ -96,6 +97,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/dp_30"
+        android:focusable="true"
         android:background="@drawable/shape_actionsheet_green_normal">
 
         <TextView

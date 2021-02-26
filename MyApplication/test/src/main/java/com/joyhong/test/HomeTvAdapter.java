@@ -106,8 +106,10 @@ public class HomeTvAdapter extends CustomRecyclerView.CustomAdapter<TestEntity> 
         } else {
             ViewCompat.animate(itemView).scaleX(1.0f).scaleY(1.0f).start();
             ViewGroup parent = (ViewGroup) itemView.getParent();
-            parent.requestLayout();
-            parent.invalidate();
+            if (parent != null) {
+                parent.requestLayout();
+                parent.invalidate();
+            }
         }
     }
 

@@ -251,7 +251,8 @@ public class DLRoundMenuView extends View {
         keyCodeMap.put(KeyEvent.KEYCODE_DPAD_DOWN,  new TestRecord(2));
         keyCodeMap.put(KeyEvent.KEYCODE_DPAD_RIGHT,  new TestRecord(1));
         keyCodeMap.put(KeyEvent.KEYCODE_DPAD_CENTER,  new TestRecord(-1));
-        keyCodeMap.put(KeyEvent.KEYCODE_BACK,  new TestRecord(4));
+        //测试要求按完5个面板键能直接成功退出
+        //keyCodeMap.put(KeyEvent.KEYCODE_BACK,  new TestRecord(4));
         keyCodeMap.put(25,  new TestRecord(3));
         keyCodeMap.put(24,  new TestRecord(1));
         keyCodeMap.put(66,  new TestRecord(-1));

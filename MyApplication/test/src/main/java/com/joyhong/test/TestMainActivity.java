@@ -148,7 +148,10 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
                             SPUtils.getInstance().put("isExternalStorage", 0);
                             SPUtils.getInstance().put("isUsbStorage", 0);
                             SPUtils.getInstance().put("isHeadSet", 0);
-                            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_ON));
+                            TestEntity testEntity = testResult.get(humanSensorTag);
+                            if (testEntity != null && SPUtils.getInstance().getInt(testEntity.getTag(), -1) != 1) {
+                                EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_ON));
+                            }
                             checkResult(true);
                             refresh();
                         }

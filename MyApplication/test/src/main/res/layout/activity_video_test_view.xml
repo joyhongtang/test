@@ -158,6 +158,7 @@
             android:layout_marginTop="10dp"
             android:hint="默认4小时"
             android:inputType="number"
+            android:imeOptions="actionDone"
             android:textColor="@color/main"
             android:textColorHint="@color/main"
            />
@@ -169,7 +170,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="默认4小时,老化时间必须大于4小时"
-            android:inputType="number"
+            android:inputType="textNoSuggestions"
             android:textColor="@color/main"
             android:textColorHint="@color/main"
             app:layout_constraintStart_toStartOf="parent" />
