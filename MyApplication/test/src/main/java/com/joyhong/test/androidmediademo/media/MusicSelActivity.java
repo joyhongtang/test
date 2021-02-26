@@ -101,7 +101,6 @@ public class MusicSelActivity extends BaseTestActivity implements CirclePgBar.On
     }
 
     public void initData() {
-        findViewById(R.id.left_back).setOnClickListener(this);
         findViewById(R.id.fail).setOnClickListener(this);
         findViewById(R.id.pass).setOnClickListener(this);
         circlePgBar = (CirclePgBar) findViewById(R.id.video_status);
