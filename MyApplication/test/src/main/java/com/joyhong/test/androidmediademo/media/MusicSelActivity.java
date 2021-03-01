@@ -97,10 +97,10 @@ public class MusicSelActivity extends BaseTestActivity implements CirclePgBar.On
         super.onCreate(savedInstanceState);
         mFilePath = getFilesDir().getAbsolutePath() + File.separator;
         setContentView(R.layout.activity_take_music);
-        initData();
+        initViewAndData();
     }
 
-    public void initData() {
+    public void initViewAndData() {
         findViewById(R.id.fail).setOnClickListener(this);
         findViewById(R.id.pass).setOnClickListener(this);
         circlePgBar = (CirclePgBar) findViewById(R.id.video_status);
