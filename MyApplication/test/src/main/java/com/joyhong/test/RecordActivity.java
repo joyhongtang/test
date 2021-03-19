@@ -244,7 +244,7 @@ public class RecordActivity extends BaseTestActivity implements TextureView.Surf
         List<Camera.Size> supportedPreviewSizes = parameters.getSupportedPreviewSizes();
         parameters.setPreviewSize(1920,1080);
         //缩短Recording启动时间
-        parameters.setRecordingHint(true);
+//        parameters.setRecordingHint(true);
         //是否支持影像稳定能力，支持则开启
         if (parameters.isVideoStabilizationSupported())
             parameters.setVideoStabilization(true);
