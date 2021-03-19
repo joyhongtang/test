@@ -1,5 +1,5 @@
 ﻿Touch_0 (触摸)
-Camera_0 （摄像头）
+Camera_1 （摄像头）
 Record_0（录音测试）
 Lcd_1 （显示屏）
 Wifi_1 （wifi测试）

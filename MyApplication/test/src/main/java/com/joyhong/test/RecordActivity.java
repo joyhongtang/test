@@ -242,12 +242,12 @@ public class RecordActivity extends BaseTestActivity implements TextureView.Surf
         //设置预览尺寸,因为预览的尺寸和最终是录制视频的尺寸无关，所以我们选取最大的数值
         //通常最大的是手机的分辨率，这样可以让预览画面尽可能清晰并且尺寸不变形，前提是TextureView的尺寸是全屏或者接近全屏
         List<Camera.Size> supportedPreviewSizes = parameters.getSupportedPreviewSizes();
-        parameters.setPreviewSize(1920,1080);
+        parameters.setPreviewSize(1280,720);
         //缩短Recording启动时间
-        parameters.setRecordingHint(true);
-        //是否支持影像稳定能力，支持则开启
-        if (parameters.isVideoStabilizationSupported())
-            parameters.setVideoStabilization(true);
+//        parameters.setRecordingHint(true);
+//        //是否支持影像稳定能力，支持则开启
+//        if (parameters.isVideoStabilizationSupported())
+//            parameters.setVideoStabilization(true);
         camera.setParameters(parameters);
     }
 
