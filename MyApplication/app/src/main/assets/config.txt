@@ -1,12 +1,12 @@
-﻿Touch_0 (触摸)
+﻿Touch_1 (触摸)
 Camera_1 （摄像头）
 Record_0（录音测试）
 Lcd_1 （显示屏）
 Wifi_1 （wifi测试）
-RemoteControl_1 （遥控器测试）
+RemoteControl_0 （遥控器测试）
 Speaker_1  （喇叭测试）
 SystemInfo_1 (系统版本信息)
-G-sensor_0 (重力感应测试)
+G-sensor_1 (重力感应测试)
 Sdcard_1 (sdcard测试)
 Human-sensor_1 (人体感应测试)
 USB_1 (USB存储测试)
