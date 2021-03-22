@@ -21,7 +21,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/main</item>
-        <item name="android:windowBackground">@color/main</item>
+        <!--<item name="android:windowBackground">@color/main</item>-->
         <!--<item name="android:fontFamily">@font/thingold</item>-->
 
         <item name="android:windowNoTitle">true</item>
