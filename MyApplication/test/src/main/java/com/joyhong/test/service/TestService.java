@@ -34,6 +34,9 @@ public class TestService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        if(null == intent){
+            return super.onStartCommand(intent, flags, startId);
+        }
         String action = intent.getAction();
         if(!TextUtils.isEmpty(TestConstant.deviceToken)){
             return super.onStartCommand(intent, flags, startId);

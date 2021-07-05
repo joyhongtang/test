@@ -24,7 +24,7 @@ public class TestEntity {
     }
 
     String content;
-    TestEntity(int row, int colume, String tag,String content, TestResultEnum testResultEnum) {
+    public TestEntity(int row, int colume, String tag,String content, TestResultEnum testResultEnum) {
         this.row = row;
         this.colume = colume;
         this.tag = tag;

@@ -88,14 +88,11 @@
     </com.joyhong.test.FocusView>
 
     <com.joyhong.test.FocusView
-        android:layout_marginRight="@dimen/dp_20"
-        android:layout_alignBottom="@id/test_result_main"
-        android:layout_toLeftOf="@+id/test_result_main"
+        android:layout_alignRight="@+id/test_result_main"
+        android:layout_alignParentBottom="true"
         android:id="@+id/show_qr_code"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/dp_30"
         android:focusable="true"
         android:background="@drawable/shape_actionsheet_green_normal">
@@ -118,9 +115,9 @@
         android:visibility="gone"
         android:layout_marginRight="@dimen/dp_20"
         android:layout_alignBottom="@id/test_result_main"
-        android:layout_toLeftOf="@+id/show_qr_code"
+        android:layout_toLeftOf="@+id/test_result_main"
         android:id="@+id/auto_test"
-        android:layout_width="200dp"
+        android:layout_width="220dp"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
@@ -131,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="自动测试"
+            android:text="整机测试"
             android:textColor="@color/white"
             android:textSize="40sp"
             app:layout_constraintBottom_toBottomOf="parent"

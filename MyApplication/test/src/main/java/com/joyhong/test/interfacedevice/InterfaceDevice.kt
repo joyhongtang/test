@@ -19,37 +19,44 @@ import com.joyhong.test.util.TestConstant
 import com.joyhong.test.util.TestHorizontalItemDecoration
 import kotlinx.android.synthetic.main.activity_test_device.*
 
-public class InterfaceDevice : BaseTestActivity(), UsbLis, HeadSetLis {
+public open class InterfaceDevice : BaseTestActivity(), UsbLis, HeadSetLis {
 
     private lateinit var mMusicAdapter: BaseQuickAdapter<DeviceInfoItem, BaseViewHolder>
     var mDeviceInfo = mutableListOf<DeviceInfoItem>()
+    var justTestHeadSet: Boolean = false
     private lateinit var mLinearLayoutManager: androidx.recyclerview.widget.LinearLayoutManager
     override fun initLayout(): Int {
         return R.layout.activity_test_interface_device
     }
 
     override fun initData() {
-        var sdcadrResule = DeviceInfoItem("外置SDCARD ： ", "")
-        if (TestMainActivity.EXIST_EXTERNA_STORAGE) {
-            mDeviceInfo.add(sdcadrResule)
+        if (justTestHeadSet) {
+            var HeadSetResule = DeviceInfoItem("挂载耳机 ： ", "")
+            if (TestMainActivity.EXIST_HEADSET) {
+                mDeviceInfo.add(HeadSetResule);
+            }
+
+            if (SPUtils.getInstance().getInt("com.joyhong.test.interfacedevice.HeadSetDevice", -1) == 1) {
+                HeadSetResule.content = "测试成功"
+            }
+        } else {
+            var sdcadrResule = DeviceInfoItem("外置SDCARD ： ", "")
+            if (TestMainActivity.EXIST_EXTERNA_STORAGE) {
+                mDeviceInfo.add(sdcadrResule)
+            }
+            var UResule = DeviceInfoItem("U盘 ： ", "")
+            if (TestMainActivity.EXIST_USB_STORAGE) {
+                mDeviceInfo.add(UResule);
+                if (SPUtils.getInstance().getInt("isExternalStorage", -1) == 1) {
+                    sdcadrResule.content = "测试成功"
+                }
+                if (SPUtils.getInstance().getInt("isUsbStorage", -1) == 1) {
+                    UResule.content = "测试成功"
+                }
+            }
         }
-        var UResule = DeviceInfoItem("U盘 ： ", "")
-        if (TestMainActivity.EXIST_USB_STORAGE) {
-            mDeviceInfo.add(UResule);
-        }
-        var HeadSetResule = DeviceInfoItem("挂载耳机 ： ", "")
-        if (TestMainActivity.EXIST_HEADSET) {
-            mDeviceInfo.add(HeadSetResule);
-        }
-        if (SPUtils.getInstance().getInt("isExternalStorage", -1) == 1) {
-            sdcadrResule.content = "测试成功"
-        }
-        if (SPUtils.getInstance().getInt("isUsbStorage", -1) == 1) {
-            UResule.content = "测试成功"
-        }
-        if (SPUtils.getInstance().getInt("isHeadSet", -1) == 1) {
-            HeadSetResule.content = "测试成功"
-        }
+
+
         mMusicAdapter =
             object : BaseQuickAdapter<DeviceInfoItem, BaseViewHolder>(
                 R.layout.item_device_test,
@@ -89,14 +96,15 @@ public class InterfaceDevice : BaseTestActivity(), UsbLis, HeadSetLis {
         usbBroadcast = UsbBroadcast()
         usbBroadcast.usbLis = this
         val usbFilter = IntentFilter()
-        usbFilter.addAction(Intent.ACTION_MEDIA_MOUNTED)
-        usbFilter.addAction(Intent.ACTION_MEDIA_REMOVED)
-        usbFilter.addAction(Intent.ACTION_MEDIA_UNMOUNTED)
-        usbFilter.addAction(Intent.ACTION_HEADSET_PLUG)
+        if(justTestHeadSet) {
+            usbFilter.addAction(Intent.ACTION_HEADSET_PLUG)
+        }else{
+            usbFilter.addAction(Intent.ACTION_MEDIA_MOUNTED)
+            usbFilter.addAction(Intent.ACTION_MEDIA_REMOVED)
+            usbFilter.addAction(Intent.ACTION_MEDIA_UNMOUNTED)
+        }
         usbFilter.addDataScheme("file")
         registerReceiver(usbBroadcast, usbFilter)
-
-
         headsetReceiver =
             HeadsetReceiver()
         headsetReceiver.headSetLis = this
@@ -184,7 +192,7 @@ public class InterfaceDevice : BaseTestActivity(), UsbLis, HeadSetLis {
                     deviceinfo.content = "测试成功"
                 }
             }
-            SPUtils.getInstance().put("isHeadSet", 1)
+            SPUtils.getInstance().put("com.joyhong.test.interfacedevice.HeadSetDevice", 1)
             mMusicAdapter.notifyDataSetChanged()
             if (checkResult()) {
             }

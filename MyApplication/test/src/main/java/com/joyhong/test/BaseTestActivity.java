@@ -43,7 +43,7 @@ public class BaseTestActivity extends Activity implements View.OnClickListener {
     @Override
     public void finish() {
         if(TestMainActivity.autoTest) {
-            boolean finised = TestMainActivity.stepAutoTestActivity(this);
+//            boolean finised = TestMainActivity.stepAutoTestActivity(this);
             super.finish();
         } else {
             super.finish();
