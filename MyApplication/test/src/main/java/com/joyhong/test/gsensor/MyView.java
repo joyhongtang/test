@@ -188,8 +188,8 @@ public class MyView extends SurfaceView implements SurfaceHolder.Callback, Runna
         mGY = event.values[SensorManager.DATA_Y];
         mGZ = event.values[SensorManager.DATA_Z];
 //这里乘以2是为了让小球移动的更快
-        mPosX -= mGX * 2;
-        mPosY += mGY * 2;
+        mPosX -= mGX * 3;
+        mPosY += mGY * 3;
 //检测小球是否超出边界
         if (mPosX < 0) {
             mPosX = 0;
