@@ -28,6 +28,8 @@ import com.joyhong.test.widget.MaterialDialog;
 import com.joyhong.test.widget.MyCreateQRViewDialog;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
@@ -103,35 +105,17 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
         rv.setAdapter(homeTvAdapter);
         homeTvAdapter.setOnItemClickListener(new MyOnItemClickListener());
         rv.setOnScrollListener(new MyOnScrollListener());
-        detectRtc();
         checkFileExistOrCopy();
-        registerHumanSensor();
         initTestResult2Sdcard();
 
     }
 
     ////////////////////////////////////rtc test////////////////////////////////////////
-    private void detectRtc() {
-        try {
-            File rtc1 = new File(DEVICE_RTC);
-            File rtc0 = new File(DEVICE_RTC0);
-            if (rtc1.exists() || rtc0.exists()) {
-                TestEntity testEntity = testResult.get(rtcTag);
-                testEntity.setTestResultEnum(TestResultEnum.PASS);
-                SPUtils.getInstance().put(testEntity.getTag(), 1);
-                homeTvAdapter.notifyDataSetChanged();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     //////////////////////////human sensor//////////////////////////////////////////////////////
     private boolean humanSensorCloseSuccess, humanSensorOpenSuccess;
     private final String HUMAN_SENSOR_CLOSE = "android.system.voltage.low";
     private final String HUMAN_SENSOR_OPEN = "android.system.voltage.high";
     private String humanSensorTag = "com.joyhong.test.sensor_human";
-    private HumanSensorReciver mHumanSensorReciver;
 
     @Override
     public void onClick(View v) {
@@ -168,42 +152,15 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
         }
     }
 
-    class HumanSensorReciver extends BroadcastReceiver {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (TextUtils.equals(HUMAN_SENSOR_CLOSE, intent.getAction())) {
-                humanSensorCloseSuccess = true;
-                checkHumanSensor();
-            } else if (TextUtils.equals(HUMAN_SENSOR_OPEN, intent.getAction())) {
-                humanSensorOpenSuccess = true;
-                checkHumanSensor();
-            }
-        }
-    }
-
-    private void registerHumanSensor() {
-        // 注册广播接收器
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(HUMAN_SENSOR_CLOSE);
-        intentFilter.addAction(HUMAN_SENSOR_OPEN);
-        mHumanSensorReciver = new HumanSensorReciver();
-        registerReceiver(mHumanSensorReciver, intentFilter);
-    }
 
     private void checkHumanSensor() {
         //&& (SPUtils.getInstance().getInt(humanSensorTag) != 1)
-        if (humanSensorCloseSuccess) {
-            TestEntity testEntity = testResult.get(humanSensorTag);
-            testEntity.setTestResultEnum(TestResultEnum.PASS);
-            SPUtils.getInstance().put(testEntity.getTag(), 1);
-            homeTvAdapter.notifyDataSetChanged();
-        }
+        TestEntity testEntity = testResult.get(humanSensorTag);
+        testEntity.setTestResultEnum(TestResultEnum.PASS);
+        SPUtils.getInstance().put(testEntity.getTag(), 1);
+        homeTvAdapter.notifyDataSetChanged();
     }
 
-    private void unRegisterHumanSensor() {
-        if (null != mHumanSensorReciver)
-            unregisterReceiver(mHumanSensorReciver);
-    }
 
     //////////////////////////human sensor//////////////////////////////////////////////////////
     private class MyOnItemClickListener implements HomeTvAdapter.OnItemClickListener {
@@ -245,12 +202,17 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
         TestEntity testEntity = testResult.get(humanSensorTag);
         if (testEntity != null && SPUtils.getInstance().getInt(testEntity.getTag(), -1) != 1) {
             //setMotionSensor(true);
-            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_ON));
-        }else{
-            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_OFF));
+            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_DETECT));
         }
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(MessageEventTest event) {
+        if (TextUtils.equals(event.message, MessageEventTest.HUMAN_SENSOR_DETECT_SUCCESS)) {
+            humanSensorCloseSuccess = true;
+            checkHumanSensor();
+        }
+    }
 
     /**
      * 初始化所有配置项
@@ -319,7 +281,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
                     testEntities.add(testEntity13);
                 } else if (line.contains("Rtc_1")) {
                     testEntities.add(testEntity14);
-                }else if (line.contains("autotest_1")) {
+                } else if (line.contains("autotest_1")) {
                     findViewById(R.id.auto_test).setVisibility(View.VISIBLE);
                     findViewById(R.id.reset_factory).setVisibility(View.VISIBLE);
                 }
@@ -687,16 +649,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
     @Override
     protected void onDestroy() {
         TestConstant.isConfigTestMode = false;
-        try {
-            unRegisterHumanSensor();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         //退出还原人体感应
-        TestEntity humanSensorEntity = testResult.get(humanSensorTag);
-        if (humanSensorEntity != null) {
-            EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_OFF));
-        }
         super.onDestroy();
     }
 
@@ -786,11 +739,11 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
             os.flush();
             int exitValue = process.waitFor();
             if (exitValue == 0) {
-                Log.e("GGGGG","ROOT SUCCESS 22");
+                Log.e("GGGGG", "ROOT SUCCESS 22");
                 rootResult.success();
                 return true;
             } else {
-                Log.e("GGGGG","ROOT Fail");
+                Log.e("GGGGG", "ROOT Fail");
                 rootResult.fail();
                 return false;
             }
@@ -830,7 +783,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
                 result += line;
             }
             int exitValue = p.waitFor();
-            Log.e("GGGGG","exitValue "+exitValue);
+            Log.e("GGGGG", "exitValue " + exitValue);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -851,6 +804,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
         }
         return result;
     }
+
     interface RootResult {
         void success();
 
