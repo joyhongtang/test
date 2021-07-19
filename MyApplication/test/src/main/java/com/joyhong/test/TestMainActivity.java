@@ -74,6 +74,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         keepScreenOn = false;
+        EventBus.getDefault().register(this);
         super.onCreate(savedInstanceState);
         SPUtils.getInstance().put("stepinto_test", true);
         TestConstant.isConfigTestMode = true;
@@ -134,7 +135,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
                             SPUtils.getInstance().put("isHeadSet", 0);
                             TestEntity testEntity = testResult.get(humanSensorTag);
                             if (testEntity != null && SPUtils.getInstance().getInt(testEntity.getTag(), -1) != 1) {
-                                EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_ON));
+                                EventBus.getDefault().post(new MessageEventTest(MessageEventTest.HUMAN_SENSOR_DETECT));
                             }
                             checkResult(true);
                             refresh();
@@ -648,6 +649,7 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
 
     @Override
     protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
         TestConstant.isConfigTestMode = false;
         //退出还原人体感应
         super.onDestroy();
