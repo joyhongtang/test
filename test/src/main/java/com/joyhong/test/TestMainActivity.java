@@ -97,9 +97,14 @@ public class TestMainActivity extends BaseTestActivity implements View.OnClickLi
         rv = findViewById(R.id.rv2);
         //设置布局管理器
         homeTvAdapter = new HomeTvAdapter(TestMainActivity.this, testEntities);
-        DecimalFormat df = new DecimalFormat("0.00");//格式化小数
-        String num = df.format((float) testEntities.size() / 4);//返回的是String类型
-        LINE_NUM = (int) Math.ceil(Double.parseDouble(num));
+        //DecimalFormat df = new DecimalFormat("0.00");//格式化小数
+        //String num = df.format((float) testEntities.size() / 4);//返回的是String类型
+        int num = testEntities.size() / 4;
+        double dNum = testEntities.size() / 4.0;
+        if (dNum - num > 0) {
+            num++;
+        }
+        LINE_NUM = num;
         mLayoutManager = new GridLayoutManager(this, 4);
         mLayoutManager.setAutoMeasureEnabled(false);
         rv.setLayoutManager(mLayoutManager);
